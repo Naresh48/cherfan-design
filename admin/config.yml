@@ -1,0 +1,400 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+editorial_workflow: true
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      # Home Page
+      - file: "content/home.json"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - label: "Global Celebration"
+            name: "globalCelebration"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+          
+          - label: "Celebration Section 1"
+            name: "celebrationSection1"
+            widget: "object"
+            fields:
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension (e.g., '0d8a9586-edit')" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Celebration Section 2"
+            name: "celebrationSection2"
+            widget: "object"
+            fields:
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Cherfan Plus"
+            name: "cherfanPlus"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Experience Cards"
+            name: "experienceCards"
+            widget: "object"
+            fields:
+              - label: "Kitchen"
+                name: "kitchen"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Master Bedroom"
+                name: "masterBedroom"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Closet"
+                name: "closet"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Kids Bedroom"
+                name: "kidsBedroom"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Expressions"
+            name: "expressions"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Location", name: "location", widget: "string" }
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+      
+      # Kitchen Page
+      - file: "content/kitchen.json"
+        label: "Kitchen Page"
+        name: "kitchen"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+          
+          - label: "Three Image Section"
+            name: "threeImageSection"
+            widget: "object"
+            fields:
+              - label: "Image 1"
+                name: "image1"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Image 2"
+                name: "image2"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Image 3"
+                name: "image3"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Text Section"
+            name: "textSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Final Text Section"
+            name: "finalTextSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description 1", name: "description1", widget: "text" }
+              - { label: "Description 2", name: "description2", widget: "text" }
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+          
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Location", name: "location", widget: "string" }
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+      
+      # Master Bedroom Page
+      - file: "content/master-bedroom.json"
+        label: "Master Bedroom Page"
+        name: "master-bedroom"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+          
+          - label: "Three Image Section"
+            name: "threeImageSection"
+            widget: "object"
+            fields:
+              - label: "Image 1"
+                name: "image1"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Image 2"
+                name: "image2"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Image 3"
+                name: "image3"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Text Section"
+            name: "textSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Final Text Section"
+            name: "finalTextSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description 1", name: "description1", widget: "text" }
+              - { label: "Description 2", name: "description2", widget: "text" }
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+          
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Location", name: "location", widget: "string" }
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+      
+      # Closet Page
+      - file: "content/closet.json"
+        label: "Closet Page"
+        name: "closet"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+          
+          - label: "Three Image Section"
+            name: "threeImageSection"
+            widget: "object"
+            fields:
+              - label: "Image 1"
+                name: "image1"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Image 2"
+                name: "image2"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              
+              - label: "Image 3"
+                name: "image3"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Text Section"
+            name: "textSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Final Text Section"
+            name: "finalTextSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description 1", name: "description1", widget: "text" }
+              - { label: "Description 2", name: "description2", widget: "text" }
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+          
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Location", name: "location", widget: "string" }
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+      
+      # Kids Bedroom Page
+      - file: "content/kids.json"
+        label: "Kids Bedroom Page"
+        name: "kids"
+        fields:
+          - label: "Split Section"
+            name: "splitSection"
+            widget: "object"
+            fields:
+              - label: "Left"
+                name: "left"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+              
+              - label: "Right"
+                name: "right"
+                widget: "object"
+                fields:
+                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+          
+          - label: "Text Section"
+            name: "textSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description 1", name: "description1", widget: "text" }
+              - { label: "Description 2", name: "description2", widget: "text" }
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+          
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Location", name: "location", widget: "string" }
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+
