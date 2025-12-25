@@ -1,0 +1,14 @@
+# Cache-Control headers for optimized assets
+# This file is used by Netlify for cache control
+
+# Optimized images - long cache
+/assets/opt/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Optimized videos - long cache
+/assets/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Original assets (if still referenced) - shorter cache
+/assets/originals/*
+  Cache-Control: public, max-age=86400

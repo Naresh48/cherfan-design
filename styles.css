@@ -1,0 +1,1243 @@
+/* ===========================
+   styles.css — consolidated
+   ===========================*/
+
+/* Brand & site variables (single :root) */
+:root {
+  --brand-bg: #ffffff;
+  --brand-accent: #1f1b18;
+  --brand-wood: #b76a45;
+
+  --site-max: 1200px;
+  --section-pad: 3rem;
+  --h1-size: 3rem;       /* mobile */
+  --h1-size-md: 4.5rem;  /* desktop */
+  --h2-size: 1.6rem;
+  --muted: #6b6b6b;
+}
+
+/* Basic utilities */
+.bg-brand-bg { background: var(--brand-bg); }
+.text-brand-accent { color: var(--brand-accent); }
+.bg-brand-accent { background: var(--brand-accent); }
+
+/* Page / section layout */
+/* Note: .main-wrapper removed (not used) */
+section { padding: var(--section-pad) 0; }
+
+/* Typography & scale */
+html {
+  background-color: #ffffff !important;
+  cursor: default !important;
+}
+
+body { 
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+  color: var(--brand-accent); 
+  background-color: #ffffff !important;
+  cursor: default !important;
+}
+
+/* Override all cursor styles to use default arrow */
+* {
+  cursor: default !important;
+}
+
+a, button, .cursor-pointer, [role="button"], input[type="submit"], input[type="button"] {
+  cursor: default !important;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: var(--h1-size);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem 0;
+}
+@media(min-width: 768px) { h1 { font-size: var(--h1-size-md); } }
+
+h2 { font-size: var(--h2-size); font-weight: 700; margin-bottom: .5rem; }
+
+/* Note: Removed unused .section-title and .section-sub classes */
+
+/* Note: Removed unused CSS classes: trend-card, trend-img, rtl-scroll, featured-item, featured-img, gallery, gallery-card, gallery-img, kids-showcase, kids-nav, kids-card */
+
+/* Reveal animation (single canonical definition) */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(12px); 
+  transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+}
+.reveal-visible { 
+  opacity: 1; 
+  transform: none; 
+}
+
+/* Arclinea-style scroll reveal animations */
+.scroll-reveal-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-text.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-image {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-image.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display:flex; align-items:center; justify-content:center; z-index:11000; }
+.lightbox-img { max-width:90%; max-height:85%; border-radius:10px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+
+/* Note: Removed unused CSS: featured-item, kids-carousel-grid, kids-card focus styles */
+
+/* Minor utilities */
+.hidden { display: none !important; }
+
+/* Header navigation - ensure tabs stay in one line */
+header nav {
+  flex-wrap: nowrap !important;
+  overflow: visible !important;
+  min-width: 0;
+}
+
+header nav a {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* Ensure header grid doesn't hide navigation */
+header > div {
+  overflow: visible;
+}
+
+/* Note: Removed unused .view-more-btn styles */
+
+/* Hero section responsive tweaks */
+@media(min-width:1024px){
+  .hero-lg { height: 90vh; max-height: 1100px; }
+}
+
+/* Hero video section - full screen */
+#heroSection {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Header scroll behavior - Arclinea style */
+#siteHeader {
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#siteHeader.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Ensure body starts at top without offset */
+body {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Footer transition effect */
+footer#contact {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+footer#contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Seasonal Experiences Section - Aman Style (Horizontal Cards) */
+.experience-cards-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  position: relative;
+}
+
+.experience-cards-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.experience-cards-grid {
+  display: flex;
+  gap: 1.25rem;
+  min-width: max-content;
+  width: max-content;
+  flex-wrap: nowrap;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experience-card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  min-width: 280px;
+  max-width: 310px;
+  opacity: 1;
+}
+
+.experience-card img {
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+
+.experience-card:hover img {
+  transform: scale(1.02);
+}
+
+/* Mobile: Show 1 card at a time with slider */
+@media (max-width: 768px) {
+  .experience-cards-grid {
+    gap: 1rem;
+  }
+  
+  .experience-card {
+    width: calc(100vw - 3rem);
+    min-width: calc(100vw - 3rem);
+    max-width: calc(100vw - 3rem);
+  }
+}
+
+/* Desktop: Show 3-4 cards, allow horizontal scroll */
+@media (min-width: 769px) {
+  .experience-cards-container {
+    overflow-x: auto;
+    /* Constrain width to show ~2.5 cards to ensure scrolling is always possible */
+    max-width: calc(320px * 2.5 + 1.5rem * 2);
+  }
+  
+  .experience-cards-grid {
+    gap: 1.5rem;
+    /* Force grid to be wider than container */
+    width: max-content;
+    min-width: max-content;
+  }
+  
+  .experience-card {
+    width: auto;
+    min-width: 290px;
+    max-width: 320px;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience-cards-container {
+    /* Constrain width to show ~2.5 cards to ensure scrolling */
+    max-width: calc(330px * 2.5 + 1.5rem * 2);
+  }
+  
+  .experience-card {
+    min-width: 300px;
+    max-width: 330px;
+    flex-shrink: 0;
+  }
+}
+
+/* Discover More Link - Aman Style */
+.discover-more-link {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--brand-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--brand-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.discover-more-link:hover {
+  opacity: 0.7;
+}
+
+/* Tab Navigation - Line Indicators - Aman Style (Single Sliding Line) */
+.experience-tabs-wrapper {
+  position: relative;
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+#experienceTabsContainer {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  min-height: 24px;
+  padding-bottom: 2px;
+}
+
+.experience-tab-indicator {
+  background: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.3s ease;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  height: auto;
+  min-height: 24px;
+  width: 40px;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.experience-tab-indicator:hover {
+  opacity: 0.85;
+}
+
+.experience-tab-indicator.active {
+  opacity: 1;
+}
+
+.experience-tab-indicator .tab-line {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: #9ca3af;
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+.experience-tab-indicator.active .tab-line {
+  background: #1f1b18;
+  width: 52px;
+  height: 2px;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .experience-tab-indicator .tab-line {
+    width: 38px;
+    height: 2px;
+  }
+  
+  .experience-tab-indicator.active .tab-line {
+    width: 56px;
+    height: 2px;
+  }
+}
+
+/* Tab content container */
+.tab-content[data-tab] {
+  min-height: 100%;
+}
+
+/* Contact section (footer) styling */
+footer#contact,
+footer[id="contact"] {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+footer#contact *,
+footer#contact > *,
+footer#contact > div,
+footer#contact > div > div,
+footer#contact > div > div > *,
+footer#contact p,
+footer#contact h4,
+footer#contact div:not(.max-w):not(.mx-auto):not(.px-6):not(.py-10):not(.grid):not(.grid-cols-1):not(.md\\:grid-cols-3):not(.gap-6),
+footer#contact span {
+  color: #ffffff !important;
+}
+
+footer#contact .text-gray-600,
+footer#contact .text-xs,
+footer#contact [class*="text-gray"] {
+  color: #ffffff !important;
+}
+
+footer#contact input[type="text"],
+footer#contact input[type="email"],
+footer#contact input {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+footer#contact input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+footer#contact button,
+footer#contact button[type="submit"],
+footer#contact .bg-brand-accent {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+footer#contact button:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ===========================
+   NEW HEADER NAV UNDERLINE & HOVER
+   ===========================*/
+
+/* Header nav underline & hover */
+#mainNav { 
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+}
+
+#mainNav > ul {
+  position: relative;
+  z-index: 1;
+}
+
+#navIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#navUnderline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #1f1b18;
+  border-radius: 2px;
+  transition: left .28s cubic-bezier(.2,.9,.2,1), width .28s cubic-bezier(.2,.9,.2,1);
+  will-change: left, width;
+}
+
+#mainNav .nav-link { 
+  color: var(--brand-accent); 
+  text-decoration: none; 
+  padding: .25rem 0; 
+  position: relative; 
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+/* Removed hover underline (::after) - using sliding underline instead */
+
+/* Focus styles for accessibility */
+#mainNav .nav-link:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Mobile: compact layout */
+@media (max-width: 768px) {
+  #mainNav ul { 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    z-index: 100;
+  }
+  
+  #mainNav ul.mobile-open {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    gap: 4px;
+  }
+
+  #mobileMenuToggle {
+    display: flex !important;
+  }
+
+  .hamburger-menu span {
+    width: 100%;
+    height: 2px;
+    background: var(--brand-accent);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .hamburger-menu[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburger-menu[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Adjust header layout for mobile */
+  #siteHeader > div {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  #mainNav {
+    width: 100%;
+    order: 3;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  /* Ensure contact button and hamburger stay on right on mobile */
+  #siteHeader > div > div:last-child {
+    margin-left: auto;
+  }
+
+  /* Navigation links mobile styling */
+  #mainNav ul.mobile-open .nav-link {
+    padding: 0.75rem 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Note: Removed unused .hero-parallax styles */
+
+/* Hero video iOS fixes - FORCE visibility */
+#heroVideo {
+  object-fit: cover;
+  pointer-events: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Prevent video from being hidden by any means */
+#heroVideo.hidden,
+#heroSection.hidden {
+  display: block !important;
+  visibility: visible !important;
+}
+
+#heroPlayOverlay {
+  z-index: 1000 !important;
+  pointer-events: auto !important;
+}
+
+#heroVideo::-webkit-media-controls {
+  display: none !important;
+}
+
+#heroVideo::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+#heroVideo::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+#heroVideo::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+#heroVideo::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* Hide iOS video controls overlay */
+video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* A Global Celebration Section - Aman Style */
+.global-celebration-section {
+  background-color: #ffffff;
+}
+
+.global-celebration-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .global-celebration-label {
+    font-size: 10px;
+    margin-bottom: 1rem;
+  }
+}
+
+.global-celebration-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--brand-accent);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .global-celebration-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .global-celebration-title {
+    font-size: 42px;
+  }
+}
+
+/* Celebration Image Sections */
+.celebration-image-section {
+  background-color: #ffffff;
+}
+
+.celebration-image-section img {
+  transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.celebration-image-section img:hover {
+  transform: scale(1.02);
+}
+
+/* Celebration Text Sections */
+.celebration-text-section {
+  background-color: #ffffff;
+}
+
+.celebration-text-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  color: var(--brand-accent);
+}
+
+.celebration-text-section p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  color: #4b5563;
+}
+
+/* Expressions of the Season */
+.expressions-section {
+  background-color: #ffffff;
+}
+
+.expression-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.expression-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.expression-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.expression-image img:hover {
+  transform: scale(1.02);
+}
+
+.expression-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.expression-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--brand-accent);
+}
+
+.expression-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4b5563;
+}
+
+/* Expressions of the Season (Aman style) */
+.expressions-season-section {
+  background-color: #ffffff;
+}
+
+.expressions-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .expressions-label {
+    font-size: 12px;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.expressions-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  color: var(--brand-accent);
+  margin: 0 0 0.75rem 0;
+}
+
+@media (min-width: 768px) {
+  .expressions-title { font-size: 52px; }
+}
+
+@media (min-width: 1024px) {
+  .expressions-title { font-size: 64px; }
+}
+
+.expressions-subtext {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #4b5563;
+  max-width: 520px;
+  margin-left: auto;
+}
+
+@media (max-width: 1023px) {
+  .expressions-subtext { margin-left: 0; }
+}
+
+.expression-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--brand-accent);
+  margin: 0 0 0.35rem 0;
+}
+
+.expression-card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE IMPROVEMENTS
+   Added for full responsiveness without design changes
+   ===========================*/
+
+/* ===========================
+   MOBILE (max-width: 768px)
+   ===========================*/
+@media (max-width: 768px) {
+  /* Header adjustments */
+  #siteHeader {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #siteHeader > div {
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  #siteTitleImg {
+    height: 0.875rem;
+  }
+
+  #contactButton {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.625rem;
+  }
+
+  /* Hero section mobile */
+  #heroSection {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  /* Global celebration section mobile */
+  .global-celebration-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .global-celebration-section > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Celebration image section mobile */
+  .celebration-image-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .celebration-image-section > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .celebration-image-section .grid {
+    gap: 0.5rem;
+  }
+
+  .celebration-image-section .relative {
+    height: 300px !important;
+  }
+
+  /* Text sections mobile */
+  .celebration-text-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .celebration-text-section h3 {
+    font-size: 20px !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .celebration-text-section p {
+    font-size: 13px !important;
+  }
+
+  /* Expressions section mobile */
+  .expressions-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .expressions-section > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .expressions-section .grid {
+    gap: 1.5rem;
+  }
+
+  .expression-label {
+    font-size: 18px;
+  }
+
+  .expression-desc {
+    font-size: 13px;
+  }
+
+  /* Seasonal experiences mobile */
+  .experience-cards-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .experience-cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .experience-cards-grid {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .experience-card {
+    min-width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    flex-shrink: 0;
+  }
+
+  .experience-tabs-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Contact modal mobile */
+  .contact-modal-content {
+    padding: 1.5rem;
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+
+  .contact-modal-title {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  .contact-form-group input,
+  .contact-form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Footer mobile */
+  footer#contact {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  footer#contact > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1.5rem;
+  }
+
+  /* Horizontal scroll sections mobile */
+  .horizontal-scroll-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .horizontal-scroll-item {
+    width: 280px !important;
+  }
+
+  .horizontal-scroll-item img {
+    height: 300px !important;
+  }
+
+  /* 3 Images section mobile (kitchen/master-bedroom/closet pages) */
+  section .grid.grid-cols-1.md\:grid-cols-3 {
+    gap: 0.5rem;
+  }
+
+  section .grid.grid-cols-1.md\:grid-cols-3 > div {
+    aspect-ratio: 4/5;
+  }
+
+  section .grid.grid-cols-1.md\:grid-cols-3 .absolute {
+    padding: 1rem;
+  }
+
+  section .grid.grid-cols-1.md\:grid-cols-3 h3 {
+    font-size: 18px !important;
+  }
+
+  section .grid.grid-cols-1.md\:grid-cols-3 p {
+    font-size: 11px !important;
+  }
+
+  /* Lightbox mobile */
+  .lightbox-img {
+    max-width: 95%;
+    max-height: 80vh;
+  }
+
+  .image-lightbox .lightbox-img {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .lightbox-close,
+  .image-lightbox .lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+
+  .lightbox-nav,
+  .image-lightbox .lightbox-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+  }
+
+  .lightbox-prev,
+  .image-lightbox .lightbox-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox-next,
+  .image-lightbox .lightbox-next {
+    right: 0.5rem;
+  }
+
+  /* Section padding adjustments */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Grid gap reductions */
+  .grid {
+    gap: 1rem;
+  }
+
+  /* Text size adjustments for readability */
+  .discover-more-link {
+    font-size: 13px;
+  }
+}
+
+/* ===========================
+   TABLET (max-width: 1024px)
+   ===========================*/
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* Header tablet */
+  #siteHeader > div {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Hero section tablet */
+  #heroSection {
+    height: 70vh;
+  }
+
+  /* Section padding tablet */
+  .global-celebration-section > div,
+  .celebration-image-section > div,
+  .expressions-section > div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* Experience cards tablet */
+  .experience-card {
+    min-width: 300px;
+    max-width: 320px;
+  }
+
+  /* Grid adjustments tablet */
+  .grid {
+    gap: 1.5rem;
+  }
+
+  /* Contact modal tablet */
+  .contact-modal-content {
+    padding: 2rem;
+    max-width: 550px;
+  }
+}
+
+/* ===========================
+   LARGE MOBILE / SMALL TABLET (max-width: 480px)
+   ===========================*/
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  #siteHeader > div {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  #siteTitleImg {
+    height: 0.75rem;
+  }
+
+  #contactButton {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.625rem;
+  }
+
+  /* Hero very small */
+  #heroSection {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  /* Text sizes extra small */
+  .global-celebration-title {
+    font-size: 24px !important;
+  }
+
+  .global-celebration-label {
+    font-size: 8px;
+  }
+
+  .celebration-text-section h3 {
+    font-size: 18px !important;
+  }
+
+  .celebration-text-section p {
+    font-size: 12px !important;
+  }
+
+  /* Experience cards extra small */
+  .experience-card {
+    min-width: calc(100vw - 1.5rem);
+    max-width: calc(100vw - 1.5rem);
+  }
+
+  /* Contact modal extra small */
+  .contact-modal-content {
+    padding: 1.25rem;
+    margin: 0.25rem;
+  }
+
+  .contact-modal-title {
+    font-size: 20px;
+  }
+
+  /* Horizontal scroll extra small */
+  .horizontal-scroll-item {
+    width: 250px !important;
+  }
+
+  .horizontal-scroll-item img {
+    height: 280px !important;
+  }
+
+  /* Footer extra small */
+  footer#contact > div {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* ===========================
+   TOUCH DEVICE IMPROVEMENTS
+   ===========================*/
+@media (hover: none) and (pointer: coarse) {
+  /* Better touch targets */
+  .nav-link,
+  #contactButton,
+  .experience-tab-indicator,
+  .lightbox-close,
+  .lightbox-nav,
+  .contact-modal-close,
+  .contact-form-submit {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Disable hover effects on touch devices */
+  .celebration-image-section img:hover,
+  .expression-image img:hover {
+    transform: none;
+  }
+
+  /* Better scrolling */
+  .experience-cards-container,
+  .horizontal-scroll-container,
+  .experience-tabs-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+
+/* ===========================
+   LANDSCAPE MOBILE
+   ===========================*/
+@media (max-width: 768px) and (orientation: landscape) {
+  #heroSection {
+    height: 100vh;
+    min-height: auto;
+  }
+
+  .contact-modal-content {
+    max-height: 90vh;
+  }
+}
+
+/* ===========================
+   PRINT STYLES (Optional - keeps design intact)
+   ===========================*/
+@media print {
+  #siteHeader,
+  #mobileMenuToggle,
+  #contactButton,
+  .contact-modal,
+  .lightbox,
+  .image-lightbox {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}

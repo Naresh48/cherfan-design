@@ -1,0 +1,1512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" />
+  <title>Kitchen — Cherfan Design</title>
+  <!-- Tailwind CSS (Built) -->
+  <link rel="stylesheet" href="tailwind.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Preload hero image for LCP -->
+  <link rel="preload" as="image" href="assets/optimized/images/0d8a9591-800.avif">
+</head>
+<body id="top" class="antialiased bg-brand-bg text-brand-accent">
+
+  <!-- Header (Same as home page) -->
+  <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-white/30 transition-transform duration-300 ease-in-out">
+    <div class="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-6">
+      <!-- Title image -->
+      <div class="flex items-center gap-4">
+        <a href="index.html">
+          <picture>
+            <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <img id="siteTitleImg" src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 object-contain">
+          </picture>
+        </a>
+      </div>
+
+      <!-- Nav -->
+      <nav id="mainNav" class="ml-2">
+        <ul class="flex gap-6 items-center text-sm font-medium" role="tablist" aria-label="Primary">
+          <li><a href="kitchen.html" class="nav-link" data-target="kitchen">Kitchen</a></li>
+          <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedroom</a></li>
+          <li><a href="closet.html" class="nav-link" data-target="closet">Closet</a></li>
+          <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
+          <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
+          <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
+        </ul>
+        <!-- animated sliding underline -->
+        <div id="navIndicator" aria-hidden="true">
+          <span id="navUnderline"></span>
+        </div>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <div class="ml-auto flex items-center gap-4">
+        <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Image Section -->
+  <section id="heroSection" class="relative h-screen w-full overflow-hidden">
+    <picture>
+      <source type="image/avif" srcset="assets/optimized/images/0d8a9591-1600.avif 1600w, assets/optimized/images/0d8a9591-1200.avif 1200w, assets/optimized/images/0d8a9591-800.avif 800w, assets/optimized/images/0d8a9591-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+      <source type="image/webp" srcset="assets/optimized/images/0d8a9591-1600.webp 1600w, assets/optimized/images/0d8a9591-1200.webp 1200w, assets/optimized/images/0d8a9591-800.webp 800w, assets/optimized/images/0d8a9591-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+      <img src="assets/optimized/images/0d8a9591-800.webp" alt="Kitchen Hero" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+    </picture>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/25"></div>
+  </section>
+
+  <!-- 3 Images in Row with Text Overlay -->
+  <section class="py-2 md:py-3 bg-white">
+    <div class="w-full">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
+        <!-- Image 1 -->
+        <div class="relative overflow-hidden aspect-[4/5] group">
+          <picture>
+            <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <p class="text-[12px] uppercase tracking-[0.2em] font-bold mb-2">PREMIUM FINISHES</p>
+            <h3 class="text-[24px] md:text-[28px] font-normal leading-tight">Calacatta Marble</h3>
+            <p class="text-[14px] mt-2 leading-relaxed">Statement centerpiece design</p>
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="relative overflow-hidden aspect-[4/5] group">
+          <picture>
+            <source type="image/avif" srcset="assets/optimized/images/0d8a9592-1600.avif 1600w, assets/optimized/images/0d8a9592-1200.avif 1200w, assets/optimized/images/0d8a9592-800.avif 800w, assets/optimized/images/0d8a9592-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <source type="image/webp" srcset="assets/optimized/images/0d8a9592-1600.webp 1600w, assets/optimized/images/0d8a9592-1200.webp 1200w, assets/optimized/images/0d8a9592-800.webp 800w, assets/optimized/images/0d8a9592-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <img src="assets/optimized/images/0d8a9592-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <p class="text-[12px] uppercase tracking-[0.2em] font-bold mb-2">ARTISANAL CRAFT</p>
+            <h3 class="text-[24px] md:text-[28px] font-normal leading-tight">Signature Island</h3>
+            <p class="text-[14px] mt-2 leading-relaxed">Architectural kitchens for cultivated living</p>
+          </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="relative overflow-hidden aspect-[4/5] group">
+          <picture>
+            <source type="image/avif" srcset="assets/optimized/images/0d8a9589-1600.avif 1600w, assets/optimized/images/0d8a9589-1200.avif 1200w, assets/optimized/images/0d8a9589-800.avif 800w, assets/optimized/images/0d8a9589-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <source type="image/webp" srcset="assets/optimized/images/0d8a9589-1600.webp 1600w, assets/optimized/images/0d8a9589-1200.webp 1200w, assets/optimized/images/0d8a9589-800.webp 800w, assets/optimized/images/0d8a9589-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <img src="assets/optimized/images/0d8a9589-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <p class="text-[12px] uppercase tracking-[0.2em] font-bold mb-2">REFINED DETAILS</p>
+            <h3 class="text-[24px] md:text-[28px] font-normal leading-tight">Handcrafted Finish</h3>
+            <p class="text-[14px] mt-2 leading-relaxed">Refined joinery & hardware</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Big Text and Small Text Section (Altus Style) -->
+  <section class="py-16 md:py-20 lg:py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <div class="max-w-3xl">
+        <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4">CRAFTING TIMELESS</p>
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1]">
+          Living Spaces
+        </h2>
+        <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal">
+          With a passion for exceptional craftsmanship, sustainable materials, and timeless design, we bring you thoughtfully curated collections that blend beauty with functionality. At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid Section - 2 Rows of 4 Images -->
+  <section class="py-12 md:py-16 lg:py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <!-- First Row - 4 Images -->
+      <div class="grid projects-grid-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
+        <!-- Project 1 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="1">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Project 1" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 1</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="2">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9592-1600.avif 1600w, assets/optimized/images/0d8a9592-1200.avif 1200w, assets/optimized/images/0d8a9592-800.avif 800w, assets/optimized/images/0d8a9592-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9592-1600.webp 1600w, assets/optimized/images/0d8a9592-1200.webp 1200w, assets/optimized/images/0d8a9592-800.webp 800w, assets/optimized/images/0d8a9592-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9592-800.webp" alt="Project 2" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 2</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="3">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9589-1600.avif 1600w, assets/optimized/images/0d8a9589-1200.avif 1200w, assets/optimized/images/0d8a9589-800.avif 800w, assets/optimized/images/0d8a9589-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9589-1600.webp 1600w, assets/optimized/images/0d8a9589-1200.webp 1200w, assets/optimized/images/0d8a9589-800.webp 800w, assets/optimized/images/0d8a9589-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9589-800.webp" alt="Project 3" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 3</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="4">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9509-edit-1600.avif 1600w, assets/optimized/images/0d8a9509-edit-1200.avif 1200w, assets/optimized/images/0d8a9509-edit-800.avif 800w, assets/optimized/images/0d8a9509-edit-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9509-edit-1600.webp 1600w, assets/optimized/images/0d8a9509-edit-1200.webp 1200w, assets/optimized/images/0d8a9509-edit-800.webp 800w, assets/optimized/images/0d8a9509-edit-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9509-edit-800.webp" alt="Project 4" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 4</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row - 4 Images -->
+      <div class="grid projects-grid-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-6">
+        <!-- Project 5 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="5">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9659-1600.avif 1600w, assets/optimized/images/0d8a9659-1200.avif 1200w, assets/optimized/images/0d8a9659-800.avif 800w, assets/optimized/images/0d8a9659-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9659-1600.webp 1600w, assets/optimized/images/0d8a9659-1200.webp 1200w, assets/optimized/images/0d8a9659-800.webp 800w, assets/optimized/images/0d8a9659-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9659-800.webp" alt="Project 5" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 5</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="6">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9601-1600.avif 1600w, assets/optimized/images/0d8a9601-1200.avif 1200w, assets/optimized/images/0d8a9601-800.avif 800w, assets/optimized/images/0d8a9601-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9601-1600.webp 1600w, assets/optimized/images/0d8a9601-1200.webp 1200w, assets/optimized/images/0d8a9601-800.webp 800w, assets/optimized/images/0d8a9601-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9601-800.webp" alt="Project 6" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 6</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="7">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9620-1600.avif 1600w, assets/optimized/images/0d8a9620-1200.avif 1200w, assets/optimized/images/0d8a9620-800.avif 800w, assets/optimized/images/0d8a9620-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9620-1600.webp 1600w, assets/optimized/images/0d8a9620-1200.webp 1200w, assets/optimized/images/0d8a9620-800.webp 800w, assets/optimized/images/0d8a9620-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9620-800.webp" alt="Project 7" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 7</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="relative overflow-hidden group cursor-pointer project-item" data-project="8">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9625-1600.avif 1600w, assets/optimized/images/0d8a9625-1200.avif 1200w, assets/optimized/images/0d8a9625-800.avif 800w, assets/optimized/images/0d8a9625-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9625-1600.webp 1600w, assets/optimized/images/0d8a9625-1200.webp 1200w, assets/optimized/images/0d8a9625-800.webp 800w, assets/optimized/images/0d8a9625-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/optimized/images/0d8a9625-800.webp" alt="Project 8" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 8</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal Scrolling Loop with 8 Images -->
+  <section class="py-12 md:py-16 bg-white overflow-hidden">
+    <div class="horizontal-scroll-container">
+      <div class="horizontal-scroll-track">
+        <!-- First set of 8 images -->
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="0">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="1">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9592-1600.avif 1600w, assets/optimized/images/0d8a9592-1200.avif 1200w, assets/optimized/images/0d8a9592-800.avif 800w, assets/optimized/images/0d8a9592-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9592-1600.webp 1600w, assets/optimized/images/0d8a9592-1200.webp 1200w, assets/optimized/images/0d8a9592-800.webp 800w, assets/optimized/images/0d8a9592-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9592-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="2">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9589-1600.avif 1600w, assets/optimized/images/0d8a9589-1200.avif 1200w, assets/optimized/images/0d8a9589-800.avif 800w, assets/optimized/images/0d8a9589-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9589-1600.webp 1600w, assets/optimized/images/0d8a9589-1200.webp 1200w, assets/optimized/images/0d8a9589-800.webp 800w, assets/optimized/images/0d8a9589-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9589-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="3">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9509-edit-1600.avif 1600w, assets/optimized/images/0d8a9509-edit-1200.avif 1200w, assets/optimized/images/0d8a9509-edit-800.avif 800w, assets/optimized/images/0d8a9509-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9509-edit-1600.webp 1600w, assets/optimized/images/0d8a9509-edit-1200.webp 1200w, assets/optimized/images/0d8a9509-edit-800.webp 800w, assets/optimized/images/0d8a9509-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9509-edit-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="4">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9659-1600.avif 1600w, assets/optimized/images/0d8a9659-1200.avif 1200w, assets/optimized/images/0d8a9659-800.avif 800w, assets/optimized/images/0d8a9659-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9659-1600.webp 1600w, assets/optimized/images/0d8a9659-1200.webp 1200w, assets/optimized/images/0d8a9659-800.webp 800w, assets/optimized/images/0d8a9659-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9659-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="5">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9601-1600.avif 1600w, assets/optimized/images/0d8a9601-1200.avif 1200w, assets/optimized/images/0d8a9601-800.avif 800w, assets/optimized/images/0d8a9601-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9601-1600.webp 1600w, assets/optimized/images/0d8a9601-1200.webp 1200w, assets/optimized/images/0d8a9601-800.webp 800w, assets/optimized/images/0d8a9601-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9601-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="6">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9620-1600.avif 1600w, assets/optimized/images/0d8a9620-1200.avif 1200w, assets/optimized/images/0d8a9620-800.avif 800w, assets/optimized/images/0d8a9620-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9620-1600.webp 1600w, assets/optimized/images/0d8a9620-1200.webp 1200w, assets/optimized/images/0d8a9620-800.webp 800w, assets/optimized/images/0d8a9620-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9620-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="7">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9625-1600.avif 1600w, assets/optimized/images/0d8a9625-1200.avif 1200w, assets/optimized/images/0d8a9625-800.avif 800w, assets/optimized/images/0d8a9625-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9625-1600.webp 1600w, assets/optimized/images/0d8a9625-1200.webp 1200w, assets/optimized/images/0d8a9625-800.webp 800w, assets/optimized/images/0d8a9625-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9625-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="0">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="1">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9592-1600.avif 1600w, assets/optimized/images/0d8a9592-1200.avif 1200w, assets/optimized/images/0d8a9592-800.avif 800w, assets/optimized/images/0d8a9592-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9592-1600.webp 1600w, assets/optimized/images/0d8a9592-1200.webp 1200w, assets/optimized/images/0d8a9592-800.webp 800w, assets/optimized/images/0d8a9592-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9592-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="2">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9589-1600.avif 1600w, assets/optimized/images/0d8a9589-1200.avif 1200w, assets/optimized/images/0d8a9589-800.avif 800w, assets/optimized/images/0d8a9589-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9589-1600.webp 1600w, assets/optimized/images/0d8a9589-1200.webp 1200w, assets/optimized/images/0d8a9589-800.webp 800w, assets/optimized/images/0d8a9589-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9589-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="3">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9509-edit-1600.avif 1600w, assets/optimized/images/0d8a9509-edit-1200.avif 1200w, assets/optimized/images/0d8a9509-edit-800.avif 800w, assets/optimized/images/0d8a9509-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9509-edit-1600.webp 1600w, assets/optimized/images/0d8a9509-edit-1200.webp 1200w, assets/optimized/images/0d8a9509-edit-800.webp 800w, assets/optimized/images/0d8a9509-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9509-edit-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="4">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9659-1600.avif 1600w, assets/optimized/images/0d8a9659-1200.avif 1200w, assets/optimized/images/0d8a9659-800.avif 800w, assets/optimized/images/0d8a9659-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9659-1600.webp 1600w, assets/optimized/images/0d8a9659-1200.webp 1200w, assets/optimized/images/0d8a9659-800.webp 800w, assets/optimized/images/0d8a9659-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9659-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="5">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9601-1600.avif 1600w, assets/optimized/images/0d8a9601-1200.avif 1200w, assets/optimized/images/0d8a9601-800.avif 800w, assets/optimized/images/0d8a9601-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9601-1600.webp 1600w, assets/optimized/images/0d8a9601-1200.webp 1200w, assets/optimized/images/0d8a9601-800.webp 800w, assets/optimized/images/0d8a9601-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9601-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="6">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9620-1600.avif 1600w, assets/optimized/images/0d8a9620-1200.avif 1200w, assets/optimized/images/0d8a9620-800.avif 800w, assets/optimized/images/0d8a9620-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9620-1600.webp 1600w, assets/optimized/images/0d8a9620-1200.webp 1200w, assets/optimized/images/0d8a9620-800.webp 800w, assets/optimized/images/0d8a9620-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9620-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="7">
+          <div class="overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9625-1600.avif 1600w, assets/optimized/images/0d8a9625-1200.avif 1200w, assets/optimized/images/0d8a9625-800.avif 800w, assets/optimized/images/0d8a9625-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9625-1600.webp 1600w, assets/optimized/images/0d8a9625-1200.webp 1200w, assets/optimized/images/0d8a9625-800.webp 800w, assets/optimized/images/0d8a9625-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9625-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image on Right, Text on Left Section -->
+  <section class="py-16 md:py-20 lg:py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center">
+        <!-- Left Side: Text -->
+        <div>
+          <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4">THE DRIVE TO FIND</p>
+          <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1]">
+            Personal Meaning
+          </h2>
+          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal mb-4">
+            Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves.
+          </p>
+          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal">
+            At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends.
+          </p>
+        </div>
+        
+        <!-- Right Side: Image -->
+        <div class="relative overflow-hidden aspect-[4/5]">
+          <picture>
+            <source type="image/avif" srcset="assets/optimized/images/0d8a9591-1600.avif 1600w, assets/optimized/images/0d8a9591-1200.avif 1200w, assets/optimized/images/0d8a9591-800.avif 800w, assets/optimized/images/0d8a9591-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <source type="image/webp" srcset="assets/optimized/images/0d8a9591-1600.webp 1600w, assets/optimized/images/0d8a9591-1200.webp 1200w, assets/optimized/images/0d8a9591-800.webp 800w, assets/optimized/images/0d8a9591-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <img src="assets/optimized/images/0d8a9591-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Same as home page) -->
+  <footer id="contact" class="border-t border-white/40 mt-12">
+    <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <picture>
+          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <img src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="lazy" decoding="async" class="h-8 object-contain" />
+        </picture>
+        <p class="text-sm mt-4">Cherfan Design — Lebanon</p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="text-sm mt-2">
+          Zouk Highway<br>
+          +961 9 222 340<br>
+          info.z@cherfandesign.com
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Newsletter</h4>
+        <form id="newsletterForm" class="mt-2 flex gap-2">
+          <input id="newsletterEmail" class="border p-2 flex-1" placeholder="Email" type="email">
+          <button type="submit" class="bg-brand-accent text-white px-4 rounded">Subscribe</button>
+        </form>
+        <p id="newsletterStatus" class="mt-2 text-sm text-center"></p>
+      </div>
+    </div>
+
+    <div class="text-center text-xs text-gray-600 pb-6">
+      © Cherfan Design — All rights reserved
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="project-modal hidden">
+    <div class="project-modal-backdrop"></div>
+    <div class="project-modal-content">
+      <button class="project-modal-close" aria-label="Close project modal">×</button>
+      
+      <div class="project-modal-grid">
+        <!-- Left Side: Main Image -->
+        <div class="project-modal-image-container">
+          <img id="projectModalImage" src="" alt="Project Image" class="project-modal-main-image" loading="lazy" decoding="async">
+          <!-- Navigation Arrows -->
+          <button class="project-modal-nav project-modal-prev" aria-label="Previous project">‹</button>
+          <button class="project-modal-nav project-modal-next" aria-label="Next project">›</button>
+        </div>
+        
+        <!-- Right Side: Description and Thumbnails -->
+        <div class="project-modal-info">
+          <div class="project-modal-header">
+            <h2 id="projectModalTitle" class="project-modal-title">Project 1</h2>
+          </div>
+          
+          <div class="project-modal-description">
+            <p id="projectModalDescription" class="project-description-text">
+              <!-- Description will be populated by JavaScript -->
+            </p>
+          </div>
+          
+          <!-- Thumbnail Gallery -->
+          <div class="project-modal-thumbnails">
+            <div class="project-thumbnails-grid" id="projectThumbnails">
+              <!-- Thumbnails will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Lightbox with Navigation -->
+  <div id="imageLightbox" class="image-lightbox hidden">
+    <div class="lightbox-backdrop"></div>
+    <button class="lightbox-close" aria-label="Close lightbox">×</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="Kitchen Image" class="lightbox-img" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  
+  <script>
+    // Kitchen Page Image Lightbox with Navigation
+    (function kitchenImageLightbox() {
+      const lightbox = document.getElementById('imageLightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const prevBtn = document.querySelector('.lightbox-prev');
+      const nextBtn = document.querySelector('.lightbox-next');
+      const backdrop = document.querySelector('.lightbox-backdrop');
+
+      // Array of unique images (8 images) - using optimized paths with helper function
+      function getOptimizedImagePath(originalPath) {
+        const baseName = originalPath.toLowerCase()
+          .replace(/assets\/kitchen\//, '')
+          .replace(/\.jpg$/, '')
+          .replace(/\s+/g, '-')
+          .replace(/[^a-z0-9.-]/g, '-')
+          .replace(/-+/g, '-');
+        const w = window.innerWidth;
+        const size = w >= 1200 ? '1600' : w >= 800 ? '1200' : w >= 400 ? '800' : '400';
+        return `assets/optimized/images/${baseName}-${size}.webp`;
+      }
+      
+      const images = [
+        'assets/optimized/images/0d8a9586-edit-1600.webp',
+        'assets/optimized/images/0d8a9592-1600.webp',
+        'assets/optimized/images/0d8a9589-1600.webp',
+        'assets/optimized/images/0d8a9509-edit-1600.webp',
+        'assets/optimized/images/0d8a9659-1600.webp',
+        'assets/optimized/images/0d8a9601-1600.webp',
+        'assets/optimized/images/0d8a9620-1600.webp',
+        'assets/optimized/images/0d8a9625-1600.webp'
+      ];
+
+      let currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        lightboxImage.src = images[currentIndex];
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImage.src = images[currentIndex];
+      }
+
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImage.src = images[currentIndex];
+      }
+
+      // Click handlers for horizontal scroll images
+      document.querySelectorAll('.horizontal-scroll-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const index = parseInt(item.dataset.imageIndex);
+          openLightbox(index);
+        });
+      });
+
+      // Close button
+      closeBtn.addEventListener('click', closeLightbox);
+      backdrop.addEventListener('click', closeLightbox);
+
+      // Navigation buttons
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNext();
+      });
+
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPrev();
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowRight') {
+          showNext();
+        } else if (e.key === 'ArrowLeft') {
+          showPrev();
+        }
+      });
+    })();
+
+    // Project Modal with Gallery and Description
+    (function projectModal() {
+      const modal = document.getElementById('projectModal');
+      const modalImage = document.getElementById('projectModalImage');
+      const modalTitle = document.getElementById('projectModalTitle');
+      const modalDescription = document.getElementById('projectModalDescription');
+      const modalClose = document.querySelector('.project-modal-close');
+      const modalBackdrop = document.querySelector('.project-modal-backdrop');
+      const prevBtn = document.querySelector('.project-modal-prev');
+      const nextBtn = document.querySelector('.project-modal-next');
+      const thumbnailsContainer = document.getElementById('projectThumbnails');
+
+      // Project data with images and descriptions
+      const projects = [
+        {
+          id: 1,
+          image: 'assets/optimized/images/0d8a9586-edit-1600.webp',
+          title: 'Project 1',
+          description: 'A stunning kitchen design featuring premium Calacatta marble countertops and custom cabinetry. This elegant space combines functionality with sophisticated aesthetics, creating the perfect environment for culinary excellence and entertaining.'
+        },
+        {
+          id: 2,
+          image: 'assets/optimized/images/0d8a9592-1600.webp',
+          title: 'Project 2',
+          description: 'Modern kitchen design with a signature island as the centerpiece. This architectural kitchen showcases artisanal craftsmanship and refined details, perfect for the cultivated lifestyle.'
+        },
+        {
+          id: 3,
+          image: 'assets/optimized/images/0d8a9589-1600.webp',
+          title: 'Project 3',
+          description: 'Luxurious kitchen featuring handcrafted finishes and premium materials. Every detail has been carefully considered to create a space that reflects timeless elegance and superior quality.'
+        },
+        {
+          id: 4,
+          image: 'assets/optimized/images/0d8a9509-edit-1600.webp',
+          title: 'Project 4',
+          description: 'Sophisticated kitchen design with refined joinery and hardware. This space embodies the perfect balance between form and function, creating an atmosphere of refined elegance.'
+        },
+        {
+          id: 5,
+          image: 'assets/optimized/images/0d8a9659-1600.webp',
+          title: 'Project 5',
+          description: 'Elegant kitchen design featuring bespoke storage solutions and premium finishes. This thoughtfully curated space blends beauty with functionality, creating an exceptional culinary environment.'
+        },
+        {
+          id: 6,
+          image: 'assets/optimized/images/0d8a9601-1600.webp',
+          title: 'Project 6',
+          description: 'Contemporary kitchen with exceptional craftsmanship and sustainable materials. This design showcases timeless elegance while maintaining the highest standards of quality and sophistication.'
+        },
+        {
+          id: 7,
+          image: 'assets/optimized/images/0d8a9620-1600.webp',
+          title: 'Project 7',
+          description: 'Luxury kitchen design that transcends trends. This exceptional space is a testament to our commitment to creating interiors that seamlessly fuse artistry with functionality.'
+        },
+        {
+          id: 8,
+          image: 'assets/optimized/images/0d8a9625-1600.webp',
+          title: 'Project 8',
+          description: 'Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence.'
+        }
+      ];
+
+      let currentProjectIndex = 0;
+
+      // Create thumbnails
+      function createThumbnails() {
+        thumbnailsContainer.innerHTML = '';
+        projects.forEach((project, index) => {
+          const thumbnail = document.createElement('div');
+          thumbnail.className = 'project-thumbnail';
+          if (index === currentProjectIndex) {
+            thumbnail.classList.add('active');
+          }
+          thumbnail.dataset.index = index;
+          
+          const img = document.createElement('img');
+          img.src = project.image;
+          img.alt = project.title;
+          img.loading = 'lazy';
+          
+          thumbnail.appendChild(img);
+          thumbnail.addEventListener('click', () => {
+            currentProjectIndex = index;
+            updateModal();
+          });
+          
+          thumbnailsContainer.appendChild(thumbnail);
+        });
+      }
+
+      // Update modal content
+      function updateModal() {
+        const project = projects[currentProjectIndex];
+        modalImage.src = project.image;
+        modalTitle.textContent = project.title;
+        modalDescription.textContent = project.description;
+        
+        // Update active thumbnail
+        const thumbnails = thumbnailsContainer.querySelectorAll('.project-thumbnail');
+        thumbnails.forEach((thumb, index) => {
+          if (index === currentProjectIndex) {
+            thumb.classList.add('active');
+          } else {
+            thumb.classList.remove('active');
+          }
+        });
+      }
+
+      // Open modal
+      function openModal(projectIndex) {
+        currentProjectIndex = projectIndex;
+        createThumbnails();
+        updateModal();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Close modal
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      // Navigate to next project
+      function showNext() {
+        currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+        updateModal();
+      }
+
+      // Navigate to previous project
+      function showPrev() {
+        currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
+        updateModal();
+      }
+
+      // Add click handlers to project items
+      document.querySelectorAll('.project-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const projectId = parseInt(item.dataset.project) - 1;
+          openModal(projectId);
+        });
+      });
+
+      // Close button
+      if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+      }
+
+      // Backdrop click
+      if (modalBackdrop) {
+        modalBackdrop.addEventListener('click', closeModal);
+      }
+
+      // Navigation buttons
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          showPrev();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          showNext();
+        });
+      }
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('hidden')) return;
+        
+        if (e.key === 'Escape') {
+          closeModal();
+        } else if (e.key === 'ArrowRight') {
+          showNext();
+        } else if (e.key === 'ArrowLeft') {
+          showPrev();
+        }
+      });
+    })();
+  </script>
+  
+  <style>
+    /* Projects Grid - Ensure 4 columns on desktop */
+    @media (min-width: 768px) {
+      .projects-grid-row {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      }
+    }
+    
+    @media (min-width: 640px) and (max-width: 767px) {
+      .projects-grid-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+    
+    /* Ensure all project images have the same height */
+    .projects-grid-row > div {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .projects-grid-row > div > div[class*="aspect"] {
+      height: 300px !important;
+      min-height: 300px !important;
+    }
+    
+    @media (min-width: 768px) {
+      .projects-grid-row > div > div[class*="aspect"] {
+        height: 350px !important;
+        min-height: 350px !important;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .projects-grid-row > div > div[class*="aspect"] {
+        height: 400px !important;
+        min-height: 400px !important;
+      }
+    }
+    
+    /* Horizontal Scrolling Styles */
+    .horizontal-scroll-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .horizontal-scroll-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: scroll-horizontal 40s linear infinite;
+      will-change: transform;
+    }
+
+    @media (max-width: 768px) {
+      .horizontal-scroll-track {
+        animation: scroll-horizontal 20s linear infinite;
+      }
+    }
+
+    .horizontal-scroll-item {
+      flex-shrink: 0;
+      width: 300px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .horizontal-scroll-item {
+        width: 350px;
+      }
+    }
+
+    @keyframes scroll-horizontal {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .horizontal-scroll-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Image Lightbox Styles */
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-lightbox.hidden {
+      display: none;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 1;
+      max-width: 90%;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 32px;
+      line-height: 1;
+      color: #000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: white;
+      transform: scale(1.1);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 40px;
+      line-height: 1;
+      color: #000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-nav:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-prev {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 32px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+
+      .lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+      }
+    }
+
+    /* Contact Modal Styles */
+    .contact-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .contact-modal.hidden {
+      display: none;
+    }
+
+    .contact-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .contact-modal-content {
+      position: relative;
+      z-index: 1;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 32px;
+      line-height: 1;
+      color: #666;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .contact-modal-close:hover {
+      background: #f5f5f5;
+      color: #000;
+    }
+
+    .contact-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--brand-accent);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .contact-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-form-group label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--brand-accent);
+    }
+
+    .contact-form-group input,
+    .contact-form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form-group input:focus,
+    .contact-form-group textarea:focus {
+      outline: none;
+      border-color: var(--brand-accent);
+    }
+
+    .contact-form-group input.invalid,
+    .contact-form-group textarea.invalid {
+      border-color: #dc2626;
+    }
+
+    .contact-form-error {
+      color: #dc2626;
+      font-size: 12px;
+      margin-top: -0.25rem;
+      display: none;
+    }
+
+    .contact-form-error.show {
+      display: block;
+    }
+
+    .contact-form-submit {
+      padding: 0.875rem 2rem;
+      background: var(--brand-accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .contact-form-submit:hover {
+      background: #2a2520;
+    }
+
+    .contact-form-submit:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Project Modal Styles */
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10002;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .project-modal.hidden {
+      display: none;
+    }
+
+    .project-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(4px);
+    }
+
+    .project-modal-content {
+      position: relative;
+      z-index: 1;
+      background: white;
+      border-radius: 12px;
+      max-width: 1400px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+    }
+
+    .project-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 32px;
+      line-height: 1;
+      color: #666;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .project-modal-close:hover {
+      background: #f5f5f5;
+      color: #000;
+    }
+
+    .project-modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .project-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .project-modal-image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .project-modal-main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 32px;
+      line-height: 1;
+      color: #000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .project-modal-nav:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .project-modal-prev {
+      left: 1rem;
+    }
+
+    .project-modal-next {
+      right: 1rem;
+    }
+
+    .project-modal-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .project-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--brand-accent);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .project-modal-description {
+      flex: 1;
+    }
+
+    .project-description-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #666;
+      margin: 0;
+    }
+
+    .project-modal-thumbnails {
+      margin-top: auto;
+    }
+
+    .project-thumbnails-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .project-thumbnails-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+      }
+    }
+
+    .project-thumbnail {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .project-thumbnail:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .project-thumbnail.active {
+      opacity: 1;
+      border-color: var(--brand-accent);
+    }
+
+    .project-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+  <!-- Contact Form Modal -->
+  <div id="contactModal" class="contact-modal hidden">
+    <div class="contact-modal-backdrop"></div>
+    <div class="contact-modal-content">
+      <button class="contact-modal-close" aria-label="Close contact form">×</button>
+      <h2 class="contact-modal-title">Get in Touch</h2>
+      <form id="contactForm" class="contact-form">
+        <div class="contact-form-row">
+          <div class="contact-form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="contact-form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        <div class="contact-form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <span class="contact-form-error" id="emailError"></span>
+        </div>
+        <div class="contact-form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="contact-form-group">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-form-submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Contact Form Modal
+    (function contactFormModal() {
+      const contactButton = document.getElementById('contactButton');
+      const contactNavLink = document.getElementById('contactNavLink');
+      const contactModal = document.getElementById('contactModal');
+      const closeButton = document.querySelector('.contact-modal-close');
+      const backdrop = document.querySelector('.contact-modal-backdrop');
+      const contactForm = document.getElementById('contactForm');
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('emailError');
+
+      function openModal() {
+        contactModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        contactModal.classList.add('hidden');
+        document.body.style.overflow = '';
+        contactForm.reset();
+        emailInput.classList.remove('invalid');
+        emailError.classList.remove('show');
+        emailError.textContent = '';
+      }
+
+      // Email validation
+      function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      emailInput.addEventListener('blur', () => {
+        const email = emailInput.value.trim();
+        if (email && !validateEmail(email)) {
+          emailInput.classList.add('invalid');
+          emailError.textContent = 'Please enter a valid email address';
+          emailError.classList.add('show');
+        } else {
+          emailInput.classList.remove('invalid');
+          emailError.classList.remove('show');
+          emailError.textContent = '';
+        }
+      });
+
+      emailInput.addEventListener('input', () => {
+        if (emailInput.classList.contains('invalid')) {
+          const email = emailInput.value.trim();
+          if (validateEmail(email)) {
+            emailInput.classList.remove('invalid');
+            emailError.classList.remove('show');
+            emailError.textContent = '';
+          }
+        }
+      });
+
+      // Form submission
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        if (!validateEmail(email)) {
+          emailInput.classList.add('invalid');
+          emailError.textContent = 'Please enter a valid email address';
+          emailError.classList.add('show');
+          emailInput.focus();
+          return;
+        }
+
+        // Here you would typically send the form data to a server
+        // For now, we'll just show an alert and close the modal
+        alert('Thank you for your message! We will get back to you soon.');
+        closeModal();
+      });
+
+      // Open modal
+      if (contactNavLink) {
+        contactNavLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      }
+      if (contactButton) {
+        contactButton.addEventListener('click', openModal);
+      }
+
+      // Close modal
+      if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', closeModal);
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

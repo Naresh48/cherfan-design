@@ -1,0 +1,11 @@
+# Redirect root to index.html
+/ /index.html 200
+
+# Ensure all HTML files are accessible
+/kitchen /kitchen.html 200
+/master-bedroom /master-bedroom.html 200
+/closet /closet.html 200
+/kids-bedroom /kids-bedroom.html 200
+
+# Fallback for 404 errors
+/* /index.html 404

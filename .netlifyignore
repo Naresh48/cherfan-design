@@ -1,0 +1,25 @@
+# Ignore files that shouldn't be deployed to Netlify
+
+# Development tools
+tools/
+node_modules/
+package.json
+package-lock.json
+
+# Documentation (not needed for deployment)
+*.md
+!README.md
+ASSET_OPTIMIZATION_SUMMARY.md
+OPTIMIZATION_COMPLETE.md
+NETLIFY_DEPLOYMENT_FIXES.md
+
+# Original assets (backups - not needed, optimized versions are used)
+assets/originals/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore

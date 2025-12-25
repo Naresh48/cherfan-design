@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" />
+  <title>Cherfan Design — Luxury Interiors</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>CD</text></svg>" />
+
+  <!-- Tailwind CSS (Built) -->
+  <link rel="stylesheet" href="tailwind.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body id="top" class="antialiased bg-brand-bg text-brand-accent">
+
+  <!-- Header -->
+  <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-white/30 transition-transform duration-300 ease-in-out">
+    <div class="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-6">
+      <!-- Title image (replace path if needed) -->
+      <div class="flex items-center gap-4">
+        <a href="#top" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">
+          <picture>
+            <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+            <img id="siteTitleImg" src="assets/optimized/images/logo-800.avif" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 object-contain">
+          </picture>
+        </a>
+      </div>
+
+      <!-- Nav (left of header, right after title image) -->
+      <nav id="mainNav" class="ml-2">
+        <ul class="flex gap-6 items-center text-sm font-medium" role="tablist" aria-label="Primary">
+          <li><a href="kitchen.html" class="nav-link" data-target="kitchen">Kitchen</a></li>
+          <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedroom</a></li>
+          <li><a href="closet.html" class="nav-link" data-target="closet">Closet</a></li>
+          <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
+          <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
+          <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
+        </ul>
+        <!-- animated sliding underline -->
+        <div id="navIndicator" aria-hidden="true">
+          <span id="navUnderline"></span>
+        </div>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <div class="ml-auto flex items-center gap-4">
+        <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="heroSection" class="relative h-screen w-full overflow-hidden" style="display: block !important; visibility: visible !important;">
+    <video 
+      id="heroVideo" 
+      class="absolute inset-0 w-full h-full object-cover" 
+      muted 
+      loop 
+      playsinline 
+      webkit-playsinline
+      autoplay
+      preload="metadata"
+      style="display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;">
+      <!-- MP4 H.264 first for iOS compatibility -->
+      <source src="assets/videos/hero-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
+      <source src="assets/videos/hero.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/25" style="pointer-events: none; z-index: 1;"></div>
+
+  </section>
+
+  <!-- A Global Celebration Section (Aman Style) -->
+  <section class="global-celebration-section py-8 md:py-10 lg:py-12 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 xl:gap-16 items-start">
+        <!-- Left Side: Text Content -->
+        <div class="text-left">
+          <p class="global-celebration-label scroll-reveal-text">
+            festive with cherfan
+          </p>
+          <h2 class="global-celebration-title scroll-reveal-text">
+            A Global Celebration
+          </h2>
+        </div>
+        
+        <!-- Right Side: Empty/Spacer -->
+        <div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="celebration-image-section py-12 md:py-16 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <div class="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-6 md:gap-8">
+        <!-- First Image with Text Section 1 below -->
+        <div class="flex flex-col gap-6 md:gap-8">
+          <div class="relative overflow-hidden h-[400px] md:h-[500px] scroll-reveal-image">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Celebration" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </picture>
+          </div>
+          <!-- Text Section 1 -->
+          <div class="celebration-text-section">
+            <h3 class="text-[24px] md:text-[28px] lg:text-[32px] font-normal tracking-[-0.02em] text-brand-accent mb-4 leading-[1.2] scroll-reveal-text">
+              Crafting Timeless Spaces
+            </h3>
+            <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal mb-4 scroll-reveal-text">
+              At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Second Image with Text Section 2 below -->
+        <div class="flex flex-col gap-6 md:gap-8">
+          <div class="relative overflow-hidden h-[400px] md:h-[500px] scroll-reveal-image">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9509-edit-1600.avif 1600w, assets/optimized/images/0d8a9509-edit-1200.avif 1200w, assets/optimized/images/0d8a9509-edit-800.avif 800w, assets/optimized/images/0d8a9509-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9509-edit-1600.webp 1600w, assets/optimized/images/0d8a9509-edit-1200.webp 1200w, assets/optimized/images/0d8a9509-edit-800.webp 800w, assets/optimized/images/0d8a9509-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9509-edit-800.webp" alt="Celebration" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </picture>
+          </div>
+          <!-- Text Section 2 -->
+          <div class="celebration-text-section">
+            <h3 class="text-[24px] md:text-[28px] lg:text-[32px] font-normal tracking-[-0.02em] text-brand-accent mb-4 leading-[1.2] scroll-reveal-text">
+              The Art of Living
+            </h3>
+            <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal mb-4 scroll-reveal-text">
+              Every corner of your home tells a story. Through our bespoke design approach.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Experiences Section -->
+  <section class="py-12 md:py-16 lg:py-20 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <div class="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 lg:gap-12 xl:gap-16 items-start">
+        <!-- Left Side: Heading and Description -->
+        <div class="lg:sticky lg:top-24">
+          <h6 class="text-[38px] md:text-[46px] lg:text-[54px] font-light tracking-[-0.025em] text-brand-accent mb-5 leading-[1.05] scroll-reveal-text">
+            Cherfan Plus
+          </h6>
+          <p class="text-[15px] leading-[1.7] text-gray-600 font-light scroll-reveal-text">
+            Across the Cherfan world, discover new and noteworthy experiences that provide an authentic connection to the soul of a place.
+          </p>
+        </div>
+
+        <!-- Right Side: Experience Cards -->
+        <div class="relative">
+          <!-- Cards Container with Horizontal Scroll -->
+          <div class="experience-cards-container mb-10">
+            <div class="experience-cards-grid">
+              <!-- Kitchen Card -->
+              <article class="experience-card" data-tab="kitchen">
+                <p class="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-medium mb-3 leading-none scroll-reveal-text">KITCHEN</p>
+                <div class="relative overflow-hidden mb-4 aspect-[3/4] scroll-reveal-image">
+                  <picture>
+                    <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Kitchen" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                  </picture>
+                </div>
+                <h3 class="text-[18px] md:text-[22px] font-light text-brand-accent tracking-[-0.01em] leading-[1.3] mb-2 scroll-reveal-text">Culinary Excellence</h3>
+                <p class="text-[14px] text-gray-600 leading-[1.6] mb-4 scroll-reveal-text">
+                  Discover kitchens designed for the art of cooking and gathering.
+                </p>
+                <a href="kitchen.html" class="discover-more-link scroll-reveal-text">Discover more</a>
+              </article>
+
+              <!-- Master Bedroom Card -->
+              <article class="experience-card" data-tab="master">
+                <p class="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-medium mb-3 leading-none scroll-reveal-text">MASTER BEDROOM</p>
+                <div class="relative overflow-hidden mb-4 aspect-[3/4] scroll-reveal-image">
+                  <picture>
+                    <source type="image/avif" srcset="assets/optimized/images/0d8a9509-edit-1600.avif 1600w, assets/optimized/images/0d8a9509-edit-1200.avif 1200w, assets/optimized/images/0d8a9509-edit-800.avif 800w, assets/optimized/images/0d8a9509-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <source type="image/webp" srcset="assets/optimized/images/0d8a9509-edit-1600.webp 1600w, assets/optimized/images/0d8a9509-edit-1200.webp 1200w, assets/optimized/images/0d8a9509-edit-800.webp 800w, assets/optimized/images/0d8a9509-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <img src="assets/optimized/images/0d8a9509-edit-800.webp" alt="Master Bedroom" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                  </picture>
+                </div>
+                <h3 class="text-[18px] md:text-[22px] font-light text-brand-accent tracking-[-0.01em] leading-[1.3] mb-2 scroll-reveal-text">Refined Retreat</h3>
+                <p class="text-[14px] text-gray-600 leading-[1.6] mb-4 scroll-reveal-text">
+                  Serene spaces designed for rest and renewal.Calm and luxurious.
+                </p>
+                <a href="master-bedroom.html" class="discover-more-link scroll-reveal-text">Discover more</a>
+              </article>
+
+              <!-- Closet Card -->
+              <article class="experience-card" data-tab="closet">
+                <p class="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-medium mb-3 leading-none scroll-reveal-text">CLOSET</p>
+                <div class="relative overflow-hidden mb-4 aspect-[3/4] scroll-reveal-image">
+                  <picture>
+                    <source type="image/avif" srcset="assets/optimized/images/0d8a9659-1600.avif 1600w, assets/optimized/images/0d8a9659-1200.avif 1200w, assets/optimized/images/0d8a9659-800.avif 800w, assets/optimized/images/0d8a9659-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <source type="image/webp" srcset="assets/optimized/images/0d8a9659-1600.webp 1600w, assets/optimized/images/0d8a9659-1200.webp 1200w, assets/optimized/images/0d8a9659-800.webp 800w, assets/optimized/images/0d8a9659-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <img src="assets/optimized/images/0d8a9659-800.webp" alt="Closet" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                  </picture>
+                </div>
+                <h3 class="text-[18px] md:text-[22px] font-light text-brand-accent tracking-[-0.01em] leading-[1.3] mb-2 scroll-reveal-text">Bespoke Organization</h3>
+                <p class="text-[14px] text-gray-600 leading-[1.6] mb-4 scroll-reveal-text">
+                  Curated storage solutions that elevate daily rituals.
+                </p>
+                <a href="closet.html" class="discover-more-link scroll-reveal-text">Discover more</a>
+              </article>
+
+              <!-- Kids Bedroom Card -->
+              <article class="experience-card" data-tab="kids">
+                <p class="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-medium mb-3 leading-none scroll-reveal-text">KIDS BEDROOM</p>
+                <div class="relative overflow-hidden mb-4 aspect-[3/4] scroll-reveal-image">
+                  <picture>
+                    <source type="image/avif" srcset="assets/optimized/images/zo709223-1600.avif 1600w, assets/optimized/images/zo709223-1200.avif 1200w, assets/optimized/images/zo709223-800.avif 800w, assets/optimized/images/zo709223-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <source type="image/webp" srcset="assets/optimized/images/zo709223-1600.webp 1600w, assets/optimized/images/zo709223-1200.webp 1200w, assets/optimized/images/zo709223-800.webp 800w, assets/optimized/images/zo709223-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+                    <img src="assets/optimized/images/zo709223-800.webp" alt="Kids Bedroom" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                  </picture>
+                </div>
+                <h3 class="text-[18px] md:text-[22px] font-light text-brand-accent tracking-[-0.01em] leading-[1.3] mb-2 scroll-reveal-text">Playful Living</h3>
+                <p class="text-[14px] text-gray-600 leading-[1.6] mb-4 scroll-reveal-text">
+                  Spaces that inspire creativity and grow with childhood.
+                </p>
+                <a href="kids-bedroom.html" class="discover-more-link scroll-reveal-text">Discover more</a>
+              </article>
+            </div>
+          </div>
+
+          <!-- Tab Navigation - Line Indicators (Aman Style) -->
+          <div class="experience-tabs-wrapper">
+            <div class="flex gap-4 relative" id="experienceTabsContainer">
+              <button class="experience-tab-indicator active" data-tab="kitchen" aria-label="Kitchen">
+                <span class="tab-line"></span>
+              </button>
+              <button class="experience-tab-indicator" data-tab="master" aria-label="Master Bedroom">
+                <span class="tab-line"></span>
+              </button>
+              <button class="experience-tab-indicator" data-tab="closet" aria-label="Closet">
+                <span class="tab-line"></span>
+              </button>
+              <button class="experience-tab-indicator" data-tab="kids" aria-label="Kids Bedroom">
+                <span class="tab-line"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Expressions of the Season Section -->
+   <section class="expressions-section py-16 md:py-20 lg:py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <div class="text-center mb-12">
+        <h3 class="text-[24px] md:text-[28px] lg:text-[32px] font-normal tracking-[-0.02em] text-brand-accent mb-4 leading-[1.2] scroll-reveal-text">
+          Expressions of the Season
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="expression-card">
+          <div class="expression-image scroll-reveal-image">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Winter Adventures" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </picture>
+          </div>
+          <div class="expression-text">
+            <p class="expression-label scroll-reveal-text">Winter Adventures</p>
+            <p class="expression-desc scroll-reveal-text">Elevated retreats crafted for the season.</p>
+          </div>
+        </article>
+
+        <article class="expression-card">
+          <div class="expression-image scroll-reveal-image">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/zo709223-1600.avif 1600w, assets/optimized/images/zo709223-1200.avif 1200w, assets/optimized/images/zo709223-800.avif 800w, assets/optimized/images/zo709223-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/zo709223-1600.webp 1600w, assets/optimized/images/zo709223-1200.webp 1200w, assets/optimized/images/zo709223-800.webp 800w, assets/optimized/images/zo709223-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/zo709223-800.webp" alt="Quiet Wonder" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </picture>
+          </div>
+          <div class="expression-text">
+            <p class="expression-label scroll-reveal-text">Quiet Wonder</p>
+            <p class="expression-desc scroll-reveal-text">Serene interiors that invite calm and warmth.</p>
+          </div>
+        </article>
+
+        <article class="expression-card">
+          <div class="expression-image scroll-reveal-image">
+            <picture>
+              <source type="image/avif" srcset="assets/optimized/images/0d8a9659-1600.avif 1600w, assets/optimized/images/0d8a9659-1200.avif 1200w, assets/optimized/images/0d8a9659-800.avif 800w, assets/optimized/images/0d8a9659-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <source type="image/webp" srcset="assets/optimized/images/0d8a9659-1600.webp 1600w, assets/optimized/images/0d8a9659-1200.webp 1200w, assets/optimized/images/0d8a9659-800.webp 800w, assets/optimized/images/0d8a9659-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+              <img src="assets/optimized/images/0d8a9659-800.webp" alt="Celestial Sounds" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </picture>
+          </div>
+          <div class="expression-text">
+            <p class="expression-label scroll-reveal-text">Celestial Moments</p>
+            <p class="expression-desc scroll-reveal-text">Spaces tuned for gatherings and celebration.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="border-t border-white/40 mt-12">
+    <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <picture>
+          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <img src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="lazy" decoding="async" class="h-8 object-contain" />
+        </picture>
+        <p class="text-sm mt-4">Cherfan Design — Lebanon</p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="text-sm mt-2">
+          Zouk Highway<br>
+          +961 9 222 340<br>
+          info.z@cherfandesign.com
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Newsletter</h4>
+        <form id="newsletterForm" class="mt-2 flex gap-2">
+          <input id="newsletterEmail" class="border p-2 flex-1" placeholder="Email" type="email">
+          <button type="submit" class="bg-brand-accent text-white px-4 rounded">Subscribe</button>
+        </form>
+        <p id="newsletterStatus" class="mt-2 text-sm text-center"></p>
+      </div>
+    </div>
+
+    <div class="text-center text-xs text-gray-600 pb-6">
+      © Cherfan Design — All rights reserved
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <img id="lbImg" class="lightbox-img" src="" loading="lazy" decoding="async">
+  </div>
+
+  <!-- Contact Form Modal -->
+  <div id="contactModal" class="contact-modal hidden">
+    <div class="contact-modal-backdrop"></div>
+    <div class="contact-modal-content">
+      <button class="contact-modal-close" aria-label="Close contact form">×</button>
+      <h2 class="contact-modal-title">Get in Touch</h2>
+      <form id="contactForm" class="space-y-4">
+        <input type="hidden" name="access_key" value="9dc81b3a-2ab4-4b96-ac36-a324e55d0ebf">
+    
+        <div>
+            <label class="block text-sm font-medium">First Name *</label>
+            <input type="text" name="first_name" id="firstName"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errFirst">First name is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Last Name *</label>
+            <input type="text" name="last_name" id="lastName"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errLast">Last name is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Email *</label>
+            <input type="email" name="email" id="emailField"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errEmail">Valid email is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Subject *</label>
+            <input type="text" name="subject" id="subjectField"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errSubject">Subject is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Notes (Optional)</label>
+            <textarea name="message" rows="4"
+                      class="border p-2 w-full rounded"></textarea>
+        </div>
+    
+        <button type="submit"
+                class="bg-brand-accent text-white px-6 py-3 rounded w-full">
+            Submit
+        </button>
+    
+        <p id="formStatus" class="mt-2 text-center text-sm"></p>
+    </form>
+    
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  
+  <style>
+    /* Contact Modal Styles */
+    .contact-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .contact-modal.hidden {
+      display: none;
+    }
+
+    .contact-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .contact-modal-content {
+      position: relative;
+      z-index: 1;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 32px;
+      line-height: 1;
+      color: #666;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .contact-modal-close:hover {
+      background: #f5f5f5;
+      color: #000;
+    }
+
+    .contact-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--brand-accent);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .contact-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-form-group label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--brand-accent);
+    }
+
+    .contact-form-group input,
+    .contact-form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form-group input:focus,
+    .contact-form-group textarea:focus {
+      outline: none;
+      border-color: var(--brand-accent);
+    }
+
+    .contact-form-group input.invalid,
+    .contact-form-group textarea.invalid {
+      border-color: #dc2626;
+    }
+
+    .contact-form-error {
+      color: #dc2626;
+      font-size: 12px;
+      margin-top: -0.25rem;
+      display: none;
+    }
+
+    .contact-form-error.show {
+      display: block;
+    }
+
+    .contact-form-submit {
+      padding: 0.875rem 2rem;
+      background: var(--brand-accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .contact-form-submit:hover {
+      background: #2a2520;
+    }
+
+    .contact-form-submit:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+
+  <script>
+    // Contact Form Modal - Open/Close Only
+    (function contactFormModal() {
+      const contactButton = document.getElementById('contactButton');
+      const contactNavLink = document.getElementById('contactNavLink');
+      const contactModal = document.getElementById('contactModal');
+      const closeButton = document.querySelector('.contact-modal-close');
+      const backdrop = document.querySelector('.contact-modal-backdrop');
+      const contactForm = document.getElementById('contactForm');
+
+      function openModal() {
+        if (contactModal) {
+          contactModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeModal() {
+        if (contactModal) {
+          contactModal.classList.add('hidden');
+          document.body.style.overflow = '';
+          if (contactForm) {
+            contactForm.reset();
+          }
+        }
+      }
+
+      // Open modal
+      if (contactNavLink) {
+        contactNavLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      }
+      if (contactButton) {
+        contactButton.addEventListener('click', openModal);
+      }
+
+      // Close modal
+      if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', closeModal);
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && contactModal && !contactModal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
