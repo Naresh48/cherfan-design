@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "imageBase": "0d8a9591"
+  },
+  "threeImageSection": {
+    "image1": {
+      "imageBase": "0d8a9586-edit",
+      "label": "PREMIUM FINISHES",
+      "title": "Calacatta Marble",
+      "description": "Statement centerpiece design"
+    },
+    "image2": {
+      "imageBase": "0d8a9592",
+      "label": "ARTISANAL CRAFT",
+      "title": "Signature Island",
+      "description": "Architectural kitchens for cultivated living"
+    },
+    "image3": {
+      "imageBase": "0d8a9589",
+      "label": "REFINED DETAILS",
+      "title": "Handcrafted Finish",
+      "description": "Refined joinery & hardware"
+    }
+  },
+  "textSection": {
+    "label": "CRAFTING TIMELESS",
+    "title": "Living Spaces",
+    "description": "With a passion for exceptional craftsmanship, sustainable materials, and timeless design, we bring you thoughtfully curated collections that blend beauty with functionality. At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality."
+  },
+  "projects": [
+    {
+      "id": 1,
+      "imageBase": "0d8a9586-edit",
+      "title": "Project 1",
+      "description": "A stunning kitchen design featuring premium Calacatta marble countertops and custom cabinetry. This elegant space combines functionality with sophisticated aesthetics, creating the perfect environment for culinary excellence and entertaining."
+    },
+    {
+      "id": 2,
+      "imageBase": "0d8a9592",
+      "title": "Project 2",
+      "description": "Modern kitchen design with a signature island as the centerpiece. This architectural kitchen showcases artisanal craftsmanship and refined details, perfect for the cultivated lifestyle."
+    },
+    {
+      "id": 3,
+      "imageBase": "0d8a9589",
+      "title": "Project 3",
+      "description": "Luxurious kitchen featuring handcrafted finishes and premium materials. Every detail has been carefully considered to create a space that reflects timeless elegance and superior quality."
+    },
+    {
+      "id": 4,
+      "imageBase": "0d8a9509-edit",
+      "title": "Project 4",
+      "description": "Sophisticated kitchen design with refined joinery and hardware. This space embodies the perfect balance between form and function, creating an atmosphere of refined elegance."
+    },
+    {
+      "id": 5,
+      "imageBase": "0d8a9659",
+      "title": "Project 5",
+      "description": "Elegant kitchen design featuring bespoke storage solutions and premium finishes. This thoughtfully curated space blends beauty with functionality, creating an exceptional culinary environment."
+    },
+    {
+      "id": 6,
+      "imageBase": "0d8a9601",
+      "title": "Project 6",
+      "description": "Contemporary kitchen with exceptional craftsmanship and sustainable materials. This design showcases timeless elegance while maintaining the highest standards of quality and sophistication."
+    },
+    {
+      "id": 7,
+      "imageBase": "0d8a9620",
+      "title": "Project 7",
+      "description": "Luxury kitchen design that transcends trends. This exceptional space is a testament to our commitment to creating interiors that seamlessly fuse artistry with functionality."
+    },
+    {
+      "id": 8,
+      "imageBase": "0d8a9625",
+      "title": "Project 8",
+      "description": "Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence."
+    }
+  ],
+  "finalTextSection": {
+    "label": "THE DRIVE TO FIND",
+    "title": "Personal Meaning",
+    "description1": "Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves.",
+    "description2": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends.",
+    "imageBase": "0d8a9591"
+  },
+  "footer": {
+    "logoImageBase": "whatsapp-image-2025-12-04-at-4.11.49-pm",
+    "location": "Cherfan Design — Lebanon",
+    "contact": {
+      "address": "Zouk Highway",
+      "phone": "+961 9 222 340",
+      "email": "info.z@cherfandesign.com"
+    },
+    "copyright": "© Cherfan Design — All rights reserved"
+  }
+}
+

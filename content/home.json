@@ -1,0 +1,77 @@
+{
+  "globalCelebration": {
+    "label": "festive with cherfan",
+    "title": "A Global Celebration"
+  },
+  "celebrationSection1": {
+    "imageBase": "0d8a9586-edit",
+    "title": "Crafting Timeless Spaces",
+    "description": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends."
+  },
+  "celebrationSection2": {
+    "imageBase": "0d8a9509-edit",
+    "title": "The Art of Living",
+    "description": "Every corner of your home tells a story. Through our bespoke design approach."
+  },
+  "cherfanPlus": {
+    "title": "Cherfan Plus",
+    "description": "Across the Cherfan world, discover new and noteworthy experiences that provide an authentic connection to the soul of a place."
+  },
+  "experienceCards": {
+    "kitchen": {
+      "label": "KITCHEN",
+      "imageBase": "0d8a9586-edit",
+      "title": "Culinary Excellence",
+      "description": "Discover kitchens designed for the art of cooking and gathering."
+    },
+    "masterBedroom": {
+      "label": "MASTER BEDROOM",
+      "imageBase": "0d8a9509-edit",
+      "title": "Refined Retreat",
+      "description": "Serene spaces designed for rest and renewal.Calm and luxurious."
+    },
+    "closet": {
+      "label": "CLOSET",
+      "imageBase": "0d8a9659",
+      "title": "Bespoke Organization",
+      "description": "Curated storage solutions that elevate daily rituals."
+    },
+    "kidsBedroom": {
+      "label": "KIDS BEDROOM",
+      "imageBase": "zo709223",
+      "title": "Playful Living",
+      "description": "Spaces that inspire creativity and grow with childhood."
+    }
+  },
+  "expressions": {
+    "title": "Expressions of the Season",
+    "cards": [
+      {
+        "imageBase": "0d8a9586-edit",
+        "label": "Winter Adventures",
+        "description": "Elevated retreats crafted for the season."
+      },
+      {
+        "imageBase": "zo709223",
+        "label": "Quiet Wonder",
+        "description": "Serene interiors that invite calm and warmth."
+      },
+      {
+        "imageBase": "0d8a9659",
+        "label": "Celestial Moments",
+        "description": "Spaces tuned for gatherings and celebration."
+      }
+    ]
+  },
+  "footer": {
+    "logoImageBase": "whatsapp-image-2025-12-04-at-4.11.49-pm",
+    "location": "Cherfan Design — Lebanon",
+    "contact": {
+      "address": "Zouk Highway",
+      "phone": "+961 9 222 340",
+      "email": "info.z@cherfandesign.com"
+    },
+    "copyright": "© Cherfan Design — All rights reserved"
+  }
+}
+

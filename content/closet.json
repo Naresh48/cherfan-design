@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "imageBase": "0d8a9659"
+  },
+  "threeImageSection": {
+    "image1": {
+      "imageBase": "0d8a9661",
+      "label": "WALK-IN CLOSET",
+      "title": "Custom Storage",
+      "description": "Luxurious walk-in closet design"
+    },
+    "image2": {
+      "imageBase": "0d8a9665",
+      "label": "ORGANIZED SPACE",
+      "title": "Storage Solutions",
+      "description": "Efficient organization systems"
+    },
+    "image3": {
+      "imageBase": "0d8a9674",
+      "label": "PREMIUM FINISHES",
+      "title": "Elegant Details",
+      "description": "Refined closet craftsmanship"
+    }
+  },
+  "textSection": {
+    "label": "CRAFTING TIMELESS",
+    "title": "Living Spaces",
+    "description": "With a passion for exceptional craftsmanship, sustainable materials, and timeless design, we bring you thoughtfully curated collections that blend beauty with functionality. At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality."
+  },
+  "finalTextSection": {
+    "label": "THE DRIVE TO FIND",
+    "title": "Personal Meaning",
+    "description1": "Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves.",
+    "description2": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends.",
+    "imageBase": "0d8a9659"
+  },
+  "footer": {
+    "logoImageBase": "whatsapp-image-2025-12-04-at-4.11.49-pm",
+    "location": "Cherfan Design — Lebanon",
+    "contact": {
+      "address": "Zouk Highway",
+      "phone": "+961 9 222 340",
+      "email": "info.z@cherfandesign.com"
+    },
+    "copyright": "© Cherfan Design — All rights reserved"
+  }
+}
+
