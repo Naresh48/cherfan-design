@@ -1,17 +1,17 @@
 {
   "globalCelebration": {
-    "label": "festive with cherfan",
-    "title": "A Global Celebration"
+    "label": "Defined by legacy",
+    "title": "A history built on trust"
   },
   "celebrationSection1": {
-    "imageBase": "0d8a9586-edit",
-    "title": "Crafting Timeless Spaces",
-    "description": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends."
+    "imageBase": "0d8a9440-edit",
+    "title": "The art of living",
+    "description": "With over 40 years of mastery, we have evolved a simple vision into a legacy of flawless design. We curate the true art of luxury living, creating spaces that stand as timeless testaments to quality."
   },
   "celebrationSection2": {
     "imageBase": "0d8a9509-edit",
-    "title": "The Art of Living",
-    "description": "Every corner of your home tells a story. Through our bespoke design approach."
+    "title": "Whispered narratives",
+    "description": "Through our bespoke mastery, every corner becomes a silent chapter of your unique story."
   },
   "cherfanPlus": {
     "title": "Cherfan Plus",
@@ -21,14 +21,14 @@
     "kitchen": {
       "label": "KITCHEN",
       "imageBase": "0d8a9586-edit",
-      "title": "Culinary Excellence",
-      "description": "Discover kitchens designed for the art of cooking and gathering."
+      "title": "The Heart of the Home",
+      "description": "Kitchens designed for the art of cooking and gathering."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
       "imageBase": "0d8a9509-edit",
       "title": "Refined Retreat",
-      "description": "Serene spaces designed for rest and renewal.Calm and luxurious."
+      "description": "A playground for your design preferences, where life is found in the small things, the colors, and the feelings that surround you."
     },
     "closet": {
       "label": "CLOSET",
@@ -39,8 +39,8 @@
     "kidsBedroom": {
       "label": "KIDS BEDROOM",
       "imageBase": "zo709223",
-      "title": "Playful Living",
-      "description": "Spaces that inspire creativity and grow with childhood."
+      "title": "Where Dreams Begin",
+      "description": "A child’s room is more than a place to sleep. We create safe, enchanting worlds where the little ones can dream, create, and own their space."
     }
   },
   "expressions": {
@@ -48,8 +48,8 @@
     "cards": [
       {
         "imageBase": "0d8a9586-edit",
-        "label": "Winter Adventures",
-        "description": "Elevated retreats crafted for the season."
+        "label": "Engineered for perfection",
+        "description": "Our 5,000 square meter factory blends advanced machinery with artisanal mastery to ensure the flawless execution of your most ambitious designs."
       },
       {
         "imageBase": "zo709223",
@@ -74,4 +74,3 @@
     "copyright": "© Cherfan Design — All rights reserved"
   }
 }
-
