@@ -116,6 +116,7 @@ header nav {
   min-width: 0;
 }
 
+/* Override for mainNav to ensure proper centering */
 header nav a {
   flex-shrink: 0;
   display: inline-block;
@@ -152,6 +153,141 @@ header > div {
 
 #siteHeader.header-hidden {
   transform: translateY(-100%);
+}
+
+/* Ensure consistent header layout across all pages */
+#siteHeader > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1rem !important; /* gap-4 = 1rem */
+  padding-top: 1.5rem !important; /* py-6 = 1.5rem */
+  padding-bottom: 1.5rem !important; /* py-6 = 1.5rem */
+  padding-left: 1.5rem !important; /* px-6 = 1.5rem */
+  padding-right: 1.5rem !important; /* px-6 = 1.5rem */
+}
+
+/* Logo spacing - upper and lower space - ensure exact same spacing on all pages */
+#siteHeader > div > a,
+#siteHeader > div > a[href="index.html"],
+#siteHeader a[href*="index.html"] {
+  padding-top: 0.75rem !important; /* py-3 = 0.75rem - upper space */
+  padding-bottom: 0.75rem !important; /* py-3 = 0.75rem - lower space */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Navigation spacing below logo - ensure consistent spacing */
+#mainNav {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-top: 0.5rem !important; /* mt-2 = 0.5rem - spacing between logo and nav */
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure navigation tabs are centered */
+#mainNav > div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide mobile menu button on desktop and ensure it doesn't affect layout */
+#mainNav > div > button[style*="display: none"],
+#mainNav > div > button.hamburger-menu[style*="display: none"] {
+  display: none !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#mainNav > div > div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  position: relative !important;
+  margin: 0 auto !important;
+}
+
+#mainNav > div > div > ul {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  width: auto !important;
+  flex: none !important;
+  list-style: none !important;
+  padding: 0 !important;
+}
+
+/* Override any flex-1 behavior that might push content left */
+#mainNav > div > div.flex-1,
+#mainNav > div > div[class*="flex-1"],
+#mainNav > div > div.relative {
+  flex: 1 1 auto !important;
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure the ul inside is centered */
+#mainNav ul[role="tablist"] {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+  gap: 2.5rem !important; /* gap-10 = 2.5rem - increased spacing between tabs */
+}
+
+/* Desktop-specific: Ensure navigation is perfectly centered */
+@media (min-width: 769px) {
+  #mainNav > div {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  #mainNav > div > div {
+    flex: 0 1 auto !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  #mainNav > div > div > ul {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+  }
+  
+  /* Ensure mobile button doesn't take space */
+  #mainNav > div > button.hamburger-menu {
+    display: none !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: none !important;
+  }
 }
 
 /* Ensure body starts at top without offset */
@@ -539,6 +675,19 @@ footer#contact button:hover {
     order: 3;
     margin-left: 0;
     margin-top: 0.5rem;
+  }
+
+  /* Ensure navigation stays centered on mobile */
+  #mainNav > div {
+    justify-content: center !important;
+  }
+
+  #mainNav > div > div {
+    justify-content: center !important;
+  }
+
+  #mainNav > div > div > ul {
+    justify-content: center !important;
   }
 
   /* Ensure contact button and hamburger stay on right on mobile */

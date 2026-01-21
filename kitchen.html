@@ -20,44 +20,44 @@
 </head>
 <body id="top" class="antialiased bg-brand-bg text-brand-accent">
 
-  <!-- Header (Same as home page) -->
+  <!-- Header (Shared across pages) -->
   <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-white/30 transition-transform duration-300 ease-in-out">
-    <div class="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-6">
-      <!-- Title image -->
-      <div class="flex items-center gap-4">
-        <a href="index.html">
-          <picture>
-            <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-            <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-            <img id="siteTitleImg" src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 object-contain">
-          </picture>
-        </a>
-      </div>
+    <div class="max-w-[1400px] mx-auto px-6 py-6 flex flex-col items-center gap-4">
+      <!-- Logo centered -->
+      <a href="index.html" class="inline-flex justify-center py-3">
+        <picture>
+          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <img id="siteTitleImg" src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 md:h-5 object-contain">
+        </picture>
+      </a>
 
-      <!-- Nav -->
-      <nav id="mainNav" class="ml-2">
-        <ul class="flex gap-6 items-center text-sm font-medium" role="tablist" aria-label="Primary">
-          <li><a href="kitchen.html" class="nav-link" data-target="kitchen">Kitchen</a></li>
-          <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedroom</a></li>
-          <li><a href="closet.html" class="nav-link" data-target="closet">Closet</a></li>
-          <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
-          <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
-          <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
-        </ul>
-        <!-- animated sliding underline -->
-        <div id="navIndicator" aria-hidden="true">
-          <span id="navUnderline"></span>
+      <!-- Nav under the logo -->
+      <nav id="mainNav" class="w-full mt-2">
+        <div class="flex items-center justify-center">
+          <!-- Mobile menu toggle -->
+          <button id="mobileMenuToggle" class="hamburger-menu mr-3 md:hidden" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="relative flex-1 flex justify-center">
+            <ul class="flex gap-10 items-center text-sm md:text-base font-medium" role="tablist" aria-label="Primary">
+              <li><a href="kitchen.html" class="nav-link" data-target="kitchen">Kitchen</a></li>
+              <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedroom</a></li>
+              <li><a href="closet.html" class="nav-link" data-target="closet">Closet</a></li>
+              <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
+              <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
+              <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
+            </ul>
+            <!-- animated sliding underline -->
+            <div id="navIndicator" aria-hidden="true">
+              <span id="navUnderline"></span>
+            </div>
+          </div>
         </div>
       </nav>
-
-      <!-- Mobile menu toggle -->
-      <div class="ml-auto flex items-center gap-4">
-        <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
     </div>
   </header>
 
@@ -650,79 +650,117 @@
       const nextBtn = document.querySelector('.project-modal-next');
       const thumbnailsContainer = document.getElementById('projectThumbnails');
 
-      // Project data with images and descriptions
+      // Project data with multiple images per project
       const projects = [
         {
           id: 1,
-          image: 'assets/optimized/images/0d8a9586-edit-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9586-edit-1600.webp',
+            'assets/optimized/images/0d8a9592-1600.webp',
+            'assets/optimized/images/0d8a9589-1600.webp'
+          ],
           title: 'Project 1',
           description: 'A stunning kitchen design featuring premium Calacatta marble countertops and custom cabinetry. This elegant space combines functionality with sophisticated aesthetics, creating the perfect environment for culinary excellence and entertaining.'
         },
         {
           id: 2,
-          image: 'assets/optimized/images/0d8a9592-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9509-edit-1600.webp',
+            'assets/optimized/images/0d8a9659-1600.webp',
+            'assets/optimized/images/0d8a9601-1600.webp'
+          ],
           title: 'Project 2',
           description: 'Modern kitchen design with a signature island as the centerpiece. This architectural kitchen showcases artisanal craftsmanship and refined details, perfect for the cultivated lifestyle.'
         },
         {
           id: 3,
-          image: 'assets/optimized/images/0d8a9589-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9620-1600.webp',
+            'assets/optimized/images/0d8a9625-1600.webp',
+            'assets/optimized/images/0d8a9586-edit-1600.webp'
+          ],
           title: 'Project 3',
           description: 'Luxurious kitchen featuring handcrafted finishes and premium materials. Every detail has been carefully considered to create a space that reflects timeless elegance and superior quality.'
         },
         {
           id: 4,
-          image: 'assets/optimized/images/0d8a9509-edit-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9592-1600.webp',
+            'assets/optimized/images/0d8a9589-1600.webp',
+            'assets/optimized/images/0d8a9509-edit-1600.webp'
+          ],
           title: 'Project 4',
           description: 'Sophisticated kitchen design with refined joinery and hardware. This space embodies the perfect balance between form and function, creating an atmosphere of refined elegance.'
         },
         {
           id: 5,
-          image: 'assets/optimized/images/0d8a9659-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9659-1600.webp',
+            'assets/optimized/images/0d8a9601-1600.webp',
+            'assets/optimized/images/0d8a9620-1600.webp'
+          ],
           title: 'Project 5',
           description: 'Elegant kitchen design featuring bespoke storage solutions and premium finishes. This thoughtfully curated space blends beauty with functionality, creating an exceptional culinary environment.'
         },
         {
           id: 6,
-          image: 'assets/optimized/images/0d8a9601-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9625-1600.webp',
+            'assets/optimized/images/0d8a9586-edit-1600.webp',
+            'assets/optimized/images/0d8a9592-1600.webp'
+          ],
           title: 'Project 6',
           description: 'Contemporary kitchen with exceptional craftsmanship and sustainable materials. This design showcases timeless elegance while maintaining the highest standards of quality and sophistication.'
         },
         {
           id: 7,
-          image: 'assets/optimized/images/0d8a9620-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9589-1600.webp',
+            'assets/optimized/images/0d8a9509-edit-1600.webp',
+            'assets/optimized/images/0d8a9659-1600.webp'
+          ],
           title: 'Project 7',
           description: 'Luxury kitchen design that transcends trends. This exceptional space is a testament to our commitment to creating interiors that seamlessly fuse artistry with functionality.'
         },
         {
           id: 8,
-          image: 'assets/optimized/images/0d8a9625-1600.webp',
+          images: [
+            'assets/optimized/images/0d8a9601-1600.webp',
+            'assets/optimized/images/0d8a9620-1600.webp',
+            'assets/optimized/images/0d8a9625-1600.webp'
+          ],
           title: 'Project 8',
           description: 'Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence.'
         }
       ];
 
-      let currentProjectIndex = 0;
+      let currentProjectId = null;
+      let currentImageIndex = 0;
 
-      // Create thumbnails
+      // Create thumbnails for current project
       function createThumbnails() {
         thumbnailsContainer.innerHTML = '';
-        projects.forEach((project, index) => {
+        if (!currentProjectId) return;
+        
+        const project = projects.find(p => p.id === currentProjectId);
+        if (!project) return;
+
+        project.images.forEach((image, index) => {
           const thumbnail = document.createElement('div');
           thumbnail.className = 'project-thumbnail';
-          if (index === currentProjectIndex) {
+          if (index === currentImageIndex) {
             thumbnail.classList.add('active');
           }
           thumbnail.dataset.index = index;
           
           const img = document.createElement('img');
-          img.src = project.image;
-          img.alt = project.title;
+          img.src = image;
+          img.alt = `${project.title} - Image ${index + 1}`;
           img.loading = 'lazy';
           
           thumbnail.appendChild(img);
           thumbnail.addEventListener('click', () => {
-            currentProjectIndex = index;
+            currentImageIndex = index;
             updateModal();
           });
           
@@ -732,15 +770,19 @@
 
       // Update modal content
       function updateModal() {
-        const project = projects[currentProjectIndex];
-        modalImage.src = project.image;
+        if (!currentProjectId) return;
+        
+        const project = projects.find(p => p.id === currentProjectId);
+        if (!project) return;
+
+        modalImage.src = project.images[currentImageIndex];
         modalTitle.textContent = project.title;
         modalDescription.textContent = project.description;
         
         // Update active thumbnail
         const thumbnails = thumbnailsContainer.querySelectorAll('.project-thumbnail');
         thumbnails.forEach((thumb, index) => {
-          if (index === currentProjectIndex) {
+          if (index === currentImageIndex) {
             thumb.classList.add('active');
           } else {
             thumb.classList.remove('active');
@@ -749,8 +791,9 @@
       }
 
       // Open modal
-      function openModal(projectIndex) {
-        currentProjectIndex = projectIndex;
+      function openModal(projectId) {
+        currentProjectId = projectId;
+        currentImageIndex = 0; // Always start with first image of the project
         createThumbnails();
         updateModal();
         modal.classList.remove('hidden');
@@ -761,17 +804,27 @@
       function closeModal() {
         modal.classList.add('hidden');
         document.body.style.overflow = '';
+        currentProjectId = null;
+        currentImageIndex = 0;
       }
 
-      // Navigate to next project
+      // Navigate to next image within current project
       function showNext() {
-        currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+        if (!currentProjectId) return;
+        const project = projects.find(p => p.id === currentProjectId);
+        if (!project) return;
+        
+        currentImageIndex = (currentImageIndex + 1) % project.images.length;
         updateModal();
       }
 
-      // Navigate to previous project
+      // Navigate to previous image within current project
       function showPrev() {
-        currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
+        if (!currentProjectId) return;
+        const project = projects.find(p => p.id === currentProjectId);
+        if (!project) return;
+        
+        currentImageIndex = (currentImageIndex - 1 + project.images.length) % project.images.length;
         updateModal();
       }
 
@@ -779,7 +832,7 @@
       document.querySelectorAll('.project-item').forEach(item => {
         item.addEventListener('click', (e) => {
           e.preventDefault();
-          const projectId = parseInt(item.dataset.project) - 1;
+          const projectId = parseInt(item.dataset.project);
           openModal(projectId);
         });
       });
@@ -816,8 +869,10 @@
         if (e.key === 'Escape') {
           closeModal();
         } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
           showNext();
         } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
           showPrev();
         }
       });

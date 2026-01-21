@@ -20,44 +20,44 @@
 </head>
 <body id="top" class="antialiased bg-brand-bg text-brand-accent">
 
-  <!-- Header (Same as home page) -->
+  <!-- Header -->
   <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-white/30 transition-transform duration-300 ease-in-out">
-    <div class="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-6">
-      <!-- Title image -->
-      <div class="flex items-center gap-4">
-        <a href="index.html">
-          <picture>
-            <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-            <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-            <img id="siteTitleImg" src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 object-contain">
-          </picture>
-        </a>
-      </div>
+    <div class="max-w-[1400px] mx-auto px-6 py-6 flex flex-col items-center gap-4">
+      <!-- Logo centered -->
+      <a href="index.html" class="inline-flex justify-center py-3">
+        <picture>
+          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
+          <img id="siteTitleImg" src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 md:h-5 object-contain">
+        </picture>
+      </a>
 
-      <!-- Nav -->
-      <nav id="mainNav" class="ml-2">
-        <ul class="flex gap-6 items-center text-sm font-medium" role="tablist" aria-label="Primary">
-          <li><a href="kitchen.html" class="nav-link" data-target="kitchen">Kitchen</a></li>
-          <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedroom</a></li>
-          <li><a href="closet.html" class="nav-link" data-target="closet">Closet</a></li>
-          <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
-          <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
-          <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
-        </ul>
-        <!-- animated sliding underline -->
-        <div id="navIndicator" aria-hidden="true">
-          <span id="navUnderline"></span>
+      <!-- Nav under the logo -->
+      <nav id="mainNav" class="w-full mt-2">
+        <div class="flex items-center justify-center">
+          <!-- Mobile menu toggle (left on mobile) -->
+          <button id="mobileMenuToggle" class="hamburger-menu mr-3 md:hidden" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="relative flex-1 flex justify-center">
+            <ul class="flex gap-10 items-center text-sm md:text-base font-medium" role="tablist" aria-label="Primary">
+              <li><a href="kitchen.html" class="nav-link" data-target="kitchen">Kitchen</a></li>
+              <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedroom</a></li>
+              <li><a href="closet.html" class="nav-link" data-target="closet">Closet</a></li>
+              <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
+              <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
+              <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
+            </ul>
+            <!-- animated sliding underline -->
+            <div id="navIndicator" aria-hidden="true">
+              <span id="navUnderline"></span>
+            </div>
+          </div>
         </div>
       </nav>
-
-      <!-- Mobile menu toggle -->
-      <div class="ml-auto flex items-center gap-4">
-        <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
     </div>
   </header>
 
