@@ -153,7 +153,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[0].title">Project 1</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[0].title">Marai C02</h4>
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 2</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[1].title">Project 2</h4>
             </div>
           </div>
         </div>
@@ -183,7 +183,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 3</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[2].title">Project 3</h4>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 4</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[3].title">Project 4</h4>
             </div>
           </div>
         </div>
@@ -216,7 +216,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 5</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[4].title">Project 5</h4>
             </div>
           </div>
         </div>
@@ -231,7 +231,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 6</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[5].title">Project 6</h4>
             </div>
           </div>
         </div>
@@ -246,7 +246,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 7</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[6].title">Project 7</h4>
             </div>
           </div>
         </div>
@@ -261,7 +261,7 @@
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight">Project 8</h4>
+              <h4 class="text-[24px] md:text-[28px] font-normal leading-tight" data-content="projects[7].title">Project 8</h4>
             </div>
           </div>
         </div>
@@ -651,7 +651,9 @@
       const thumbnailsContainer = document.getElementById('projectThumbnails');
 
       // Project data with multiple images per project
-      const projects = [
+      // Images arrays are kept as they represent gallery images for each project
+      // Title and description will be loaded from JSON
+      let projects = [
         {
           id: 1,
           images: [
@@ -733,6 +735,42 @@
           description: 'Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence.'
         }
       ];
+
+      // Load project titles and descriptions from JSON
+      function loadProjectDataFromJSON() {
+        fetch('/content/kitchen.json')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Failed to load kitchen.json');
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (data.projects && Array.isArray(data.projects)) {
+              // Update project titles and descriptions from JSON
+              data.projects.forEach((jsonProject, index) => {
+                if (projects[index]) {
+                  projects[index].title = jsonProject.title || projects[index].title;
+                  projects[index].description = jsonProject.description || projects[index].description;
+                }
+              });
+              // If modal is already open, update it with new data
+              if (currentProjectId && !modal.classList.contains('hidden')) {
+                updateModal();
+              }
+            }
+          })
+          .catch(error => {
+            console.warn('Could not load project data from JSON:', error);
+          });
+      }
+
+      // Load JSON data when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadProjectDataFromJSON);
+      } else {
+        loadProjectDataFromJSON();
+      }
 
       let currentProjectId = null;
       let currentImageIndex = 0;
