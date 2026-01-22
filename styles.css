@@ -1,5 +1,7 @@
 /* ===========================
    styles.css — consolidated
+   Version: 2025-01-15-header-fix
+   Last Updated: 2025-01-15
    ===========================*/
 
 /* Brand & site variables (single :root) */
@@ -155,47 +157,133 @@ header > div {
   transform: translateY(-100%);
 }
 
-/* Ensure consistent header layout across all pages */
-#siteHeader > div {
+/* CRITICAL: Override any page-specific styles that might affect header spacing */
+/* This ensures header is consistent across ALL pages including kids-bedroom and about-us */
+html body header#siteHeader,
+html body #siteHeader {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Ensure consistent header layout across all pages - STRONGEST RULES */
+/* Maximum specificity rules to override everything */
+body header#siteHeader > div,
+html body header#siteHeader > div,
+body #siteHeader > div,
+html body #siteHeader > div,
+header#siteHeader > div,
+#siteHeader > div,
+header#siteHeader > div.max-w-\[1400px\],
+body header#siteHeader > div.max-w-\[1400px\],
+html body header#siteHeader > div.max-w-\[1400px\] {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  gap: 1rem !important; /* gap-4 = 1rem */
-  padding-top: 1.5rem !important; /* py-6 = 1.5rem */
-  padding-bottom: 1.5rem !important; /* py-6 = 1.5rem */
+  gap: 0.5rem !important; /* gap-2 = 0.5rem - spacing between logo and nav */
+  padding-top: 1rem !important; /* py-4 = 1rem */
+  padding-bottom: 1rem !important; /* py-4 = 1rem */
   padding-left: 1.5rem !important; /* px-6 = 1.5rem */
   padding-right: 1.5rem !important; /* px-6 = 1.5rem */
+  box-sizing: border-box !important;
+  margin: 0 !important;
 }
 
-/* Logo spacing - upper and lower space - ensure exact same spacing on all pages */
+/* Logo spacing - upper and lower space - ensure EXACT same spacing on all pages */
+/* Maximum specificity for logo spacing */
+body header#siteHeader > div > a,
+html body header#siteHeader > div > a,
+body header#siteHeader > div > a.inline-flex,
+html body header#siteHeader > div > a.inline-flex,
+body #siteHeader > div > a,
+html body #siteHeader > div > a,
+header#siteHeader > div > a,
+header#siteHeader > div > a.inline-flex,
 #siteHeader > div > a,
 #siteHeader > div > a[href="index.html"],
-#siteHeader a[href*="index.html"] {
-  padding-top: 0.75rem !important; /* py-3 = 0.75rem - upper space */
-  padding-bottom: 0.75rem !important; /* py-3 = 0.75rem - lower space */
+#siteHeader > div > a[href*="index.html"],
+#siteHeader a[href*="index.html"],
+header#siteHeader a[href*="index.html"] {
+  padding-top: 0.5rem !important; /* py-2 = 0.5rem - upper space */
+  padding-bottom: 0.5rem !important; /* py-2 = 0.5rem - lower space */
   padding-left: 0 !important;
   padding-right: 0 !important;
   display: inline-flex !important;
   justify-content: center !important;
+  align-items: center !important;
   margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   line-height: 1 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+/* Ensure logo image has no extra spacing */
+header#siteHeader > div > a picture,
+header#siteHeader > div > a > picture,
+#siteHeader > div > a picture,
+#siteHeader > div > a > picture {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+
+header#siteHeader > div > a img,
+header#siteHeader > div > a picture img,
+#siteHeader > div > a img,
+#siteHeader > div > a picture img,
+#siteTitleImg {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
 }
 
 /* Navigation spacing below logo - ensure consistent spacing */
-#mainNav {
+/* Maximum specificity for navigation */
+body header#siteHeader nav#mainNav,
+html body header#siteHeader nav#mainNav,
+body #mainNav,
+html body #mainNav,
+body header#siteHeader nav#mainNav.w-full,
+html body header#siteHeader nav#mainNav.w-full,
+header#siteHeader nav#mainNav,
+#mainNav,
+header#siteHeader nav#mainNav.w-full {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
-  margin-top: 0.5rem !important; /* mt-2 = 0.5rem - spacing between logo and nav */
+  margin-top: 0.25rem !important; /* mt-1 = 0.25rem - spacing between logo and nav */
   margin-bottom: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
   padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Ensure navigation tabs are centered */
+/* Maximum specificity for nav wrapper */
+body header#siteHeader nav#mainNav > div,
+html body header#siteHeader nav#mainNav > div,
+body #mainNav > div,
+html body #mainNav > div,
+header#siteHeader nav#mainNav > div,
 #mainNav > div {
   display: flex !important;
   align-items: center !important;
@@ -248,8 +336,29 @@ header > div {
   margin-right: auto !important;
 }
 
-/* Ensure the ul inside is centered */
-#mainNav ul[role="tablist"] {
+/* Ensure the ul inside is centered - STRONGEST RULES FOR TAB SPACING */
+/* Maximum specificity for tab spacing - override everything */
+body header#siteHeader nav#mainNav ul[role="tablist"],
+html body header#siteHeader nav#mainNav ul[role="tablist"],
+body header#siteHeader nav#mainNav ul[role="tablist"].flex,
+html body header#siteHeader nav#mainNav ul[role="tablist"].flex,
+body #mainNav ul[role="tablist"],
+html body #mainNav ul[role="tablist"],
+body #mainNav ul[role="tablist"].flex,
+html body #mainNav ul[role="tablist"].flex,
+body #mainNav > div > div > ul,
+html body #mainNav > div > div > ul,
+body #mainNav > div > div.relative > ul,
+html body #mainNav > div > div.relative > ul,
+body #mainNav > div > div.flex-1 > ul,
+html body #mainNav > div > div.flex-1 > ul,
+header#siteHeader nav#mainNav ul[role="tablist"],
+header#siteHeader nav#mainNav ul[role="tablist"].flex,
+#mainNav ul[role="tablist"],
+#mainNav ul[role="tablist"].flex,
+#mainNav > div > div > ul,
+#mainNav > div > div.relative > ul,
+#mainNav > div > div.flex-1 > ul {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -257,15 +366,50 @@ header > div {
   padding: 0 !important;
   list-style: none !important;
   gap: 2.5rem !important; /* gap-10 = 2.5rem - increased spacing between tabs */
+  column-gap: 2.5rem !important;
+  row-gap: 0 !important;
+}
+
+/* Override Tailwind gap classes to ensure consistent spacing - ALL VARIATIONS */
+/* Maximum specificity to override all Tailwind utility classes */
+body header#siteHeader nav#mainNav ul[role="tablist"].gap-10,
+html body header#siteHeader nav#mainNav ul[role="tablist"].gap-10,
+body header#siteHeader nav#mainNav ul[role="tablist"][class*="gap-"],
+html body header#siteHeader nav#mainNav ul[role="tablist"][class*="gap-"],
+body #mainNav ul[role="tablist"].gap-10,
+html body #mainNav ul[role="tablist"].gap-10,
+body #mainNav ul[role="tablist"][class*="gap-"],
+html body #mainNav ul[role="tablist"][class*="gap-"],
+body #mainNav ul.flex.gap-10,
+html body #mainNav ul.flex.gap-10,
+body #mainNav ul[class*="gap-6"],
+html body #mainNav ul[class*="gap-6"],
+body #mainNav ul[class*="gap-8"],
+html body #mainNav ul[class*="gap-8"],
+body #mainNav ul[class*="gap-10"],
+html body #mainNav ul[class*="gap-10"],
+header#siteHeader nav#mainNav ul[role="tablist"].gap-10,
+header#siteHeader nav#mainNav ul[role="tablist"][class*="gap-"],
+#mainNav ul[role="tablist"].gap-10,
+#mainNav ul[role="tablist"][class*="gap-"],
+#mainNav ul.flex.gap-10,
+#mainNav ul[class*="gap-6"],
+#mainNav ul[class*="gap-8"],
+#mainNav ul[class*="gap-10"] {
+  gap: 2.5rem !important;
+  column-gap: 2.5rem !important;
+  row-gap: 0 !important;
 }
 
 /* Desktop-specific: Ensure navigation is perfectly centered */
 @media (min-width: 769px) {
+  header#siteHeader nav#mainNav > div,
   #mainNav > div {
     justify-content: center !important;
     align-items: center !important;
   }
   
+  header#siteHeader nav#mainNav > div > div,
   #mainNav > div > div {
     flex: 0 1 auto !important;
     max-width: 100% !important;
@@ -274,13 +418,16 @@ header > div {
     margin-right: auto !important;
   }
   
+  header#siteHeader nav#mainNav > div > div > ul,
   #mainNav > div > div > ul {
     margin-left: auto !important;
     margin-right: auto !important;
     justify-content: center !important;
+    gap: 2.5rem !important; /* Ensure gap is applied on desktop too */
   }
   
   /* Ensure mobile button doesn't take space */
+  header#siteHeader nav#mainNav > div > button.hamburger-menu,
   #mainNav > div > button.hamburger-menu {
     display: none !important;
     width: 0 !important;
@@ -288,6 +435,277 @@ header > div {
     padding: 0 !important;
     flex: none !important;
   }
+}
+
+/* FINAL OVERRIDE: Ensure header spacing is EXACTLY the same on ALL pages */
+header#siteHeader,
+#siteHeader {
+  box-sizing: border-box !important;
+}
+
+header#siteHeader > div.max-w-\[1400px\],
+header#siteHeader > div,
+#siteHeader > div.max-w-\[1400px\],
+#siteHeader > div {
+  box-sizing: border-box !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* ULTIMATE OVERRIDE: Force exact spacing on all pages regardless of any other styles */
+/* These rules have maximum specificity and will override everything */
+body header#siteHeader > div,
+body #siteHeader > div,
+html body header#siteHeader > div,
+html body #siteHeader > div,
+body header#siteHeader > div.max-w-\[1400px\],
+html body header#siteHeader > div.max-w-\[1400px\],
+body #siteHeader > div.max-w-\[1400px\],
+html body #siteHeader > div.max-w-\[1400px\] {
+  gap: 0.5rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+body header#siteHeader > div > a,
+body #siteHeader > div > a,
+html body header#siteHeader > div > a,
+html body #siteHeader > div > a,
+body header#siteHeader > div > a.inline-flex,
+html body header#siteHeader > div > a.inline-flex,
+body #siteHeader > div > a.inline-flex,
+html body #siteHeader > div > a.inline-flex {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+body header#siteHeader nav#mainNav,
+body #mainNav,
+html body header#siteHeader nav#mainNav,
+html body #mainNav,
+body header#siteHeader nav#mainNav.w-full,
+html body header#siteHeader nav#mainNav.w-full,
+body #mainNav.w-full,
+html body #mainNav.w-full {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body header#siteHeader nav#mainNav > div,
+body #mainNav > div,
+html body header#siteHeader nav#mainNav > div,
+html body #mainNav > div,
+body header#siteHeader nav#mainNav > div.flex,
+html body header#siteHeader nav#mainNav > div.flex,
+body #mainNav > div.flex,
+html body #mainNav > div.flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body header#siteHeader nav#mainNav > div > div,
+body #mainNav > div > div,
+html body header#siteHeader nav#mainNav > div > div,
+html body #mainNav > div > div,
+body header#siteHeader nav#mainNav > div > div.relative,
+html body header#siteHeader nav#mainNav > div > div.relative,
+body header#siteHeader nav#mainNav > div > div.flex-1,
+html body header#siteHeader nav#mainNav > div > div.flex-1,
+body #mainNav > div > div.relative,
+html body #mainNav > div > div.relative,
+body #mainNav > div > div.flex-1,
+html body #mainNav > div > div.flex-1 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+body header#siteHeader nav#mainNav ul[role="tablist"],
+body #mainNav ul[role="tablist"],
+html body header#siteHeader nav#mainNav ul[role="tablist"],
+html body #mainNav ul[role="tablist"],
+body header#siteHeader nav#mainNav > div > div > ul,
+body #mainNav > div > div > ul,
+html body header#siteHeader nav#mainNav > div > div > ul,
+html body #mainNav > div > div > ul,
+body header#siteHeader nav#mainNav > div > div.relative > ul,
+body #mainNav > div > div.relative > ul,
+html body header#siteHeader nav#mainNav > div > div.relative > ul,
+html body #mainNav > div > div.relative > ul,
+body header#siteHeader nav#mainNav > div > div.flex-1 > ul,
+body #mainNav > div > div.flex-1 > ul,
+html body header#siteHeader nav#mainNav > div > div.flex-1 > ul,
+html body #mainNav > div > div.flex-1 > ul {
+  gap: 2.5rem !important;
+  column-gap: 2.5rem !important;
+  row-gap: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* FINAL ABSOLUTE OVERRIDE: Ensure header is EXACTLY the same on ALL pages including kids-bedroom and about-us */
+/* These rules use maximum specificity and will override ANY other styles, including page-specific styles */
+html body header#siteHeader > div.max-w-\[1400px\],
+html body header#siteHeader > div,
+html body #siteHeader > div.max-w-\[1400px\],
+html body #siteHeader > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  max-width: 1400px !important;
+  width: 100% !important;
+}
+
+html body header#siteHeader > div > a.inline-flex,
+html body header#siteHeader > div > a,
+html body #siteHeader > div > a.inline-flex,
+html body #siteHeader > div > a {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  height: auto !important;
+}
+
+html body header#siteHeader nav#mainNav.w-full,
+html body header#siteHeader nav#mainNav,
+html body #mainNav.w-full,
+html body #mainNav {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-top: 0.25rem !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+html body header#siteHeader nav#mainNav > div.flex,
+html body header#siteHeader nav#mainNav > div,
+html body #mainNav > div.flex,
+html body #mainNav > div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+html body header#siteHeader nav#mainNav > div > div.relative.flex-1,
+html body header#siteHeader nav#mainNav > div > div.flex-1,
+html body header#siteHeader nav#mainNav > div > div.relative,
+html body header#siteHeader nav#mainNav > div > div,
+html body #mainNav > div > div.relative.flex-1,
+html body #mainNav > div > div.flex-1,
+html body #mainNav > div > div.relative,
+html body #mainNav > div > div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+html body header#siteHeader nav#mainNav ul[role="tablist"].flex.gap-10,
+html body header#siteHeader nav#mainNav ul[role="tablist"].flex,
+html body header#siteHeader nav#mainNav ul[role="tablist"],
+html body header#siteHeader nav#mainNav > div > div > ul.flex.gap-10,
+html body header#siteHeader nav#mainNav > div > div > ul.flex,
+html body header#siteHeader nav#mainNav > div > div > ul,
+html body #mainNav ul[role="tablist"].flex.gap-10,
+html body #mainNav ul[role="tablist"].flex,
+html body #mainNav ul[role="tablist"],
+html body #mainNav > div > div > ul.flex.gap-10,
+html body #mainNav > div > div > ul.flex,
+html body #mainNav > div > div > ul {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+  gap: 2.5rem !important;
+  column-gap: 2.5rem !important;
+  row-gap: 0 !important;
+  width: auto !important;
+  flex: none !important;
+}
+
+/* Override any potential page-specific styles that might affect header */
+html body[id="top"] header#siteHeader,
+html body.antialiased header#siteHeader,
+html body.bg-brand-bg header#siteHeader,
+html body.text-brand-accent header#siteHeader,
+html body[id="top"] #siteHeader,
+html body.antialiased #siteHeader,
+html body.bg-brand-bg #siteHeader,
+html body.text-brand-accent #siteHeader {
+  box-sizing: border-box !important;
+}
+
+html body[id="top"] header#siteHeader > div,
+html body.antialiased header#siteHeader > div,
+html body.bg-brand-bg header#siteHeader > div,
+html body.text-brand-accent header#siteHeader > div,
+html body[id="top"] #siteHeader > div,
+html body.antialiased #siteHeader > div,
+html body.bg-brand-bg #siteHeader > div,
+html body.text-brand-accent #siteHeader > div {
+  gap: 0.5rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
 
 /* Ensure body starts at top without offset */
@@ -300,6 +718,97 @@ body {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+/* ABSOLUTE FINAL OVERRIDE: Target kids-bedroom and about-us pages specifically */
+/* This ensures header is EXACTLY the same on these pages */
+html body header#siteHeader > div.max-w-\[1400px\].mx-auto.px-6.py-6.flex.flex-col.items-center.gap-4,
+html body header#siteHeader > div.max-w-\[1400px\] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1400px !important;
+}
+
+html body header#siteHeader > div > a.inline-flex.justify-center.py-3,
+html body header#siteHeader > div > a.inline-flex {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  line-height: 1 !important;
+}
+
+html body nav#mainNav.w-full.mt-2,
+html body nav#mainNav.w-full,
+html body nav#mainNav {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-top: 0.25rem !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+html body nav#mainNav > div.flex.items-center.justify-center,
+html body nav#mainNav > div.flex,
+html body nav#mainNav > div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+html body nav#mainNav > div > div.relative.flex-1.flex.justify-center,
+html body nav#mainNav > div > div.relative.flex-1,
+html body nav#mainNav > div > div.relative,
+html body nav#mainNav > div > div.flex-1,
+html body nav#mainNav > div > div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+html body nav#mainNav ul.flex.gap-10.items-center.text-sm.md\:text-base.font-medium[role="tablist"],
+html body nav#mainNav ul.flex.gap-10[role="tablist"],
+html body nav#mainNav ul[role="tablist"].flex.gap-10,
+html body nav#mainNav ul[role="tablist"] {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+  gap: 2.5rem !important;
+  column-gap: 2.5rem !important;
+  row-gap: 0 !important;
+  width: auto !important;
+  flex: none !important;
 }
 
 /* Footer transition effect */
@@ -972,9 +1481,9 @@ video::-webkit-media-controls-overlay-play-button {
   }
 
   #siteHeader > div {
-    gap: 0.75rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   #siteTitleImg {

@@ -1,6 +1,18 @@
 # Cache-Control headers for optimized assets
 # This file is used by Netlify for cache control
 
+# HTML files - no cache to ensure latest version is always served
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# CSS files - shorter cache to ensure updates are reflected quickly
+/styles.css
+  Cache-Control: public, max-age=300, must-revalidate
+/tailwind.css
+  Cache-Control: public, max-age=300, must-revalidate
+/*.css
+  Cache-Control: public, max-age=300, must-revalidate
+
 # Optimized images - long cache
 /assets/opt/*
   Cache-Control: public, max-age=31536000, immutable

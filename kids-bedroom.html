@@ -17,6 +17,68 @@
   <link rel="stylesheet" href="styles.css" />
   
   <style>
+    /* CRITICAL: Force exact header spacing to match all other pages */
+    header#siteHeader > div.max-w-\[1400px\] {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+      box-sizing: border-box !important;
+      margin: 0 auto !important;
+    }
+    header#siteHeader > div > a.inline-flex {
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin: 0 !important;
+      display: inline-flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    nav#mainNav.w-full {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      margin-top: 0.25rem !important;
+      margin-bottom: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding: 0 !important;
+    }
+    nav#mainNav > div.flex {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    nav#mainNav > div > div.relative.flex-1 {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+    nav#mainNav ul[role="tablist"].flex.gap-10 {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      list-style: none !important;
+      gap: 2.5rem !important;
+      column-gap: 2.5rem !important;
+      row-gap: 0 !important;
+    }
 
     /* Kids Bedroom Split Hover Section - Nidi Style */
     .kids-split-section {
@@ -160,9 +222,9 @@
 
   <!-- Header -->
   <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-white/30 transition-transform duration-300 ease-in-out">
-    <div class="max-w-[1400px] mx-auto px-6 py-6 flex flex-col items-center gap-4">
+    <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col items-center gap-2">
       <!-- Logo centered -->
-      <a href="index.html" class="inline-flex justify-center py-3">
+      <a href="index.html" class="inline-flex justify-center py-2">
         <picture>
           <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
           <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
@@ -171,7 +233,7 @@
       </a>
 
       <!-- Nav under the logo -->
-      <nav id="mainNav" class="w-full mt-2">
+      <nav id="mainNav" class="w-full mt-1">
         <div class="flex items-center justify-center">
           <!-- Mobile menu toggle (left on mobile) -->
           <button id="mobileMenuToggle" class="hamburger-menu mr-3 md:hidden" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
