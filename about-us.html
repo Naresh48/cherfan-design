@@ -152,9 +152,7 @@
       <!-- Logo centered -->
       <a href="index.html" class="inline-flex justify-center py-2">
         <picture>
-          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <img id="siteTitleImg" src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 md:h-5 object-contain">
+          <img id="siteTitleImg" src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="eager" decoding="async" class="h-6 md:h-10 object-contain">
         </picture>
       </a>
 
@@ -325,10 +323,8 @@
   <footer id="contact" class="border-t border-white/40 mt-12">
     <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
-        <picture>
-          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <img src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="lazy" decoding="async" class="h-8 object-contain" />
+        <picture data-image="footer.logoImageBase">
+          <img src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="lazy" decoding="async" class="h-6 md:h-10 object-contain" />
         </picture>
         <p class="text-sm mt-4">Cherfan Design — Lebanon</p>
       </div>
@@ -363,6 +359,13 @@
     <div class="contact-modal-content">
       <button class="contact-modal-close" aria-label="Close contact form">×</button>
       <h2 class="contact-modal-title">Get in Touch</h2>
+      <!-- Contact details block -->
+      <div class="mb-4 text-sm leading-relaxed">
+        <p class="text-sm text-brand-accent"><span class="font-medium">Contact:</span> +961 9 222 340</p>
+        <p class="text-sm text-brand-accent"><span class="font-medium">Email:</span> info.z@cherfandesign.com</p>
+        <p class="text-sm text-brand-accent"><span class="font-medium">Location:</span> Zouk Highway</p>
+      </div>
+      <h2 class="contact-modal-title">Information Request</h2>
       <form id="contactForm" class="space-y-4">
         <input type="hidden" name="access_key" value="9dc81b3a-2ab4-4b96-ac36-a324e55d0ebf">
     
@@ -395,9 +398,9 @@
         </div>
     
         <div>
-            <label class="block text-sm font-medium">Notes (Optional)</label>
+            <label class="block text-sm font-medium">Notes *</label>
             <textarea name="message" rows="4"
-                      class="border p-2 w-full rounded"></textarea>
+                      class="border p-2 w-full rounded" required></textarea>
         </div>
     
         <button type="submit"
@@ -476,10 +479,20 @@
 
     .contact-modal-title {
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
       font-weight: 400;
       margin-bottom: 1.5rem;
       color: var(--brand-accent);
+    }
+
+    /* First title: "Get in Touch" – smaller */
+    .contact-modal-content .contact-modal-title:first-of-type {
+      font-size: 22px;
+    }
+
+    /* Second title: "Information Request" – larger, with extra spacing above */
+    .contact-modal-content .contact-modal-title:nth-of-type(2) {
+      font-size: 30px;
+      margin-top: 3rem;
     }
   </style>
 

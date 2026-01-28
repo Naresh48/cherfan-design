@@ -6,7 +6,8 @@
 
 /* Brand & site variables (single :root) */
 :root {
-  --brand-bg: #ffffff;
+  /* Global background color (much lighter for a clearer change) */
+  --brand-bg: #FBF2E8;
   --brand-accent: #1f1b18;
   --brand-wood: #b76a45;
 
@@ -20,6 +21,7 @@
 
 /* Basic utilities */
 .bg-brand-bg { background: var(--brand-bg); }
+.bg-white { background-color: var(--brand-bg) !important; }
 .text-brand-accent { color: var(--brand-accent); }
 .bg-brand-accent { background: var(--brand-accent); }
 
@@ -29,14 +31,14 @@ section { padding: var(--section-pad) 0; }
 
 /* Typography & scale */
 html {
-  background-color: #ffffff !important;
+  background-color: #FBF2E8 !important;
   cursor: default !important;
 }
 
 body { 
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
   color: var(--brand-accent); 
-  background-color: #ffffff !important;
+  background-color: #FBF2E8 !important;
   cursor: default !important;
 }
 
@@ -111,6 +113,36 @@ h2 { font-size: var(--h2-size); font-weight: 700; margin-bottom: .5rem; }
 /* Minor utilities */
 .hidden { display: none !important; }
 
+/* Kids decorative props (kids-elements) */
+.kids-props-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kids-prop {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+/* Roughly random positions around empty areas of the page */
+.kids-prop-1  { top: 760px;  left: 10%; }
+.kids-prop-2  { top: 820px;  right: 8%; }
+.kids-prop-4  { top: 940px;  right: 14%; }
+.kids-prop-5  { top: 1080px; left: 8%; }
+.kids-prop-6  { top: 1250px; right: 6%; }
+.kids-prop-7  { top: 980px;  left: 22%; }
+.kids-prop-11 { top: 1580px; left: 26%; }
+.kids-prop-12 { top: 1700px; right: 18%; }
+.kids-prop-13 { top: 2180px; right: 6%; }
+.kids-prop-14 { top: 2020px; right: 22%; }
+.kids-prop-15 { top: 2180px; left: 6%; }
+.kids-prop-16 { top: 2320px; right: 10%; }
+
 /* Header navigation - ensure tabs stay in one line */
 header nav {
   flex-wrap: nowrap !important;
@@ -166,7 +198,8 @@ html body #siteHeader {
   left: 0 !important;
   right: 0 !important;
   z-index: 50 !important;
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  /* Match global beige background (much lighter) with slight transparency */
+  background-color: rgba(251, 242, 232, 0.85) !important;
   backdrop-filter: blur(4px) !important;
   -webkit-backdrop-filter: blur(4px) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -248,6 +281,22 @@ header#siteHeader > div > a picture img,
   margin: 0 !important;
   padding: 0 !important;
   vertical-align: middle !important;
+  /* Logo size - responsive: smaller on mobile, larger on desktop */
+  height: 1.125rem; /* ~18px on mobile */
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.45));
+  object-fit: contain;
+  width: auto;
+}
+
+/* Desktop logo size */
+@media (min-width: 768px) {
+  header#siteHeader > div > a img,
+  header#siteHeader > div > a picture img,
+  #siteHeader > div > a img,
+  #siteHeader > div > a picture img,
+  #siteTitleImg {
+    height: 1.75rem; /* ~28px on desktop */
+  }
 }
 
 /* Navigation spacing below logo - ensure consistent spacing */
@@ -1009,13 +1058,110 @@ footer#contact.visible {
   min-height: 100%;
 }
 
+/* Footer logo - same size as header logo */
+/* Ensure footer logo container div has transparent background */
+footer#contact > div > div:first-child,
+footer[id="contact"] > div > div:first-child,
+footer#contact > div > div:first-child picture,
+footer[id="contact"] > div > div:first-child picture {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ensure picture element displays correctly - NO WHITE BACKGROUND */
+footer#contact picture,
+footer[id="contact"] picture,
+footer#contact > div > div:first-child picture,
+footer[id="contact"] > div > div:first-child picture,
+footer#contact > div > div:first-child > picture,
+footer[id="contact"] > div > div:first-child > picture {
+  display: block !important;
+  line-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Maximum specificity to override Tailwind classes - NO WHITE BACKGROUND */
+footer#contact picture img,
+footer[id="contact"] picture img,
+footer#contact picture img.h-6,
+footer#contact picture img[class*="h-6"],
+footer#contact picture img[class*="h-10"],
+footer#contact picture img[class*="md:h-10"],
+footer#contact img[alt="Cherfan Design"],
+footer#contact img[alt="Cherfan Design"].h-6,
+footer#contact img[alt="Cherfan Design"][class*="h-6"],
+footer#contact img[alt="Cherfan Design"][class*="h-10"],
+footer#contact img[alt="Cherfan Design"][class*="md:h-10"],
+footer[id="contact"] img[alt="Cherfan Design"],
+footer[id="contact"] picture img.h-6,
+footer[id="contact"] picture img[class*="h-6"],
+footer[id="contact"] picture img[class*="h-10"],
+footer[id="contact"] picture img[class*="md:h-10"],
+footer[id="contact"] img[alt="Cherfan Design"].h-6,
+footer[id="contact"] img[alt="Cherfan Design"][class*="h-6"],
+footer[id="contact"] img[alt="Cherfan Design"][class*="h-10"],
+footer[id="contact"] img[alt="Cherfan Design"][class*="md:h-10"],
+footer#contact > div > div:first-child img,
+footer[id="contact"] > div > div:first-child img {
+  height: 1.125rem !important; /* ~18px on mobile - same as header */
+  max-height: 1.125rem !important;
+  min-height: 1.125rem !important;
+  object-fit: contain !important;
+  width: auto !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Desktop footer logo size */
+@media (min-width: 768px) {
+  footer#contact picture img,
+  footer[id="contact"] picture img,
+  footer#contact picture img.h-6,
+  footer#contact picture img[class*="h-6"],
+  footer#contact picture img[class*="h-10"],
+  footer#contact picture img[class*="md:h-10"],
+  footer#contact img[alt="Cherfan Design"],
+  footer#contact img[alt="Cherfan Design"].h-6,
+  footer#contact img[alt="Cherfan Design"][class*="h-6"],
+  footer#contact img[alt="Cherfan Design"][class*="h-10"],
+  footer#contact img[alt="Cherfan Design"][class*="md:h-10"],
+  footer[id="contact"] img[alt="Cherfan Design"],
+  footer[id="contact"] picture img.h-6,
+  footer[id="contact"] picture img[class*="h-6"],
+  footer[id="contact"] picture img[class*="h-10"],
+  footer[id="contact"] picture img[class*="md:h-10"],
+  footer[id="contact"] img[alt="Cherfan Design"].h-6,
+  footer[id="contact"] img[alt="Cherfan Design"][class*="h-6"],
+  footer[id="contact"] img[alt="Cherfan Design"][class*="h-10"],
+  footer[id="contact"] img[alt="Cherfan Design"][class*="md:h-10"],
+  footer#contact > div > div:first-child img,
+  footer[id="contact"] > div > div:first-child img {
+    height: 1.75rem !important; /* ~28px on desktop - same as header */
+    max-height: 1.75rem !important;
+    min-height: 1.75rem !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
+
 /* Contact section (footer) styling */
 footer#contact,
 footer[id="contact"] {
-  background-color: #000000 !important;
-  background: #000000 !important;
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
+  /* Footer is one shade darker than the global background for subtle contrast */
+  background-color: #D9C7B1 !important;
+  background: #D9C7B1 !important;
+  color: #1f1b18 !important;
+  border-top: none !important;
+  border-color: transparent !important;
+  margin-top: 0 !important;
 }
 
 footer#contact *,
@@ -1027,36 +1173,39 @@ footer#contact p,
 footer#contact h4,
 footer#contact div:not(.max-w):not(.mx-auto):not(.px-6):not(.py-10):not(.grid):not(.grid-cols-1):not(.md\\:grid-cols-3):not(.gap-6),
 footer#contact span {
-  color: #ffffff !important;
+  color: #1f1b18 !important;
 }
 
 footer#contact .text-gray-600,
 footer#contact .text-xs,
 footer#contact [class*="text-gray"] {
-  color: #ffffff !important;
+  color: #1f1b18 !important;
 }
 
 footer#contact input[type="text"],
 footer#contact input[type="email"],
 footer#contact input {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
+  /* Newsletter input: light grey background with black text */
+  background-color: #e5e5e5 !important;
+  border-color: #cccccc !important;
+  color: #000000 !important;
 }
 
 footer#contact input::placeholder {
-  color: rgba(255, 255, 255, 0.6) !important;
+  /* Placeholder text in a medium grey for readability */
+  color: #666666 !important;
 }
 
 footer#contact button,
 footer#contact button[type="submit"],
 footer#contact .bg-brand-accent {
-  background-color: #ffffff !important;
+  /* Newsletter subscribe button: light grey background with black text */
+  background-color: #e5e5e5 !important;
   color: #000000 !important;
 }
 
 footer#contact button:hover {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: #d4d4d4 !important;
 }
 
 /* ===========================
@@ -1271,7 +1420,7 @@ video::-webkit-media-controls-overlay-play-button {
 
 /* A Global Celebration Section - Aman Style */
 .global-celebration-section {
-  background-color: #ffffff;
+  background-color: var(--brand-bg);
 }
 
 .global-celebration-label {
@@ -1316,7 +1465,7 @@ video::-webkit-media-controls-overlay-play-button {
 
 /* Celebration Image Sections */
 .celebration-image-section {
-  background-color: #ffffff;
+  background-color: var(--brand-bg);
 }
 
 .celebration-image-section img {
@@ -1332,7 +1481,7 @@ video::-webkit-media-controls-overlay-play-button {
 
 /* Celebration Text Sections */
 .celebration-text-section {
-  background-color: #ffffff;
+  background-color: var(--brand-bg);
 }
 
 .celebration-text-section h3 {
@@ -1349,7 +1498,7 @@ video::-webkit-media-controls-overlay-play-button {
 
 /* Expressions of the Season */
 .expressions-section {
-  background-color: #ffffff;
+  background-color: var(--brand-bg);
 }
 
 .expression-card {
@@ -1398,7 +1547,39 @@ video::-webkit-media-controls-overlay-play-button {
 
 /* Expressions of the Season (Aman style) */
 .expressions-season-section {
-  background-color: #ffffff;
+  background-color: var(--brand-bg);
+}
+
+/* Contact modal base styling - match site background */
+.contact-modal-content {
+  background-color: var(--brand-bg) !important;
+  color: var(--brand-accent) !important;
+}
+
+/* Contact modal inputs - placeholder box same as background */
+.contact-modal-content input,
+.contact-modal-content textarea {
+  background-color: var(--brand-bg) !important;
+  border-color: #d0c2b2 !important; /* slightly darker for definition */
+  color: var(--brand-accent) !important;
+}
+
+.contact-modal-content input::placeholder,
+.contact-modal-content textarea::placeholder {
+  color: #7c7267 !important; /* soft grey-brown for readability */
+}
+
+/* Contact modal submit button - light grey with dark text */
+.contact-modal-content button[type="submit"],
+.contact-modal-content .contact-form-submit {
+  background-color: #e5e5e5 !important;
+  color: #000000 !important;
+  border-color: #d0cfcf !important;
+}
+
+.contact-modal-content button[type="submit"]:hover,
+.contact-modal-content .contact-form-submit:hover {
+  background-color: #d4d4d4 !important;
 }
 
 .expressions-label {
@@ -1434,6 +1615,516 @@ video::-webkit-media-controls-overlay-play-button {
 
 @media (min-width: 1024px) {
   .expressions-title { font-size: 64px; }
+}
+
+.kids-philosophy-section {
+  background-color: var(--brand-bg);
+  padding: 4rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .kids-philosophy-section {
+    padding: 5rem 2.5rem;
+  }
+}
+
+.kids-philosophy-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.kids-philosophy-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .kids-philosophy-body {
+    flex-direction: row;
+  }
+
+  .kids-philosophy-body .kids-philosophy-paragraph {
+    width: 50%;
+  }
+}
+
+.kids-philosophy-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.kids-philosophy-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--brand-accent);
+  margin: 0 0 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .kids-philosophy-title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kids-philosophy-title {
+    font-size: 48px;
+  }
+}
+
+.kids-philosophy-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Kids Manifesto (Nidi-style horizontal navigation) */
+.kids-manifesto-section {
+  background-color: var(--brand-bg);
+  padding: 3.5rem 1.5rem 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .kids-manifesto-section {
+    padding: 4rem 2.5rem 5rem;
+  }
+}
+
+.kids-manifesto-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kids-manifesto-header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kids-manifesto-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--brand-accent);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .kids-manifesto-title {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kids-manifesto-title {
+    font-size: 40px;
+  }
+}
+
+.kids-manifesto-arrows {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kids-manifesto-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.kids-manifesto-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.kids-manifesto-track {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.kids-manifesto-card {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .kids-manifesto-card {
+    /* Show roughly two and a half cards in the viewport */
+    flex: 0 0 40%;
+  }
+}
+
+.kids-manifesto-image-wrap {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .kids-manifesto-image-wrap {
+    height: 260px;
+  }
+}
+
+.kids-manifesto-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.kids-manifesto-card:hover .kids-manifesto-image {
+  transform: scale(1.02);
+}
+
+.kids-manifesto-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kids-manifesto-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--brand-accent);
+  margin: 0 0 0.75rem 0;
+}
+
+.kids-manifesto-card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #4b5563;
+  margin: 0;
+}
+
+.kids-manifesto-arrow {
+  position: relative;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 27, 24, 0.35);
+  background: rgba(251, 242, 232, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--brand-accent);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.kids-manifesto-arrow:hover {
+  background: var(--brand-accent);
+  color: #fff;
+  border-color: var(--brand-accent);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .kids-manifesto-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* Kids Manifesto Modal */
+.kids-manifesto-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.kids-manifesto-modal.hidden {
+  display: none;
+}
+
+.kids-manifesto-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.kids-manifesto-modal-content {
+  position: relative;
+  z-index: 1;
+  background: var(--brand-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.kids-project-modal-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .kids-project-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.kids-project-modal-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.kids-project-modal-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kids-project-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 1;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.kids-project-modal-nav:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.kids-project-modal-prev {
+  left: 1rem;
+}
+
+.kids-project-modal-next {
+  right: 1rem;
+}
+
+.kids-project-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kids-project-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--brand-accent);
+  margin: 0 0 0.75rem 0;
+}
+
+.kids-project-modal-description {
+  flex: 1;
+}
+
+.kids-project-description-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #4b5563;
+  margin: 0;
+}
+
+.kids-project-modal-thumbnails {
+  margin-top: auto;
+}
+
+.kids-project-thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.kids-project-thumbnails-grid button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.kids-project-thumbnails-grid img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.kids-project-thumbnails-grid img.active {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.kids-manifesto-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.kids-manifesto-modal-close:hover {
+  background: #f3f3f3;
+  color: #000;
+}
+
+/* Kids Study Space Section (Nidi-style image + text card) */
+.kids-study-section {
+  background-color: var(--brand-bg);
+  padding: 4rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .kids-study-section {
+    padding: 5rem 2.5rem;
+  }
+}
+
+.kids-study-inner {
+  max-width: 100%;
+  margin: 0;
+}
+
+.kids-study-card {
+  background-color: transparent;
+  border-radius: 40px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 900px) {
+  .kids-study-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.kids-study-image-wrap {
+  flex: 0 0 55%;
+  min-height: 280px;
+  max-height: 420px;
+  border-radius: 40px 40px 0 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.kids-study-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kids-study-text {
+  flex: 1 1 auto;
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--brand-bg);
+  border-radius: 0 0 40px 40px;
+}
+
+@media (min-width: 900px) {
+  .kids-study-text {
+    padding: 2.75rem 3rem;
+    border-radius: 0 40px 40px 0;
+  }
+
+  .kids-study-image-wrap {
+    border-radius: 40px 0 0 40px;
+  }
+}
+
+.kids-study-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--brand-accent);
+  margin: 0 0 1rem 0;
+}
+
+@media (min-width: 900px) {
+  .kids-study-title {
+    font-size: 30px;
+  }
+}
+
+.kids-study-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #4b5563;
+  margin: 0;
 }
 
 .expressions-subtext {
@@ -1482,12 +2173,14 @@ video::-webkit-media-controls-overlay-play-button {
 
   #siteHeader > div {
     gap: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    /* More vertical padding to balance the much larger logo */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   #siteTitleImg {
-    height: 0.875rem;
+    /* Mobile logo size - proportional to header */
+    height: 1.125rem; /* ~18px */
   }
 
   #contactButton {
@@ -1607,6 +2300,16 @@ video::-webkit-media-controls-overlay-play-button {
 
   .contact-modal-title {
     font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  /* Contact modal secondary heading (Information Request) */
+  .contact-modal-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--brand-accent);
     margin-bottom: 1rem;
   }
 
@@ -1773,7 +2476,8 @@ video::-webkit-media-controls-overlay-play-button {
   }
 
   #siteTitleImg {
-    height: 0.75rem;
+    /* Extra-small screens: keep logo clearly visible without overpowering */
+    height: 1.125rem; /* ~18px */
   }
 
   #contactButton {

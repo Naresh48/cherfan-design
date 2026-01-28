@@ -26,9 +26,7 @@
       <!-- Logo centered -->
       <a href="index.html" class="inline-flex justify-center py-2">
         <picture>
-          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <img id="siteTitleImg" src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="eager" decoding="async" class="h-4 md:h-5 object-contain">
+          <img id="siteTitleImg" src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="eager" decoding="async" class="h-6 md:h-10 object-contain">
         </picture>
       </a>
 
@@ -457,10 +455,8 @@
   <footer id="contact" class="border-t border-white/40 mt-12">
     <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
-        <picture data-image="footer.logoImageBase">
-          <source type="image/avif" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.avif 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.avif 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.avif 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <source type="image/webp" srcset="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1600.webp 1600w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-1200.webp 1200w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp 800w, assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-          <img src="assets/optimized/images/whatsapp-image-2025-12-04-at-4.11.49-pm-800.webp" alt="Cherfan Design" loading="lazy" decoding="async" class="h-8 object-contain" />
+        <picture>
+          <img src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="lazy" decoding="async" class="h-6 md:h-10 object-contain" />
         </picture>
         <p class="text-sm mt-4" data-content="footer.location">Cherfan Design — Lebanon</p>
       </div>
@@ -538,7 +534,67 @@
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- Contact Form Modal (match home page) -->
+  <div id="contactModal" class="contact-modal hidden">
+    <div class="contact-modal-backdrop"></div>
+    <div class="contact-modal-content">
+      <button class="contact-modal-close" aria-label="Close contact form">×</button>
+      <h2 class="contact-modal-title">Get in Touch</h2>
+      <!-- Contact details block -->
+      <div class="mb-4 text-sm leading-relaxed">
+        <p class="text-sm text-brand-accent"><span class="font-medium">Contact:</span> +961 9 222 340</p>
+        <p class="text-sm text-brand-accent"><span class="font-medium">Email:</span> info.z@cherfandesign.com</p>
+        <p class="text-sm text-brand-accent"><span class="font-medium">Location:</span> Zouk Highway</p>
+      </div>
+      <h2 class="contact-modal-title">Information Request</h2>
+      <form id="contactForm" class="space-y-4">
+        <input type="hidden" name="access_key" value="9dc81b3a-2ab4-4b96-ac36-a324e55d0ebf">
+    
+        <div>
+            <label class="block text-sm font-medium">First Name *</label>
+            <input type="text" name="first_name" id="firstName"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errFirst">First name is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Last Name *</label>
+            <input type="text" name="last_name" id="lastName"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errLast">Last name is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Email *</label>
+            <input type="email" name="email" id="emailField"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errEmail">Valid email is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Subject *</label>
+            <input type="text" name="subject" id="subjectField"
+                   class="border p-2 w-full rounded" required>
+            <p class="text-red-600 text-xs mt-1 hidden" id="errSubject">Subject is required.</p>
+        </div>
+    
+        <div>
+            <label class="block text-sm font-medium">Notes *</label>
+            <textarea name="message" rows="4"
+                      class="border p-2 w-full rounded" required></textarea>
+        </div>
+    
+        <button type="submit"
+                class="bg-brand-accent text-white px-6 py-3 rounded w-full">
+            Submit
+        </button>
+    
+        <p id="formStatus" class="mt-2 text-center text-sm"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS (load after modal and other markup so shared handlers attach correctly) -->
   <script src="script.js"></script>
   <script src="content-loader.js"></script>
   
@@ -1156,6 +1212,24 @@
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
 
+    .contact-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--brand-accent);
+    }
+
+    /* First title: "Get in Touch" – smaller */
+    .contact-modal-content .contact-modal-title:first-of-type {
+      font-size: 22px;
+    }
+
+    /* Second title: "Information Request" – larger, with extra spacing above */
+    .contact-modal-content .contact-modal-title:nth-of-type(2) {
+      font-size: 30px;
+      margin-top: 3rem;
+    }
+
     .contact-modal-close {
       position: absolute;
       top: 1rem;
@@ -1464,143 +1538,5 @@
     }
   </style>
 
-  <!-- Contact Form Modal -->
-  <div id="contactModal" class="contact-modal hidden">
-    <div class="contact-modal-backdrop"></div>
-    <div class="contact-modal-content">
-      <button class="contact-modal-close" aria-label="Close contact form">×</button>
-      <h2 class="contact-modal-title">Get in Touch</h2>
-      <form id="contactForm" class="contact-form">
-        <div class="contact-form-row">
-          <div class="contact-form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required>
-          </div>
-          <div class="contact-form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required>
-          </div>
-        </div>
-        <div class="contact-form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-          <span class="contact-form-error" id="emailError"></span>
-        </div>
-        <div class="contact-form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required>
-        </div>
-        <div class="contact-form-group">
-          <label for="notes">Notes</label>
-          <textarea id="notes" name="notes" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="contact-form-submit">Submit</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    // Contact Form Modal
-    (function contactFormModal() {
-      const contactButton = document.getElementById('contactButton');
-      const contactNavLink = document.getElementById('contactNavLink');
-      const contactModal = document.getElementById('contactModal');
-      const closeButton = document.querySelector('.contact-modal-close');
-      const backdrop = document.querySelector('.contact-modal-backdrop');
-      const contactForm = document.getElementById('contactForm');
-      const emailInput = document.getElementById('email');
-      const emailError = document.getElementById('emailError');
-
-      function openModal() {
-        contactModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        contactModal.classList.add('hidden');
-        document.body.style.overflow = '';
-        contactForm.reset();
-        emailInput.classList.remove('invalid');
-        emailError.classList.remove('show');
-        emailError.textContent = '';
-      }
-
-      // Email validation
-      function validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      }
-
-      emailInput.addEventListener('blur', () => {
-        const email = emailInput.value.trim();
-        if (email && !validateEmail(email)) {
-          emailInput.classList.add('invalid');
-          emailError.textContent = 'Please enter a valid email address';
-          emailError.classList.add('show');
-        } else {
-          emailInput.classList.remove('invalid');
-          emailError.classList.remove('show');
-          emailError.textContent = '';
-        }
-      });
-
-      emailInput.addEventListener('input', () => {
-        if (emailInput.classList.contains('invalid')) {
-          const email = emailInput.value.trim();
-          if (validateEmail(email)) {
-            emailInput.classList.remove('invalid');
-            emailError.classList.remove('show');
-            emailError.textContent = '';
-          }
-        }
-      });
-
-      // Form submission
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const email = emailInput.value.trim();
-        if (!validateEmail(email)) {
-          emailInput.classList.add('invalid');
-          emailError.textContent = 'Please enter a valid email address';
-          emailError.classList.add('show');
-          emailInput.focus();
-          return;
-        }
-
-        // Here you would typically send the form data to a server
-        // For now, we'll just show an alert and close the modal
-        alert('Thank you for your message! We will get back to you soon.');
-        closeModal();
-      });
-
-      // Open modal
-      if (contactNavLink) {
-        contactNavLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          openModal();
-        });
-      }
-      if (contactButton) {
-        contactButton.addEventListener('click', openModal);
-      }
-
-      // Close modal
-      if (closeButton) {
-        closeButton.addEventListener('click', closeModal);
-      }
-
-      if (backdrop) {
-        backdrop.addEventListener('click', closeModal);
-      }
-
-      // Close on Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
-          closeModal();
-        }
-      });
-    })();
-  </script>
 </body>
 </html>

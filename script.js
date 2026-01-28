@@ -1285,6 +1285,57 @@ if (contactForm) {
   });
 }
 
+// Global Contact Modal close behavior (shared across all pages)
+(function globalContactModalCloseHandler() {
+  const contactModal = document.getElementById('contactModal');
+  if (!contactModal) return;
+
+  const closeButton = contactModal.querySelector('.contact-modal-close');
+  const backdrop = contactModal.querySelector('.contact-modal-backdrop');
+  const form = document.getElementById('contactForm');
+
+  function resetFormState() {
+    if (!form) return;
+    form.reset();
+
+    const status = document.getElementById('formStatus');
+    if (status) {
+      status.innerHTML = "";
+      status.classList.remove("text-green-600", "text-red-600");
+    }
+
+    const errFirst = document.getElementById("errFirst");
+    const errLast = document.getElementById("errLast");
+    const errEmail = document.getElementById("errEmail");
+    const errSubject = document.getElementById("errSubject");
+
+    if (errFirst) errFirst.classList.add("hidden");
+    if (errLast) errLast.classList.add("hidden");
+    if (errEmail) errEmail.classList.add("hidden");
+    if (errSubject) errSubject.classList.add("hidden");
+  }
+
+  function closeModal() {
+    contactModal.classList.add('hidden');
+    document.body.style.overflow = '';
+    resetFormState();
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', closeModal);
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', closeModal);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+})();
+
 // Newsletter Form Submission (Web3Forms)
 (function newsletterFormHandler() {
   function initNewsletterForm() {
@@ -1379,6 +1430,224 @@ if (contactForm) {
       setTimeout(() => {
         if (!footer.classList.contains('visible')) footer.classList.add('visible');
       }, 400);
+    });
+  })();
+
+  // ==== Kids Manifesto Carousel (Kids Bedroom page) ====
+  (function kidsManifestoCarousel() {
+    const section = document.querySelector('.kids-manifesto-section');
+    if (!section) return;
+
+    const viewport = section.querySelector('.kids-manifesto-viewport');
+    const track = section.querySelector('.kids-manifesto-track');
+    const cards = section.querySelectorAll('.kids-manifesto-card');
+    const prevButton = section.querySelector('.kids-manifesto-arrow--prev');
+    const nextButton = section.querySelector('.kids-manifesto-arrow--next');
+
+    if (!viewport || !track || !cards.length || !prevButton || !nextButton) return;
+
+    function getStep() {
+      const firstCard = cards[0];
+      if (!firstCard) return viewport.clientWidth;
+
+      const style = window.getComputedStyle(track);
+      const gap = parseFloat(style.gap) || 0;
+      return firstCard.offsetWidth + gap;
+    }
+
+    function scrollByCards(direction) {
+      const step = getStep();
+      const maxScroll = Math.max(0, track.scrollWidth - viewport.clientWidth);
+      let target = viewport.scrollLeft + direction * step;
+
+      if (target < 0) target = 0;
+      if (target > maxScroll) target = maxScroll;
+
+      viewport.scrollTo({
+        left: target,
+        behavior: 'smooth'
+      });
+    }
+
+    prevButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      scrollByCards(-1);
+    });
+
+    nextButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      scrollByCards(1);
+    });
+
+    // Recalculate step on resize for accurate scrolling
+    window.addEventListener('resize', () => {
+      // No-op body; getStep() is called fresh each time
+    });
+
+    // Product preview modal (per-card, similar to kitchen product preview)
+    const modal = document.getElementById('kidsManifestoModal');
+    const modalImg = document.getElementById('kidsManifestoModalImg');
+    const modalTitle = document.getElementById('kidsManifestoModalTitle');
+    const modalBody = document.getElementById('kidsManifestoModalBody');
+    const modalClose = modal ? modal.querySelector('.kids-manifesto-modal-close') : null;
+    const modalBackdrop = modal ? modal.querySelector('.kids-manifesto-modal-backdrop') : null;
+    const prevImgBtn = modal ? modal.querySelector('.kids-project-modal-prev') : null;
+    const nextImgBtn = modal ? modal.querySelector('.kids-project-modal-next') : null;
+    const thumbsContainer = modal ? document.getElementById('kidsProjectThumbnails') : null;
+
+    // Per-product galleries (4 kids-bedroom-like photos each)
+    const kidsProjects = [
+      {
+        id: 1,
+        images: [
+          'assets/optimized/images/zo709223-1600.webp',
+          'assets/optimized/images/zo709223-1200.webp',
+          'assets/optimized/images/zo709223-800.webp',
+          'assets/optimized/images/zo709223-400.webp'
+        ]
+      },
+      {
+        id: 2,
+        images: [
+          'assets/optimized/images/zo709272-1600.webp',
+          'assets/optimized/images/zo709272-1200.webp',
+          'assets/optimized/images/zo709272-800.webp',
+          'assets/optimized/images/zo709272-400.webp'
+        ]
+      },
+      {
+        id: 3,
+        images: [
+          'assets/optimized/images/0d8a9591-1600.webp',
+          'assets/optimized/images/0d8a9591-1200.webp',
+          'assets/optimized/images/0d8a9591-800.webp',
+          'assets/optimized/images/0d8a9591-400.webp'
+        ]
+      },
+      {
+        id: 4,
+        images: [
+          'assets/optimized/images/0d8a9509-edit-1600.webp',
+          'assets/optimized/images/0d8a9509-edit-1200.webp',
+          'assets/optimized/images/0d8a9509-edit-800.webp',
+          'assets/optimized/images/0d8a9509-edit-400.webp'
+        ]
+      },
+      {
+        id: 5,
+        images: [
+          'assets/optimized/images/0d8a9659-1600.webp',
+          'assets/optimized/images/0d8a9659-1200.webp',
+          'assets/optimized/images/0d8a9659-800.webp',
+          'assets/optimized/images/0d8a9659-400.webp'
+        ]
+      },
+      {
+        id: 6,
+        images: [
+          'assets/optimized/images/0d8a9586-edit-1600.webp',
+          'assets/optimized/images/0d8a9586-edit-1200.webp',
+          'assets/optimized/images/0d8a9586-edit-800.webp',
+          'assets/optimized/images/0d8a9586-edit-400.webp'
+        ]
+      }
+    ];
+
+    let currentProject = null;
+    let currentImageIndex = 0;
+
+    function updateModalImage() {
+      if (!currentProject || !modalImg) return;
+      modalImg.src = currentProject.images[currentImageIndex];
+    }
+
+    function buildThumbnails() {
+      if (!thumbsContainer || !currentProject) return;
+      thumbsContainer.innerHTML = '';
+
+      currentProject.images.forEach((src, index) => {
+        const btn = document.createElement('button');
+        const img = document.createElement('img');
+        img.src = src;
+        if (index === currentImageIndex) {
+          img.classList.add('active');
+        }
+        btn.appendChild(img);
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentImageIndex = index;
+          updateModalImage();
+          buildThumbnails();
+        });
+        thumbsContainer.appendChild(btn);
+      });
+    }
+
+    function openProductModal(card) {
+      if (!modal || !modalImg || !modalTitle || !modalBody) return;
+
+      const cardIndex = Array.from(cards).indexOf(card);
+      currentProject = kidsProjects[cardIndex] || kidsProjects[0];
+      currentImageIndex = 0;
+
+      const imgEl = card.querySelector('.kids-manifesto-image');
+      const titleEl = card.querySelector('.kids-manifesto-card-title');
+      const textEl = card.querySelector('.kids-manifesto-card-text');
+
+      // Use gallery images for modal; alt from card image
+      if (imgEl) {
+        modalImg.alt = imgEl.alt || '';
+      }
+      updateModalImage();
+      buildThumbnails();
+
+      if (titleEl) {
+        modalTitle.textContent = titleEl.textContent || '';
+      }
+      if (textEl) {
+        modalBody.textContent = textEl.textContent || '';
+      }
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      if (!modal) return;
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closeProductModal);
+    }
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener('click', closeProductModal);
+    }
+    if (prevImgBtn) {
+      prevImgBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!currentProject) return;
+        currentImageIndex = (currentImageIndex - 1 + currentProject.images.length) % currentProject.images.length;
+        updateModalImage();
+        buildThumbnails();
+      });
+    }
+    if (nextImgBtn) {
+      nextImgBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!currentProject) return;
+        currentImageIndex = (currentImageIndex + 1) % currentProject.images.length;
+        updateModalImage();
+        buildThumbnails();
+      });
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        openProductModal(card);
+      });
     });
   })();
 
