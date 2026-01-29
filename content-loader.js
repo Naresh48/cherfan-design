@@ -216,21 +216,44 @@
    * Determine current page and load appropriate content
    */
   function init() {
-    const path = window.location.pathname;
-    const page = path.split('/').pop() || 'index.html';
+    // First, check for data-page attribute on body tag (most reliable)
+    const body = document.body;
+    let pageName = body ? body.getAttribute('data-page') : null;
     
-    let pageName = 'home';
-    if (page === 'index.html' || page === '' || page === '/') {
+    if (pageName) {
+      console.log('Content loader: Detected page from data-page attribute:', pageName);
+    } else {
+      // Fallback to URL detection
+      let path = window.location.pathname;
+      
+      // Remove leading/trailing slashes and get the filename
+      path = path.replace(/^\/+|\/+$/g, '');
+      const page = path.split('/').pop() || 'index.html';
+      
+      // Also check window.location.href as fallback
+      const href = window.location.href;
+      const hrefPage = href.split('/').pop().split('?')[0].split('#')[0];
+      
+      // Determine page name
       pageName = 'home';
-    } else if (page === 'kitchen.html') {
-      pageName = 'kitchen';
-    } else if (page === 'master-bedroom.html') {
-      pageName = 'master-bedroom';
-    } else if (page === 'closet.html') {
-      pageName = 'closet';
-    } else if (page === 'kids-bedroom.html') {
-      pageName = 'kids';
+      const currentPage = page || hrefPage || 'index.html';
+      
+      console.log('Content loader: Detected page from URL:', currentPage, 'from path:', path);
+      
+      if (currentPage === 'index.html' || currentPage === '' || currentPage === '/' || !currentPage) {
+        pageName = 'home';
+      } else if (currentPage === 'kitchen.html' || currentPage.includes('kitchen')) {
+        pageName = 'kitchen';
+      } else if (currentPage === 'master-bedroom.html' || currentPage.includes('master-bedroom')) {
+        pageName = 'master-bedroom';
+      } else if (currentPage === 'closet.html' || currentPage.includes('closet')) {
+        pageName = 'closet';
+      } else if (currentPage === 'kids-bedroom.html' || currentPage.includes('kids-bedroom')) {
+        pageName = 'kids';
+      }
     }
+    
+    console.log('Content loader: Loading content for page:', pageName);
 
     // Load content when DOM is ready
     // Track if content has been loaded to avoid duplicate loads
