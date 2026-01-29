@@ -18,6 +18,9 @@
           });
         }
       });
+    } else {
+      // If netlifyIdentity is not available, log an error
+      console.error("Netlify Identity widget failed to load. Please check your Netlify Identity settings.");
     }
   </script>
 </body>
