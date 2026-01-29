@@ -13,10 +13,49 @@
   },
   "textSection": {
     "label": "THE DRIVE TO FIND",
-    "title": "Personal Meaning",
+    "title": "Space for dreamers",
     "description1": "Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves.",
     "description2": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends.",
     "imageBase": "0d8a9591"
+  },
+  "manifestoSection": {
+    "title": "Kids Manifesto",
+    "products": [
+      {
+        "id": 1,
+        "title": "Playful beginnings",
+        "text": "Soft colours, rounded volumes and layered beds shape a room where younger kids feel safe, curious and free to invent their own stories."
+      },
+      {
+        "id": 2,
+        "title": "Growing with character",
+        "text": "A composition for teens that balances study, sleep and storage, leaving space for music, friends and the objects that tell their story."
+      },
+      {
+        "id": 3,
+        "title": "Space to focus",
+        "text": "Integrated desks, lighting and shelving create a calm corner where homework and creativity can live side by side without compromise."
+      },
+      {
+        "id": 4,
+        "title": "Soft-toned calm",
+        "text": "Neutral palettes and tactile fabrics create a sense of quiet that helps children slow down, rest well and wake up inspired."
+      },
+      {
+        "id": 5,
+        "title": "Order made playful",
+        "text": "Generous wardrobes and open niches keep everyday pieces within reach, teaching children that organisation can be easy and beautiful."
+      },
+      {
+        "id": 6,
+        "title": "Details that last",
+        "text": "Precision joinery and durable finishes mean the room can evolve from childhood through teenage years without losing its integrity."
+      }
+    ]
+  },
+  "studySection": {
+    "title": "A dedicated study space",
+    "body": "A workstation that is tailored to their height and rhythm makes it easier to focus, revise and explore new passions. With our modular compositions, shelving and desks grow with your child, keeping books, technology and favourite objects within easy reach while preserving a feeling of calm."
   },
   "footer": {
     "logoImageBase": "whatsapp-image-2025-12-04-at-4.11.49-pm",
