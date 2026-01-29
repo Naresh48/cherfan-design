@@ -98,7 +98,11 @@
    */
   function setTextContent(element, text) {
     if (element && text !== undefined && text !== null) {
-      element.textContent = text;
+      // Convert to string and trim whitespace
+      const textValue = String(text).trim();
+      if (textValue) {
+        element.textContent = textValue;
+      }
     }
   }
 
@@ -118,7 +122,16 @@
     // Use relative path to work in all environments
     const jsonPath = `content/${pageName}.json`;
     
-    fetch(jsonPath)
+    // Add cache-busting timestamp to ensure fresh content
+    const timestamp = new Date().getTime();
+    const url = `${jsonPath}?t=${timestamp}`;
+    
+    fetch(url, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error(`Failed to load ${jsonPath}`);
@@ -126,8 +139,8 @@
         return response.json();
       })
       .then(data => {
+        console.log(`Content loader: Successfully loaded ${jsonPath}`, data);
         injectContent(data);
-        console.log(`Content loader: Successfully loaded ${jsonPath}`);
       })
       .catch(error => {
         // Log error for debugging
@@ -210,12 +223,22 @@
     }
 
     // Load content when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
+    // Use setTimeout to ensure all scripts and DOM elements are fully loaded
+    function loadContent() {
+      // Small delay to ensure all elements are rendered
+      setTimeout(() => {
         loadPageContent(pageName);
-      });
+      }, 100);
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadContent);
+    } else if (document.readyState === 'interactive') {
+      // DOM is ready but resources may still be loading
+      loadContent();
     } else {
-      loadPageContent(pageName);
+      // DOM is fully loaded
+      loadContent();
     }
   }
 
