@@ -115,7 +115,8 @@
    * Load and inject content for a specific page
    */
   function loadPageContent(pageName) {
-    const jsonPath = `/content/${pageName}.json`;
+    // Use relative path to work in all environments
+    const jsonPath = `content/${pageName}.json`;
     
     fetch(jsonPath)
       .then(response => {
@@ -126,10 +127,11 @@
       })
       .then(data => {
         injectContent(data);
+        console.log(`Content loader: Successfully loaded ${jsonPath}`);
       })
       .catch(error => {
-        // Fail silently - maintain backward compatibility
-        console.warn(`Content loader: Could not load ${jsonPath}`, error);
+        // Log error for debugging
+        console.error(`Content loader: Could not load ${jsonPath}`, error);
       });
   }
 
@@ -137,10 +139,16 @@
    * Inject content into HTML elements using data attributes
    */
   function injectContent(data) {
-    if (!data) return;
+    if (!data) {
+      console.warn('Content loader: No data provided to injectContent');
+      return;
+    }
 
     // Process all elements with data-content attribute
-    document.querySelectorAll('[data-content]').forEach(element => {
+    const elements = document.querySelectorAll('[data-content]');
+    console.log(`Content loader: Found ${elements.length} elements with data-content attribute`);
+    
+    elements.forEach(element => {
       const path = element.getAttribute('data-content');
       const value = getNestedValue(data, path);
       if (value !== null) {
@@ -153,6 +161,8 @@
         } else {
           setTextContent(element, value);
         }
+      } else {
+        console.warn(`Content loader: No value found for path: ${path}`);
       }
     });
 
