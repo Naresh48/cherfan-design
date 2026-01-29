@@ -161,23 +161,33 @@
     const elements = document.querySelectorAll('[data-content]');
     console.log(`Content loader: Found ${elements.length} elements with data-content attribute`);
     
+    if (elements.length === 0) {
+      console.warn('Content loader: No elements with data-content attribute found. Page may not be fully loaded.');
+      return;
+    }
+    
+    let updatedCount = 0;
     elements.forEach(element => {
       const path = element.getAttribute('data-content');
       const value = getNestedValue(data, path);
-      if (value !== null) {
+      if (value !== null && value !== undefined) {
         // Special handling for footer contact (needs HTML)
         if (path === 'footer.contact') {
           const contact = data.footer?.contact;
           if (contact) {
             setHTMLContent(element, `${contact.address}<br>${contact.phone}<br>${contact.email}`);
+            updatedCount++;
           }
         } else {
           setTextContent(element, value);
+          updatedCount++;
         }
       } else {
         console.warn(`Content loader: No value found for path: ${path}`);
       }
     });
+    
+    console.log(`Content loader: Updated ${updatedCount} out of ${elements.length} elements`);
 
     // Process all picture elements with data-image attribute
     document.querySelectorAll('picture[data-image]').forEach(pictureEl => {
@@ -223,19 +233,44 @@
     }
 
     // Load content when DOM is ready
-    // Use setTimeout to ensure all scripts and DOM elements are fully loaded
+    // Track if content has been loaded to avoid duplicate loads
+    let contentLoaded = false;
+    
     function loadContent() {
-      // Small delay to ensure all elements are rendered
+      if (contentLoaded) return;
+      
+      // Wait a bit longer to ensure all scripts have run
       setTimeout(() => {
-        loadPageContent(pageName);
-      }, 100);
+        if (!contentLoaded) {
+          loadPageContent(pageName);
+          contentLoaded = true;
+        }
+      }, 300);
     }
     
+    // Try multiple strategies to ensure content loads
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', loadContent);
+      // Also try on window load as backup
+      window.addEventListener('load', () => {
+        if (!contentLoaded) {
+          setTimeout(() => {
+            loadPageContent(pageName);
+            contentLoaded = true;
+          }, 100);
+        }
+      });
     } else if (document.readyState === 'interactive') {
       // DOM is ready but resources may still be loading
       loadContent();
+      window.addEventListener('load', () => {
+        if (!contentLoaded) {
+          setTimeout(() => {
+            loadPageContent(pageName);
+            contentLoaded = true;
+          }, 100);
+        }
+      });
     } else {
       // DOM is fully loaded
       loadContent();
