@@ -5,27 +5,27 @@
   "threeImageSection": {
     "image1": {
       "imageBase": "0d8a9586-edit",
-      "label": "PREMIUM FINISHES",
-      "title": "Calacatta Marble",
-      "description": "Statement centerpiece design"
+      "label": "TIMELESS LEGACY",
+      "title": "Forty Years",
+      "description": "Cultivating homes with soulful intent."
     },
     "image2": {
       "imageBase": "0d8a9592",
-      "label": "ARTISANAL CRAFT",
-      "title": "Signature Island",
-      "description": "Architectural kitchens for cultivated living"
+      "label": "PRIVATE HAVEN",
+      "title": "Interior Poetry",
+      "description": "Small moments that define the home."
     },
     "image3": {
       "imageBase": "0d8a9589",
-      "label": "REFINED DETAILS",
-      "title": "Handcrafted Finish",
-      "description": "Refined joinery & hardware"
+      "label": "BESPOKE VOLUME",
+      "title": "Tailored Shelving",
+      "description": "Refined solutions for luxury living"
     }
   },
   "textSection": {
-    "label": "CRAFTING TIMELESS",
-    "title": "Living Spaces",
-    "description": "With a passion for exceptional craftsmanship, sustainable materials, and timeless design, we bring you thoughtfully curated collections that blend beauty with functionality. At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality."
+    "label": "ARCHITECTURAL LIVING",
+    "title": "A Space for Ritual",
+    "description": "Minimalist in form, yet infinite in feeling. We sculpt kitchens that transcend mere utility, offering a serene and sophisticated gallery for the modern connoisseur. From the weight of the stone to the fluid rhythm of the layout, every detail is curated to elevate the art of the meal and the soul of the home."
   },
   "projects": [
     {

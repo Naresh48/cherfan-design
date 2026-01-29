@@ -14,15 +14,15 @@
     "description": "Through our bespoke mastery, every corner becomes a silent chapter of your unique story."
   },
   "cherfanPlus": {
-    "title": "Cherfan Plus",
-    "description": "Across the Cherfan world, discover new and noteworthy experiences that provide an authentic connection to the soul of a place."
+    "title": "Sculpting Light and Space",
+    "description": "Beyond the blueprint lies a home with a soul. Journey through our curated world—from the heart of the kitchen to the finest living details; designed to elevate every moment."
   },
   "experienceCards": {
     "kitchen": {
       "label": "KITCHEN",
       "imageBase": "0d8a9586-edit",
       "title": "The Heart of the Home",
-      "description": "Kitchens designed for the art of cooking and gathering."
+      "description": "Kitchens imagined as sanctuaries for the soul, where the quiet ritual of creation meets the warmth of a shared life. Every surface is a canvas for your cooking and hosting gatherings."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
@@ -34,7 +34,7 @@
       "label": "CLOSET",
       "imageBase": "0d8a9659",
       "title": "Bespoke Organization",
-      "description": "Curated storage solutions that elevate daily rituals."
+      "description": "Bespoke structures for the organized life, where master-craftsmanship breathes soul into every corner and elevates habits into art."
     },
     "kidsBedroom": {
       "label": "KIDS BEDROOM",
@@ -65,9 +65,9 @@
   },
   "footer": {
     "logoImageBase": "whatsapp-image-2025-12-04-at-4.11.49-pm",
-    "location": "Cherfan Design — Lebanon",
+    "location": "   Cherfan Design — Lebanon",
     "contact": {
-      "address": "Zouk Highway",
+      "address": "Zouk Highway, Lebanon",
       "phone": "+961 9 222 340",
       "email": "info.z@cherfandesign.com"
     },
