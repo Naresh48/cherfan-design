@@ -4,12 +4,12 @@
     "title": "A history built on trust"
   },
   "celebrationSection1": {
-    "imageBase": "0d8a9440-edit",
+    "imageBase": "0d8a9509-edit",
     "title": "The art of living",
     "description": "With over 40 years of mastery, we have evolved a simple vision into a legacy of flawless design. We curate the true art of luxury living, creating spaces that stand as timeless testaments to quality."
   },
   "celebrationSection2": {
-    "imageBase": "0d8a9509-edit",
+    "imageBase": "0d8a9580-edit",
     "title": "Whispered narratives",
     "description": "Through our bespoke mastery, every corner becomes a silent chapter of your unique story."
   },
@@ -26,13 +26,13 @@
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
-      "imageBase": "0d8a9509-edit",
+      "imageBase": "home-pics-processed/13",
       "title": "Refined Retreat",
       "description": "A playground for your design preferences, where life is found in the small things, the colors, and the feelings that surround you."
     },
     "closet": {
       "label": "CLOSET",
-      "imageBase": "0d8a9659",
+      "imageBase": "home-pics-processed/DD123",
       "title": "Bespoke Organization",
       "description": "Bespoke structures for the organized life, where master-craftsmanship breathes soul into every corner and elevates habits into art."
     },
@@ -47,17 +47,17 @@
     "title": "Expressions of the Season",
     "cards": [
       {
-        "imageBase": "0d8a9586-edit",
+        "imageBase": "home-pics-processed/DSC09139",
         "label": "Engineered for perfection",
         "description": "Our 5,000 square meter factory blends advanced machinery with artisanal mastery to ensure the flawless execution of your most ambitious designs."
       },
       {
-        "imageBase": "zo709223",
+        "imageBase": "home-pics-processed/DSC08840",
         "label": "Quiet Wonder",
         "description": "Serene interiors that invite calm and warmth."
       },
       {
-        "imageBase": "0d8a9659",
+        "imageBase": "home-pics-processed/CD123",
         "label": "Celestial Moments",
         "description": "Spaces tuned for gatherings and celebration."
       }
