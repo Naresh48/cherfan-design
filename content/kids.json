@@ -12,10 +12,10 @@
     }
   },
   "textSection": {
-    "label": "THE DRIVE TO FIND",
-    "title": "Space for dreamers",
-    "description1": "Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves.",
-    "description2": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends.",
+    "label": "The Architecture of Growth",
+    "title": "The Architecture of Growth",
+    "description1": "A bedroom is the first environment a person truly owns. We design spaces that honor the imagination of childhood while providing the structure needed for the years that follow. By focusing on honest materials and adaptable layouts, we create a sanctuary where a child can feel grounded as they explore their world.",
+    "description2": "At Cherfan Design, we believe quality should begin at the start. We build interiors that evolve alongside their inhabitants, moving beyond temporary trends to create a lasting foundation. Whether it is a room for play or a space for study, our work provides the calm and clarity needed for the next generation to thrive.",
     "imageBase": "0d8a9591"
   },
   "manifestoSection": {
@@ -23,18 +23,18 @@
     "products": [
       {
         "id": 1,
-        "title": "Leo's Realms",
-        "text": "Soft colours, rounded volumes and layered beds shape a room where younger kids feel safe, curious and free to invent their own stories."
+        "title": "Leo's Realm",
+        "text": "Parents choose neutral tones to create a quiet backdrop for growth. This intentional space provides the calm a child needs to focus and discover themselves."
       },
       {
         "id": 2,
-        "title": "Arlo's Territory",
-        "text": "A composition for teens that balances study, sleep and storage, leaving space for music, friends and the objects that tell their story."
+        "title": "Arlo & Mate's Space",
+        "text": "The design is born from the intent to foster connection while respecting personal boundaries. It provides a durable, thoughtful foundation where siblings can grow together without outgrowing their surroundings."
       },
       {
         "id": 3,
         "title": "Arlo's Archive",
-        "text": "Integrated desks, lighting and shelving create a calm corner where homework and creativity can live side by side without compromise."
+        "text": "Wood and blue accents are chosen for structure and belonging. This layout fosters connection while giving every child a personal place to call their own."
       },
       {
         "id": 4,
@@ -44,12 +44,12 @@
       {
         "id": 5,
         "title": "Mia's Horizon",
-        "text": "Generous wardrobes and open niches keep everyday pieces within reach, teaching children that organisation can be easy and beautiful."
+        "text": "Floral accents and light wood create a nurturing sanctuary for rest and play. This trundle bed and storage offer a flexible foundation for growth."
       },
       {
         "id": 6,
         "title": "Steven's Haven",
-        "text": "Precision joinery and durable finishes mean the room can evolve from childhood through teenage years without losing its integrity."
+        "text": "Neutral tones and tactile textures provide a quiet backdrop for a child’s personality to emerge. These choices reflect a commitment to a space that remains relevant as the child grows."
       }
     ]
   },
