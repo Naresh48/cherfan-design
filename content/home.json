@@ -5,12 +5,12 @@
   },
   "celebrationSection1": {
     "imageBase": "0d8a9509-edit",
-    "title": "The art of living",
-    "description": "With over 40 years of mastery, we have evolved a simple vision into a legacy of flawless design. We curate the true art of luxury living, creating spaces that stand as timeless testaments to quality."
+    "title": "Four Decades of Design",
+    "description": "With 40 years of experience, we create living spaces that balance luxury with lasting quality. Our work is built to stand the test of time."
   },
   "celebrationSection2": {
     "imageBase": "0d8a9580-edit",
-    "title": "Whispered narratives",
+    "title": "Art of living",
     "description": "Through our bespoke mastery, every corner becomes a silent chapter of your unique story."
   },
   "cherfanPlus": {
@@ -22,7 +22,7 @@
       "label": "KITCHEN",
       "imageBase": "0d8a9586-edit",
       "title": "The Heart of the Home",
-      "description": "Kitchens imagined as sanctuaries for the soul, where the quiet ritual of creation meets the warmth of a shared life. Every surface is a canvas for your cooking and hosting gatherings."
+      "description": "Kitchens imagined as sanctuaries for the soul, where the quiet ritual of creation meets the warmth of a shared life."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
@@ -44,22 +44,22 @@
     }
   },
   "expressions": {
-    "title": "Expressions of the Season",
+    "title": "The Process Behind the Spaces",
     "cards": [
       {
         "imageBase": "home-pics-processed/DSC09139",
-        "label": "Engineered for perfection",
-        "description": "Our 5,000 square meter factory blends advanced machinery with artisanal mastery to ensure the flawless execution of your most ambitious designs."
+        "label": "The Craft",
+        "description": "Our team brings decades of technical knowledge to every piece we build. Skilled hands ensure that every detail meets our standards for durability and finish."
       },
       {
         "imageBase": "home-pics-processed/DSC08840",
-        "label": "Quiet Wonder",
-        "description": "Serene interiors that invite calm and warmth."
+        "label": "The Production",
+        "description": "Our 5,000 square meter factory blends advanced machinery with artisanal mastery to ensure flawless execution."
       },
       {
         "imageBase": "home-pics-processed/CD123",
-        "label": "Celestial Moments",
-        "description": "Spaces tuned for gatherings and celebration."
+        "label": "The Logistics",
+        "description": "Our dedicated warehouse and fleet manage the final stages of the journey. We maintain full control over storage and delivery to ensure every project arrives safely"
       }
     ]
   },
