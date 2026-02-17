@@ -21,26 +21,26 @@
     "kitchen": {
       "label": "KITCHEN",
       "imageBase": "0d8a9586-edit",
-      "title": "The Heart of the Home",
-      "description": "Kitchens imagined as sanctuaries for the soul, where the quiet ritual of creation meets the warmth of a shared life."
+      "title": "Culinary Excellence",
+      "description": "Discover kitchens designed for the art of cooking and gathering."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
       "imageBase": "home-pics-processed/13",
-      "title": "Master Bedroom",
-      "description": "A playground for your design preferences, where life is found in the small things, the colors, and the feelings that surround you."
+      "title": "Refined Retreat",
+      "description": "Serene spaces designed for rest and renewal.Calm and luxurious."
     },
     "closet": {
       "label": "CLOSET",
       "imageBase": "home-pics-processed/DD123",
-      "title": "Closet",
-      "description": "Bespoke structures for the organized life, where master-craftsmanship breathes soul into every corner and elevates habits into art."
+      "title": "Bespoke Organization",
+      "description": "Curated storage solutions that elevate daily rituals."
     },
     "kidsBedroom": {
       "label": "KIDS BEDROOM",
       "imageBase": "zo709223",
-      "title": "Kids Bedroom",
-      "description": "A child's room is more than a place to sleep. We create safe, enchanting worlds where the little ones can dream, create, and own their space."
+      "title": "Playful Living",
+      "description": "Spaces that inspire creativity and grow with childhood."
     }
   },
   "expressions": {
