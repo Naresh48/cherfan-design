@@ -30,63 +30,63 @@
   "textSection": {
     "label": "ARCHITECTURAL LIVING",
     "title": "A Space for Ritual",
-    "description": "Minimalist in form, yet infinite in feeling. We sculpt kitchens that transcend mere utility, offering a serene and sophisticated gallery for the modern connoisseur. From the weight of the stone to the fluid rhythm of the layout, every detail is curated to elevate the art of the meal and the soul of the home."
+    "description": "Minimalist in form, yet infinite in feeling. Design that doesn't just fill a room, but defines how you live within it. We use stone and light to build spaces that transcend trends. Every layout is a study in proportion, curated to bring order, beauty, and a sense of permanence to your life. "
   },
   "projects": [
     {
       "id": 1,
       "imageBase": "0d8a9586-edit",
-      "title": "Marai-C02",
+      "title": "Marai A12",
       "description": "A stunning kitchen design featuring premium Calacatta marble countertops and custom cabinetry. This elegant space combines functionality with sophisticated aesthetics, creating the perfect environment for culinary excellence and entertaining."
     },
     {
       "id": 2,
       "imageBase": "0d8a9592",
-      "title": "Ligno-C01",
+      "title": "Ligno Z23",
       "description": "Modern kitchen design with a signature island as the centerpiece. This architectural kitchen showcases artisanal craftsmanship and refined details, perfect for the cultivated lifestyle."
     },
     {
       "id": 3,
       "imageBase": "0d8a9589",
-      "title": "Project AD",
+      "title": "Layera AM1",
       "description": "Luxurious kitchen featuring handcrafted finishes and premium materials. Every detail has been carefully considered to create a space that reflects timeless elegance and superior quality."
     },
     {
       "id": 4,
       "imageBase": "0d8a9509-edit",
-      "title": "MIRAI C01",
+      "title": "Mirai C2",
       "description": "Sophisticated kitchen design with refined joinery and hardware. This space embodies the perfect balance between form and function, creating an atmosphere of refined elegance."
     },
     {
       "id": 5,
       "imageBase": "0d8a9659",
-      "title": "Project TR",
+      "title": "Troy B4",
       "description": "Elegant kitchen design featuring bespoke storage solutions and premium finishes. This thoughtfully curated space blends beauty with functionality, creating an exceptional culinary environment."
     },
     {
       "id": 6,
       "imageBase": "0d8a9601",
-      "title": "Cimi-01a",
+      "title": "Cimi 01",
       "description": "Contemporary kitchen with exceptional craftsmanship and sustainable materials. This design showcases timeless elegance while maintaining the highest standards of quality and sophistication."
     },
     {
       "id": 7,
       "imageBase": "0d8a9620",
-      "title": "Project AM02",
+      "title": "Taloy D5",
       "description": "Luxury kitchen design that transcends trends. This exceptional space is a testament to our commitment to creating interiors that seamlessly fuse artistry with functionality."
     },
     {
       "id": 8,
       "imageBase": "0d8a9625",
-      "title": "Project IU12",
+      "title": "Glory C6",
       "description": "Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence."
     }
   ],
   "finalTextSection": {
-    "label": "THE DRIVE TO FIND",
-    "title": "Personal Meaning",
-    "description1": "Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves.",
-    "description2": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends.",
+    "label": "DEFINED BY DETAIL",
+    "title": "The Home’s Anchor",
+    "description1": "A kitchen should transcend its utility to become the soul of the house. We use proportion and texture to build spaces that stand apart from passing trends, offering a sense of order and calm to your day. By balancing raw materials with precise lines, we create a sanctuary that feels both grounded and light.",
+    "description2": "At Cherfan Design, we do more than install cabinets and stone. We curate environments that enhance your well-being and honor your way of life. Our work is a commitment to permanence, ensuring the heart of your home remains a source of inspiration for years to come.",
     "imageBase": "0d8a9591"
   },
   "footer": {
