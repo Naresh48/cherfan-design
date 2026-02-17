@@ -21,25 +21,25 @@
     "kitchen": {
       "label": "KITCHEN",
       "imageBase": "0d8a9586-edit",
-      "title": "Culinary Excellence",
+      "title": "Kitchen",
       "description": "Discover kitchens designed for the art of cooking and gathering."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
       "imageBase": "home-pics-processed/13",
-      "title": "Refined Retreat",
+      "title": "Master Bedroom",
       "description": "Serene spaces designed for rest and renewal.Calm and luxurious."
     },
     "closet": {
       "label": "CLOSET",
       "imageBase": "home-pics-processed/DD123",
-      "title": "Bespoke Organization",
+      "title": "Closet",
       "description": "Curated storage solutions that elevate daily rituals."
     },
     "kidsBedroom": {
       "label": "KIDS BEDROOM",
       "imageBase": "zo709223",
-      "title": "Playful Living",
+      "title": "Kids Bedroom",
       "description": "Spaces that inspire creativity and grow with childhood."
     }
   },
