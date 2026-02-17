@@ -43,9 +43,9 @@
           <div class="relative flex-1 flex justify-center">
             <ul class="flex gap-10 items-center text-sm md:text-base font-medium" role="tablist" aria-label="Primary">
               <li><a href="kitchen.html" class="nav-link" data-target="kitchen">Kitchen</a></li>
+              <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
               <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedroom</a></li>
               <li><a href="closet.html" class="nav-link" data-target="closet">Closet</a></li>
-              <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedroom</a></li>
               <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
               <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
             </ul>
@@ -69,13 +69,28 @@
     <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/25"></div>
   </section>
 
+  <!-- Centered Text Section -->
+  <section class="py-16 md:py-20 lg:py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 scroll-reveal-text" data-content="heroTextSection.label">CULINARY EXCELLENCE</p>
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1] scroll-reveal-text" data-content="heroTextSection.title">
+          The Heart of the Home
+        </h2>
+        <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal scroll-reveal-text" data-content="heroTextSection.description">
+          Kitchens imagined as sanctuaries for the soul, where the quiet ritual of creation meets the warmth of a shared life. Every surface is a canvas for your cooking and hosting gatherings.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- 3 Images in Row with Text Overlay -->
-  <section class="py-2 md:py-3 bg-white">
-    <div class="w-full">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
+  <section class="py-2 md:py-3 bg-white kitchen-three-images-section">
+    <div class="w-full max-w-[1200px] mx-auto px-0">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <!-- Image 1 -->
-        <div class="relative overflow-hidden aspect-[4/5] group">
-          <picture data-image="threeImageSection.image1.imageBase">
+        <div class="relative overflow-hidden aspect-square group w-full">
+          <picture data-image="threeImageSection.image1.imageBase" class="block w-full h-full">
             <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -89,8 +104,8 @@
         </div>
 
         <!-- Image 2 -->
-        <div class="relative overflow-hidden aspect-[4/5] group">
-          <picture data-image="threeImageSection.image2.imageBase">
+        <div class="relative overflow-hidden aspect-square group w-full">
+          <picture data-image="threeImageSection.image2.imageBase" class="block w-full h-full">
             <source type="image/avif" srcset="assets/optimized/images/0d8a9592-1600.avif 1600w, assets/optimized/images/0d8a9592-1200.avif 1200w, assets/optimized/images/0d8a9592-800.avif 800w, assets/optimized/images/0d8a9592-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/optimized/images/0d8a9592-1600.webp 1600w, assets/optimized/images/0d8a9592-1200.webp 1200w, assets/optimized/images/0d8a9592-800.webp 800w, assets/optimized/images/0d8a9592-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/optimized/images/0d8a9592-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -104,8 +119,8 @@
         </div>
 
         <!-- Image 3 -->
-        <div class="relative overflow-hidden aspect-[4/5] group">
-          <picture data-image="threeImageSection.image3.imageBase">
+        <div class="relative overflow-hidden aspect-square group w-full">
+          <picture data-image="threeImageSection.image3.imageBase" class="block w-full h-full">
             <source type="image/avif" srcset="assets/optimized/images/0d8a9589-1600.avif 1600w, assets/optimized/images/0d8a9589-1200.avif 1200w, assets/optimized/images/0d8a9589-800.avif 800w, assets/optimized/images/0d8a9589-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/optimized/images/0d8a9589-1600.webp 1600w, assets/optimized/images/0d8a9589-1200.webp 1200w, assets/optimized/images/0d8a9589-800.webp 800w, assets/optimized/images/0d8a9589-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/optimized/images/0d8a9589-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -452,7 +467,7 @@
   </section>
 
   <!-- Footer (Same as home page) -->
-  <footer id="contact" class="border-t border-white/40 mt-12">
+  <footer id="contact" class="border-t border-white/40 mt-12" style="background-color: #E8D9C8;">
     <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
         <picture>
@@ -1370,7 +1385,7 @@
     .project-modal-content {
       position: relative;
       z-index: 1;
-      background: white;
+      background: var(--brand-bg) !important;
       border-radius: 12px;
       max-width: 1400px;
       width: 100%;

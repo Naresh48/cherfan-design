@@ -965,6 +965,61 @@ footer#contact.visible {
   }
 }
 
+/* "Light and Space" section – hide labels above cards */
+p[data-content="experienceCards.kitchen.label"],
+p[data-content="experienceCards.masterBedroom.label"],
+p[data-content="experienceCards.closet.label"],
+p[data-content="experienceCards.kidsBedroom.label"] {
+  display: none !important;
+}
+
+/* "Light and Space" section – match card titles to "Defined by legacy" styling */
+h3[data-content="experienceCards.kitchen.title"],
+h3[data-content="experienceCards.masterBedroom.title"],
+h3[data-content="experienceCards.closet.title"],
+h3[data-content="experienceCards.kidsBedroom.title"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 9px !important; /* Match "Defined by legacy" */
+  font-weight: 300 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #6b7280 !important;
+  margin-bottom: 0.75rem !important;
+  display: block !important;
+  line-height: 1.2 !important;
+}
+
+@media (min-width: 768px) {
+  h3[data-content="experienceCards.kitchen.title"],
+  h3[data-content="experienceCards.masterBedroom.title"],
+  h3[data-content="experienceCards.closet.title"],
+  h3[data-content="experienceCards.kidsBedroom.title"] {
+    font-size: 10px !important; /* Match "Defined by legacy" */
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* "Light and Space" section – match paragraph text to other sections */
+p[data-content="experienceCards.kitchen.description"],
+p[data-content="experienceCards.masterBedroom.description"],
+p[data-content="experienceCards.closet.description"],
+p[data-content="experienceCards.kidsBedroom.description"] {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important; /* Match other section paragraph text */
+}
+
+@media (min-width: 768px) {
+  p[data-content="experienceCards.kitchen.description"],
+  p[data-content="experienceCards.masterBedroom.description"],
+  p[data-content="experienceCards.closet.description"],
+  p[data-content="experienceCards.kidsBedroom.description"] {
+    font-size: 11px !important; /* Match other section paragraph text */
+  }
+}
+
 /* Discover More Link - Aman Style */
 .discover-more-link {
   font-size: 13px;
@@ -1156,8 +1211,8 @@ footer[id="contact"] > div > div:first-child img {
 footer#contact,
 footer[id="contact"] {
   /* Footer is one shade darker than the global background for subtle contrast */
-  background-color: #D9C7B1 !important;
-  background: #D9C7B1 !important;
+  background-color: #E8D9C8 !important;
+  background: #E8D9C8 !important;
   color: #1f1b18 !important;
   border-top: none !important;
   border-color: transparent !important;
@@ -1253,6 +1308,13 @@ footer#contact button:hover {
   position: relative; 
   display: inline-block;
   transition: color 0.2s ease;
+  /* Match "Defined by legacy" (global-celebration-label) typography:
+     Inter, small uppercase label style */
+  font-family: 'Inter', sans-serif;
+  font-size: 10px !important;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 /* Removed hover underline (::after) - using sliding underline instead */
@@ -1463,6 +1525,31 @@ video::-webkit-media-controls-overlay-play-button {
   }
 }
 
+/* Make "Light and Space" (cherfanPlus.title) match
+   "The art of living"/"Whispered narratives" title styling */
+h6[data-content="cherfanPlus.title"] {
+  font-family: 'Playfair Display', serif !important;
+  /* Match celebrationSection1/2.title sizes (after 20% reduction) */
+  font-size: 19px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+  color: var(--brand-accent) !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+
+@media (min-width: 768px) {
+  h6[data-content="cherfanPlus.title"] {
+    font-size: 22px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  h6[data-content="cherfanPlus.title"] {
+    font-size: 26px !important;
+  }
+}
+
 /* Celebration Image Sections */
 .celebration-image-section {
   background-color: var(--brand-bg);
@@ -1494,6 +1581,47 @@ video::-webkit-media-controls-overlay-play-button {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   color: #4b5563;
+}
+
+/* "A history built on trust" section – make
+   "The art of living" & "Whispered narratives" titles 20% smaller,
+   and their body text 30% smaller */
+h3[data-content="celebrationSection1.title"],
+h3[data-content="celebrationSection2.title"] {
+  font-size: 19px !important; /* ~20% smaller than 24px */
+}
+
+@media (min-width: 768px) {
+  h3[data-content="celebrationSection1.title"],
+  h3[data-content="celebrationSection2.title"] {
+    font-size: 22px !important; /* ~20% smaller than 28px */
+  }
+}
+
+@media (min-width: 1024px) {
+  h3[data-content="celebrationSection1.title"],
+  h3[data-content="celebrationSection2.title"] {
+    font-size: 26px !important; /* ~20% smaller than 32px */
+  }
+}
+
+p[data-content="celebrationSection1.description"],
+p[data-content="celebrationSection2.description"],
+p[data-content="cherfanPlus.description"] {
+  /* Match "Light and Space" description: same font & size (~30% smaller) */
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important; /* ~30% smaller than 15px */
+}
+
+@media (min-width: 768px) {
+  p[data-content="celebrationSection1.description"],
+  p[data-content="celebrationSection2.description"],
+  p[data-content="cherfanPlus.description"] {
+    font-size: 11px !important;
+  }
 }
 
 /* Expressions of the Season */
@@ -1538,11 +1666,304 @@ video::-webkit-media-controls-overlay-play-button {
   color: var(--brand-accent);
 }
 
+/* "Expressions of the Season" labels – match "Defined by legacy" styling */
+.expression-label,
+p[data-content="expressions.cards[0].label"],
+p[data-content="expressions.cards[1].label"],
+p[data-content="expressions.cards[2].label"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 9px !important; /* Match "Defined by legacy" */
+  font-weight: 300 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #6b7280 !important;
+  margin-bottom: 0.75rem !important;
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .expression-label,
+  p[data-content="expressions.cards[0].label"],
+  p[data-content="expressions.cards[1].label"],
+  p[data-content="expressions.cards[2].label"] {
+    font-size: 10px !important; /* Match "Defined by legacy" */
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Kitchen page 3 images section – force perfect squares and remove side padding */
+.kitchen-three-images-section > div.max-w-\[1200px\] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Hide labels in kitchen page 3 images section */
+.kitchen-three-images-section p[data-content="threeImageSection.image1.label"],
+.kitchen-three-images-section p[data-content="threeImageSection.image2.label"],
+.kitchen-three-images-section p[data-content="threeImageSection.image3.label"] {
+  display: none !important;
+}
+
+/* Force perfect square */
+.kitchen-three-images-section .grid > div[class*="aspect-square"] {
+  aspect-ratio: 1 / 1 !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+/* Ensure picture and img fill the square */
+.kitchen-three-images-section .grid > div[class*="aspect-square"] picture {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.kitchen-three-images-section .grid > div[class*="aspect-square"] picture img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Kitchen page – match home page title and paragraph styles */
+/* Labels (like "PREMIUM FINISHES", "CRAFTING TIMELESS") */
+p[data-content="threeImageSection.image1.label"],
+p[data-content="threeImageSection.image2.label"],
+p[data-content="threeImageSection.image3.label"],
+p[data-content="textSection.label"],
+p[data-content="finalTextSection.label"],
+p[data-content="heroTextSection.label"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 9px !important; /* Match "Defined by legacy" */
+  font-weight: 300 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #6b7280 !important;
+}
+
+@media (min-width: 768px) {
+  p[data-content="threeImageSection.image1.label"],
+  p[data-content="threeImageSection.image2.label"],
+  p[data-content="threeImageSection.image3.label"],
+  p[data-content="textSection.label"],
+  p[data-content="finalTextSection.label"],
+  p[data-content="heroTextSection.label"] {
+    font-size: 10px !important; /* Match "Defined by legacy" */
+  }
+}
+
+/* 3-image section titles (h3) – match "The art of living" style */
+h3[data-content="threeImageSection.image1.title"],
+h3[data-content="threeImageSection.image2.title"],
+h3[data-content="threeImageSection.image3.title"] {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 19px !important; /* Match "The art of living" */
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+}
+
+@media (min-width: 768px) {
+  h3[data-content="threeImageSection.image1.title"],
+  h3[data-content="threeImageSection.image2.title"],
+  h3[data-content="threeImageSection.image3.title"] {
+    font-size: 22px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  h3[data-content="threeImageSection.image1.title"],
+  h3[data-content="threeImageSection.image2.title"],
+  h3[data-content="threeImageSection.image3.title"] {
+    font-size: 26px !important;
+  }
+}
+
+/* 3-image section descriptions – match paragraph text */
+p[data-content="threeImageSection.image1.description"],
+p[data-content="threeImageSection.image2.description"],
+p[data-content="threeImageSection.image3.description"] {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #ffffff !important; /* Keep white for overlay */
+  line-height: 1.7 !important;
+  font-size: 10px !important; /* Match other section paragraph text */
+}
+
+@media (min-width: 768px) {
+  p[data-content="threeImageSection.image1.description"],
+  p[data-content="threeImageSection.image2.description"],
+  p[data-content="threeImageSection.image3.description"] {
+    font-size: 11px !important;
+  }
+}
+
+/* Main section titles (h2) – match "A history built on trust" */
+h2[data-content="textSection.title"],
+h2[data-content="finalTextSection.title"],
+h2[data-content="heroTextSection.title"] {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 28px !important; /* Match "A history built on trust" */
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+  color: var(--brand-accent) !important;
+}
+
+@media (min-width: 768px) {
+  h2[data-content="textSection.title"],
+  h2[data-content="finalTextSection.title"],
+  h2[data-content="heroTextSection.title"] {
+    font-size: 36px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2[data-content="textSection.title"],
+  h2[data-content="finalTextSection.title"],
+  h2[data-content="heroTextSection.title"] {
+    font-size: 42px !important;
+  }
+}
+
+/* Main section descriptions – match paragraph text */
+p[data-content="textSection.description"],
+p[data-content="finalTextSection.description"],
+p[data-content="finalTextSection.description1"],
+p[data-content="finalTextSection.description2"],
+p[data-content="heroTextSection.description"] {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important; /* Match other section paragraph text */
+}
+
+@media (min-width: 768px) {
+  p[data-content="textSection.description"],
+  p[data-content="finalTextSection.description"],
+  p[data-content="finalTextSection.description1"],
+  p[data-content="finalTextSection.description2"],
+  p[data-content="heroTextSection.description"] {
+    font-size: 11px !important;
+  }
+}
+
+/* About Us page – match home and kitchen page styles */
+/* Labels (like "OUR STORY", "OUR PHILOSOPHY", "WHAT DRIVES US") */
+/* Target paragraphs with uppercase and tracking in about-us page sections */
+section p.uppercase.tracking-\[0\.2em\],
+section p[class*="uppercase"][class*="tracking"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 9px !important; /* Match "Defined by legacy" */
+  font-weight: 300 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #6b7280 !important;
+}
+
+@media (min-width: 768px) {
+  section p.uppercase.tracking-\[0\.2em\],
+  section p[class*="uppercase"][class*="tracking"] {
+    font-size: 10px !important; /* Match "Defined by legacy" */
+  }
+}
+
+/* Main section titles (h2) – match "A history built on trust" */
+/* Target h2 elements in sections (excluding hero section) */
+section:not(:first-of-type) h2,
+section h2[style*="Playfair Display"] {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 28px !important; /* Match "A history built on trust" */
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+  color: var(--brand-accent) !important;
+}
+
+@media (min-width: 768px) {
+  section:not(:first-of-type) h2,
+  section h2[style*="Playfair Display"] {
+    font-size: 36px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section:not(:first-of-type) h2,
+  section h2[style*="Playfair Display"] {
+    font-size: 42px !important;
+  }
+}
+
+/* Sub-section titles (h3) – match "The art of living" style */
+section h3[style*="Playfair Display"] {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 19px !important; /* Match "The art of living" */
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+  color: var(--brand-accent) !important;
+}
+
+@media (min-width: 768px) {
+  section h3[style*="Playfair Display"] {
+    font-size: 22px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section h3[style*="Playfair Display"] {
+    font-size: 26px !important;
+  }
+}
+
+/* Paragraph text – match other sections */
+/* Target paragraphs with text-gray-700 in sections (excluding hero) */
+section:not(:first-of-type) p.text-gray-700,
+section p.text-gray-700[class*="leading"] {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important; /* Match other section paragraph text */
+}
+
+@media (min-width: 768px) {
+  section:not(:first-of-type) p.text-gray-700,
+  section p.text-gray-700[class*="leading"] {
+    font-size: 11px !important;
+  }
+}
+
 .expression-desc {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 300;
   color: #4b5563;
+}
+
+/* "Expressions of the Season" description text – match other section paragraph text */
+p[data-content="expressions.cards[0].description"],
+p[data-content="expressions.cards[1].description"],
+p[data-content="expressions.cards[2].description"],
+.expression-desc {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important; /* Match other section paragraph text */
+}
+
+@media (min-width: 768px) {
+  p[data-content="expressions.cards[0].description"],
+  p[data-content="expressions.cards[1].description"],
+  p[data-content="expressions.cards[2].description"],
+  .expression-desc {
+    font-size: 11px !important; /* Match other section paragraph text */
+  }
 }
 
 /* Expressions of the Season (Aman style) */
@@ -1615,6 +2036,29 @@ video::-webkit-media-controls-overlay-play-button {
 
 @media (min-width: 1024px) {
   .expressions-title { font-size: 64px; }
+}
+
+/* "Expressions of the Season" title – match "Light and Space" styling */
+h3[data-content="expressions.title"] {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 19px !important; /* Match "Light and Space" */
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+  color: var(--brand-accent) !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+
+@media (min-width: 768px) {
+  h3[data-content="expressions.title"] {
+    font-size: 22px !important; /* Match "Light and Space" */
+  }
+}
+
+@media (min-width: 1024px) {
+  h3[data-content="expressions.title"] {
+    font-size: 26px !important; /* Match "Light and Space" */
+  }
 }
 
 .kids-philosophy-section {
@@ -1880,10 +2324,10 @@ video::-webkit-media-controls-overlay-play-button {
   z-index: 1;
   background: var(--brand-bg);
   border-radius: 16px;
-  padding: 2rem;
-  max-width: 1200px;
+  padding: 3rem;
+  max-width: 1600px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 95vh;
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
@@ -1891,7 +2335,7 @@ video::-webkit-media-controls-overlay-play-button {
 .kids-project-modal-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 2.5rem;
+  gap: 3.5rem;
   align-items: flex-start;
 }
 
@@ -1958,7 +2402,7 @@ video::-webkit-media-controls-overlay-play-button {
 
 .kids-project-modal-title {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 300;
   letter-spacing: -0.01em;
   color: var(--brand-accent);
@@ -1971,7 +2415,7 @@ video::-webkit-media-controls-overlay-play-button {
 
 .kids-project-description-text {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   font-weight: 300;
   color: #4b5563;
@@ -2353,8 +2797,9 @@ video::-webkit-media-controls-overlay-play-button {
     gap: 0.5rem;
   }
 
-  section .grid.grid-cols-1.md\:grid-cols-3 > div {
-    aspect-ratio: 4/5;
+  /* Override: Force square aspect ratio for kitchen page 3 images */
+  .kitchen-three-images-section .grid.grid-cols-1.md\:grid-cols-3 > div {
+    aspect-ratio: 1 / 1 !important;
   }
 
   section .grid.grid-cols-1.md\:grid-cols-3 .absolute {

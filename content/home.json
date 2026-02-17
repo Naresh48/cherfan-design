@@ -14,33 +14,33 @@
     "description": "Through our bespoke mastery, every corner becomes a silent chapter of your unique story."
   },
   "cherfanPlus": {
-    "title": "Sculpting Light and Space",
-    "description": "Beyond the blueprint lies a home with a soul. Journey through our curated world—from the heart of the kitchen to the finest living details; designed to elevate every moment."
+  "title": "Light and Space",
+  "description": "Beyond the blueprint lies a home with a soul. Journey through our curated world—from the heart of the kitchen to the finest living details; designed to elevate every moment."
   },
   "experienceCards": {
     "kitchen": {
       "label": "KITCHEN",
       "imageBase": "0d8a9586-edit",
-      "title": "The Heart of the Home",
+      "title": "Kitchen",
       "description": "Kitchens imagined as sanctuaries for the soul, where the quiet ritual of creation meets the warmth of a shared life. Every surface is a canvas for your cooking and hosting gatherings."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
       "imageBase": "home-pics-processed/13",
-      "title": "Refined Retreat",
+      "title": "Master Bedroom",
       "description": "A playground for your design preferences, where life is found in the small things, the colors, and the feelings that surround you."
     },
     "closet": {
       "label": "CLOSET",
       "imageBase": "home-pics-processed/DD123",
-      "title": "Bespoke Organization",
+      "title": "Closet",
       "description": "Bespoke structures for the organized life, where master-craftsmanship breathes soul into every corner and elevates habits into art."
     },
     "kidsBedroom": {
       "label": "KIDS BEDROOM",
       "imageBase": "zo709223",
-      "title": "Where Dreams Begin",
-      "description": "A child’s room is more than a place to sleep. We create safe, enchanting worlds where the little ones can dream, create, and own their space."
+      "title": "Kids Bedroom",
+      "description": "A child's room is more than a place to sleep. We create safe, enchanting worlds where the little ones can dream, create, and own their space."
     }
   },
   "expressions": {

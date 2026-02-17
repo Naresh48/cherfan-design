@@ -2,6 +2,11 @@
   "hero": {
     "imageBase": "0d8a9591"
   },
+  "heroTextSection": {
+    "label": "CULINARY EXCELLENCE",
+    "title": "The Heart of the Home",
+    "description": "Kitchens imagined as sanctuaries for the soul, where the quiet ritual of creation meets the warmth of a shared life. Every surface is a canvas for your cooking and hosting gatherings."
+  },
   "threeImageSection": {
     "image1": {
       "imageBase": "0d8a9586-edit",

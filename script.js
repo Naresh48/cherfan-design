@@ -1649,5 +1649,78 @@ if (contactForm) {
         openProductModal(card);
       });
     });
+
+    // Hero split section - open modal on click
+    const heroSplitItems = document.querySelectorAll('.kids-split-item[data-hero-section]');
+    if (heroSplitItems.length > 0 && modal) {
+      // Hero section image galleries
+      const heroProjects = {
+        left: {
+          images: [
+            'assets/optimized/images/zo709223-1600.webp',
+            'assets/optimized/images/zo709223-1200.webp',
+            'assets/optimized/images/zo709223-800.webp',
+            'assets/optimized/images/zo709223-400.webp'
+          ],
+          title: '4-12 years',
+          description: 'Bedrooms for dreamers - Discover bedrooms for kids'
+        },
+        right: {
+          images: [
+            'assets/optimized/images/zo709272-1600.webp',
+            'assets/optimized/images/zo709272-1200.webp',
+            'assets/optimized/images/zo709272-800.webp',
+            'assets/optimized/images/zo709272-400.webp'
+          ],
+          title: '13-17 years',
+          description: 'Bedrooms for visionaries - Discover bedrooms for teens'
+        }
+      };
+
+      function openHeroModal(heroSection) {
+        if (!modal || !modalImg || !modalTitle || !modalBody) return;
+
+        const project = heroProjects[heroSection];
+        if (!project) return;
+
+        currentProject = project;
+        currentImageIndex = 0;
+
+        const imgEl = document.querySelector(`.kids-split-item[data-hero-section="${heroSection}"] .kids-split-image`);
+        if (imgEl) {
+          modalImg.alt = imgEl.alt || '';
+        }
+
+        updateModalImage();
+        buildThumbnails();
+
+        modalTitle.textContent = project.title || '';
+        modalBody.textContent = project.description || '';
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      heroSplitItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const heroSection = item.dataset.heroSection;
+          if (heroSection) {
+            openHeroModal(heroSection);
+          }
+        });
+
+        // Support keyboard navigation
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const heroSection = item.dataset.heroSection;
+            if (heroSection) {
+              openHeroModal(heroSection);
+            }
+          }
+        });
+      });
+    }
   })();
 
