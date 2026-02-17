@@ -46,6 +46,15 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           
+          - label: "Kids Bedroom Section"
+            name: "kidsBedroomSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension (e.g., 'zo709223')" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          
           - label: "Experience Cards"
             name: "experienceCards"
             widget: "object"
