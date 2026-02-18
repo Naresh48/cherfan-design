@@ -1020,10 +1020,13 @@ p[data-content="experienceCards.kidsBedroom.description"] {
   }
 }
 
-/* Discover More Link - Aman Style */
+/* Discover More Link - Aman Style - Match "Defined by legacy" typography */
 .discover-more-link {
-  font-size: 13px;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--brand-accent);
   text-decoration: underline;
   text-decoration-color: var(--brand-accent);
@@ -1031,8 +1034,13 @@ p[data-content="experienceCards.kidsBedroom.description"] {
   text-underline-offset: 3px;
   display: inline-block;
   transition: opacity 0.2s ease;
-  letter-spacing: 0;
   line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .discover-more-link {
+    font-size: 10px;
+  }
 }
 
 .discover-more-link:hover {
@@ -2874,7 +2882,7 @@ h3[data-content="expressions.title"] {
 
   /* Text size adjustments for readability */
   .discover-more-link {
-    font-size: 13px;
+    font-size: 9px;
   }
 }
 
