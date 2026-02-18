@@ -1632,7 +1632,17 @@ p[data-content="cherfanPlus.description"] {
 .expression-card {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.5rem; /* Increased gap between pictures and titles */
+}
+@media (min-width: 768px) {
+  .expression-card {
+    gap: 1.75rem; /* Increased gap for tablet */
+  }
+}
+@media (min-width: 1024px) {
+  .expression-card {
+    gap: 2rem; /* Increased gap for desktop */
+  }
 }
 
 .expression-image {
@@ -3046,5 +3056,247 @@ h3[data-content="expressions.title"] {
   body {
     background: white;
     color: black;
+  }
+}
+
+/* Kitchen page - 3 images section spacing */
+section.kitchen-three-images-section {
+  padding: 0.5rem 0 3rem 0 !important; /* Increased bottom padding for gap */
+}
+
+@media (min-width: 768px) {
+  section.kitchen-three-images-section {
+    padding: 0.75rem 0 4rem 0 !important; /* Increased bottom padding for gap */
+  }
+}
+
+@media (min-width: 1024px) {
+  section.kitchen-three-images-section {
+    padding: 1rem 0 5rem 0 !important; /* Increased bottom padding for gap */
+  }
+}
+
+/* Kitchen page - A Space for Ritual section spacing adjustments - OVERRIDE GLOBAL SECTION PADDING */
+section.space-for-ritual-section {
+  padding: 3rem 0 1.5rem 0 !important; /* Increased top padding for gap from 3 images section */
+}
+
+@media (min-width: 768px) {
+  section.space-for-ritual-section {
+    padding: 4rem 0 2rem 0 !important; /* Increased top padding for gap */
+  }
+}
+
+@media (min-width: 1024px) {
+  section.space-for-ritual-section {
+    padding: 5rem 0 2.5rem 0 !important; /* Increased top padding for gap */
+  }
+}
+
+section.space-for-ritual-projects-section {
+  padding: 1.5rem 0 5rem 0 !important; /* Increased bottom padding for gap to RTL section */
+}
+
+@media (min-width: 768px) {
+  section.space-for-ritual-projects-section {
+    padding: 2rem 0 6rem 0 !important; /* Increased bottom padding for gap */
+  }
+}
+
+@media (min-width: 1024px) {
+  section.space-for-ritual-projects-section {
+    padding: 2.5rem 0 7rem 0 !important; /* Increased bottom padding for gap */
+  }
+}
+
+section.final-text-section {
+  padding: 5rem 0 4rem 0 !important; /* Increased top padding for gap from projects section */
+}
+
+@media (min-width: 768px) {
+  section.final-text-section {
+    padding: 6rem 0 5rem 0 !important; /* Increased top padding for gap */
+  }
+}
+
+@media (min-width: 1024px) {
+  section.final-text-section {
+    padding: 7rem 0 6rem 0 !important; /* Increased top padding for gap */
+  }
+}
+
+/* Footer styling to match home page title and text fonts and sizes - applies to all pages */
+footer#contact h4,
+footer[id="contact"] h4 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 19px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+  color: var(--brand-accent) !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact h4,
+  footer[id="contact"] h4 {
+    font-size: 22px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer#contact h4,
+  footer[id="contact"] h4 {
+    font-size: 26px !important;
+  }
+}
+
+footer#contact p,
+footer[id="contact"] p {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact p,
+  footer[id="contact"] p {
+    font-size: 11px !important;
+  }
+}
+
+/* Override Tailwind text size classes in footer */
+footer#contact p.text-sm,
+footer[id="contact"] p.text-sm,
+footer#contact #newsletterStatus,
+footer[id="contact"] #newsletterStatus {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact p.text-sm,
+  footer[id="contact"] p.text-sm,
+  footer#contact #newsletterStatus,
+  footer[id="contact"] #newsletterStatus {
+    font-size: 11px !important;
+  }
+}
+
+footer#contact .text-xs,
+footer[id="contact"] .text-xs {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact .text-xs,
+  footer[id="contact"] .text-xs {
+    font-size: 11px !important;
+  }
+}
+
+/* Footer newsletter input and button text styling to match paragraph text */
+footer#contact input[type="email"],
+footer[id="contact"] input[type="email"],
+footer#contact #newsletterEmail,
+footer[id="contact"] #newsletterEmail {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact input[type="email"],
+  footer[id="contact"] input[type="email"],
+  footer#contact #newsletterEmail,
+  footer[id="contact"] #newsletterEmail {
+    font-size: 11px !important;
+  }
+}
+
+footer#contact input[type="email"]::placeholder,
+footer[id="contact"] input[type="email"]::placeholder,
+footer#contact #newsletterEmail::placeholder,
+footer[id="contact"] #newsletterEmail::placeholder {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #9ca3af !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact input[type="email"]::placeholder,
+  footer[id="contact"] input[type="email"]::placeholder,
+  footer#contact #newsletterEmail::placeholder,
+  footer[id="contact"] #newsletterEmail::placeholder {
+    font-size: 11px !important;
+  }
+}
+
+footer#contact button[type="submit"],
+footer[id="contact"] button[type="submit"],
+footer#contact form button,
+footer[id="contact"] form button {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact button[type="submit"],
+  footer[id="contact"] button[type="submit"],
+  footer#contact form button,
+  footer[id="contact"] form button {
+    font-size: 11px !important;
+  }
+}
+
+/* Override all Tailwind text size classes in footer to ensure consistency across all pages */
+footer#contact .text-sm,
+footer[id="contact"] .text-sm,
+footer#contact .text-base,
+footer[id="contact"] .text-base,
+footer#contact .text-lg,
+footer[id="contact"] .text-lg {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact .text-sm,
+  footer[id="contact"] .text-sm,
+  footer#contact .text-base,
+  footer[id="contact"] .text-base,
+  footer#contact .text-lg,
+  footer[id="contact"] .text-lg {
+    font-size: 11px !important;
+  }
+}
+
+/* Footer copyright text - ensure it matches paragraph text */
+footer#contact [data-content="footer.copyright"],
+footer[id="contact"] [data-content="footer.copyright"] {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  footer#contact [data-content="footer.copyright"],
+  footer[id="contact"] [data-content="footer.copyright"] {
+    font-size: 11px !important;
   }
 }

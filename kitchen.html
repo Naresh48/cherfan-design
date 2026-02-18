@@ -15,6 +15,64 @@
   <!-- Link CSS -->
   <link rel="stylesheet" href="styles.css" />
   
+  <!-- Inline styles for spacing adjustments -->
+  <style>
+    /* Kitchen page - 3 images section spacing */
+    section.kitchen-three-images-section {
+      padding: 0.5rem 0 3rem 0 !important; /* Increased bottom padding for gap */
+    }
+    @media (min-width: 768px) {
+      section.kitchen-three-images-section {
+        padding: 0.75rem 0 4rem 0 !important; /* Increased bottom padding for gap */
+      }
+    }
+    @media (min-width: 1024px) {
+      section.kitchen-three-images-section {
+        padding: 1rem 0 5rem 0 !important; /* Increased bottom padding for gap */
+      }
+    }
+    /* Kitchen page - A Space for Ritual section spacing adjustments */
+    section.space-for-ritual-section {
+      padding: 3rem 0 1.5rem 0 !important; /* Increased top padding for gap from 3 images section */
+    }
+    @media (min-width: 768px) {
+      section.space-for-ritual-section {
+        padding: 4rem 0 2rem 0 !important; /* Increased top padding for gap */
+      }
+    }
+    @media (min-width: 1024px) {
+      section.space-for-ritual-section {
+        padding: 5rem 0 2.5rem 0 !important; /* Increased top padding for gap */
+      }
+    }
+    section.space-for-ritual-projects-section {
+      padding: 1.5rem 0 5rem 0 !important; /* Increased bottom padding for gap to RTL section */
+    }
+    @media (min-width: 768px) {
+      section.space-for-ritual-projects-section {
+        padding: 2rem 0 6rem 0 !important; /* Increased bottom padding for gap */
+      }
+    }
+    @media (min-width: 1024px) {
+      section.space-for-ritual-projects-section {
+        padding: 2.5rem 0 7rem 0 !important; /* Increased bottom padding for gap */
+      }
+    }
+    section.final-text-section {
+      padding: 5rem 0 4rem 0 !important; /* Increased top padding for gap from projects section */
+    }
+    @media (min-width: 768px) {
+      section.final-text-section {
+        padding: 6rem 0 5rem 0 !important; /* Increased top padding for gap */
+      }
+    }
+    @media (min-width: 1024px) {
+      section.final-text-section {
+        padding: 7rem 0 6rem 0 !important; /* Increased top padding for gap */
+      }
+    }
+  </style>
+  
   <!-- Preload hero image for LCP -->
   <link rel="preload" as="image" href="assets/optimized/images/0d8a9591-800.avif">
 </head>
@@ -85,7 +143,7 @@
   </section>
 
   <!-- 3 Images in Row with Text Overlay -->
-  <section class="py-2 md:py-3 bg-white kitchen-three-images-section">
+  <section class="bg-white kitchen-three-images-section">
     <div class="w-full max-w-[1200px] mx-auto px-0">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <!-- Image 1 -->
@@ -136,8 +194,8 @@
     </div>
   </section>
 
-  <!-- Big Text and Small Text Section (Altus Style) -->
-  <section class="py-16 md:py-20 lg:py-24 bg-white">
+  <!-- Big Text and Small Text Section (Altus Style) - A Space for Ritual -->
+  <section class="bg-white space-for-ritual-section" style="padding-top: 3rem !important; padding-bottom: 1.5rem !important;">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <div class="max-w-3xl">
         <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4" data-content="textSection.label">CRAFTING TIMELESS</p>
@@ -152,7 +210,7 @@
   </section>
 
   <!-- Projects Grid Section - 2 Rows of 4 Images -->
-  <section class="py-12 md:py-16 lg:py-20 bg-white">
+  <section class="bg-white space-for-ritual-projects-section" style="padding-top: 1.5rem !important; padding-bottom: 5rem !important;">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <!-- First Row - 4 Images -->
       <div class="grid projects-grid-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
@@ -437,7 +495,7 @@
   </section>
 
   <!-- Image on Right, Text on Left Section -->
-  <section class="py-16 md:py-20 lg:py-24 bg-white">
+  <section class="bg-white final-text-section" style="padding-top: 5rem !important; padding-bottom: 4rem !important;">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center">
         <!-- Left Side: Text -->
