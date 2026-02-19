@@ -14,39 +14,39 @@
     "description": "Through our bespoke mastery, every corner becomes a silent chapter of your unique story."
   },
   "cherfanPlus": {
-  "title": "Light and Space",
-  "description": "Beyond the blueprint lies a home with a soul. Journey through our curated world—from the heart of the kitchen to the finest living details; designed to elevate every moment."
+    "title": "Light and Space",
+    "description": "Beyond the blueprint lies a home with a soul. Journey through our curated world—from the heart of the kitchen to the finest living details; designed to elevate every moment."
   },
   "kidsBedroomSection": {
-    "label": "KIDS BEDROOM",
+    "label": "DESIGN BUILT FOR DISCOVERY",
     "imageBase": "home-kids",
-    "title": "Where Dreams Take Flight",
-    "description": "Every child deserves a space that sparks imagination and nurtures growth. Our kids bedroom designs blend playful creativity with thoughtful functionality, creating environments where young minds can explore, dream, and thrive. From whimsical themes to timeless elegance, we craft bedrooms that grow with your child while maintaining the warmth and comfort they need."
+    "title": "Kids Bedroom",
+    "description": "A bedroom is a child’s entire universe. We craft furniture that inspires curiosity while maintaining a sense of calm. Our goal is to create a peaceful sanctuary where your little ones have the room they need to play, learn, and rest.\n\nUsing the same architectural standards as our signature collections, these pieces are made to endure. We combine natural, safe materials with timeless shapes. This is furniture designed to grow with your child, from their first steps to their biggest dreams."
   },
   "experienceCards": {
     "kitchen": {
       "label": "KITCHEN",
       "imageBase": "0d8a9586-edit",
       "title": "Kitchen",
-      "description": "Discover kitchens designed for the art of cooking and gathering."
+      "description": "Where architectural stone meets refined organic woods to create a timeless culinary masterpiece."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
       "imageBase": "home-pics-processed/13",
       "title": "Master Bedroom",
-      "description": "Serene spaces designed for rest and renewal.Calm and luxurious."
+      "description": "An intimate sanctuary where sculptural light and organic textures define a peaceful retreat."
     },
     "closet": {
       "label": "CLOSET",
       "imageBase": "home-pics-processed/DD123",
       "title": "Closet",
-      "description": "Curated storage solutions that elevate daily rituals."
+      "description": "A curated gallery where meticulous organization meets the quiet luxury of bespoke design."
     },
     "kidsBedroom": {
       "label": "KIDS BEDROOM",
       "imageBase": "zo709223",
       "title": "Kids Bedroom",
-      "description": "Spaces that inspire creativity and grow with childhood."
+      "description": "A sophisticated haven designed for discovery while respecting the home's high-end minimalist aesthetic."
     }
   },
   "expressions": {
@@ -65,7 +65,7 @@
       {
         "imageBase": "home-pics-processed/CD123",
         "label": "The Logistics",
-        "description": "Our dedicated warehouse and fleet manage the final stages of the journey. We maintain full control over storage and delivery to ensure every project arrives safely"
+        "description": "Our dedicated warehouse and fleet manage final stages of the journey. We maintain full control over storage and delivery to ensure project arrives safely."
       }
     ]
   },
