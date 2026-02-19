@@ -11,21 +11,21 @@
   "threeImageSection": {
     "image1": {
       "imageBase": "0d8a9586-edit",
-      "label": "TIMELESS LEGACY",
-      "title": "Forty Years",
-      "description": "Cultivating homes with soulful intent."
+      "label": "A",
+      "title": "Architectural Marble",
+      "description": "Rare slabs of natural art."
     },
     "image2": {
       "imageBase": "0d8a9592",
-      "label": "PRIVATE HAVEN",
-      "title": "Interior Poetry",
-      "description": "Small moments that define the home."
+      "label": "B",
+      "title": "Living Grain",
+      "description": "Natural textures you can feel."
     },
     "image3": {
       "imageBase": "0d8a9589",
-      "label": "BESPOKE VOLUME",
-      "title": "Tailored Shelving",
-      "description": "Refined solutions for luxury living"
+      "label": "C",
+      "title": "Atmospheric Light",
+      "description": "Sculpting every evening mood."
     }
   },
   "textSection": {
