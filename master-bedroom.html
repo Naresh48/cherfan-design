@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" />
   <title>Master Bedroom — Cherfan Design</title>
   <!-- Tailwind CSS (Built) -->
+  <link rel="preload" href="tailwind.css" as="style">
   <link rel="stylesheet" href="tailwind.css" />
   
   <!-- Google Fonts -->
@@ -425,8 +426,8 @@
   </div>
 
   <!-- JS (load after modal and other markup so shared handlers attach correctly) -->
-  <script src="script.js"></script>
-  <script src="content-loader.js"></script>
+  <script src="script.js" defer></script>
+  <script src="content-loader.js" defer></script>
   
   <script>
     // Master Bedroom Page Image Lightbox with Navigation

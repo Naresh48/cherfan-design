@@ -6,6 +6,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>CD</text></svg>" />
 
   <!-- Tailwind CSS (Built) -->
+  <link rel="preload" href="tailwind.css" as="style">
   <link rel="stylesheet" href="tailwind.css" />
   
   <!-- Google Fonts -->
@@ -695,7 +696,7 @@
   </style>
 
   <!-- JS (load after modal so shared handlers in script.js can attach) -->
-  <script src="script.js"></script>
-  <script src="content-loader.js"></script>
+  <script src="script.js" defer></script>
+  <script src="content-loader.js" defer></script>
 </body>
 </html>
