@@ -72,6 +72,19 @@
         padding: 7rem 0 6rem 0 !important; /* Increased top padding for gap */
       }
     }
+    /* Reduce The Home's Anchor section image size */
+    #homes-anchor-image {
+      max-width: 100% !important;
+      max-height: 70vh !important;
+      width: auto !important;
+    }
+    @media (min-width: 1024px) {
+      #homes-anchor-image {
+        max-width: 100% !important;
+        max-height: 80vh !important;
+        width: auto !important;
+      }
+    }
   </style>
   
   <!-- Preload hero image for LCP -->
@@ -588,7 +601,7 @@
         </div>
         
         <!-- Right Side: Image -->
-        <div class="relative overflow-hidden aspect-[4/5]">
+        <div class="relative overflow-hidden mx-auto lg:mx-0" style="aspect-ratio: 4/5; max-height: 70vh; max-width: 100%;" id="homes-anchor-image">
           <picture>
             <source type="image/avif" srcset="assets/final-pics/kitchen-homeman-1600.avif 1600w, assets/final-pics/kitchen-homeman-1200.avif 1200w, assets/final-pics/kitchen-homeman-800.avif 800w, assets/final-pics/kitchen-homeman-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/final-pics/kitchen-homeman-1600.webp 1600w, assets/final-pics/kitchen-homeman-1200.webp 1200w, assets/final-pics/kitchen-homeman-800.webp 800w, assets/final-pics/kitchen-homeman-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
