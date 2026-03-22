@@ -5,6 +5,13 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
+# Image picker + crop via Cloudinary Media Library — see admin/README.md
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: doxvoohbv
+    api_key: 262929882165832
+
 editorial_workflow: true
 
 collections:
@@ -27,7 +34,7 @@ collections:
             name: "celebrationSection1"
             widget: "object"
             fields:
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension (e.g., '0d8a9586-edit')" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop. Or use existing image base (e.g. '0d8a9586-edit')." }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           
@@ -35,7 +42,7 @@ collections:
             name: "celebrationSection2"
             widget: "object"
             fields:
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           
@@ -51,7 +58,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Label", name: "label", widget: "string" }
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension (e.g., 'zo709223')" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           
@@ -64,7 +71,7 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
               
@@ -73,7 +80,7 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
               
@@ -82,7 +89,7 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
               
@@ -91,7 +98,7 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
           
@@ -104,7 +111,7 @@ collections:
                 name: "cards"
                 widget: "list"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
           
@@ -112,7 +119,7 @@ collections:
             name: "footer"
             widget: "object"
             fields:
-              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Location", name: "location", widget: "string" }
               - label: "Contact"
                 name: "contact"
@@ -132,7 +139,7 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Three Image Section"
             name: "threeImageSection"
@@ -142,7 +149,7 @@ collections:
                 name: "image1"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -151,7 +158,7 @@ collections:
                 name: "image2"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -160,7 +167,7 @@ collections:
                 name: "image3"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -178,7 +185,7 @@ collections:
             widget: "list"
             fields:
               - { label: "ID", name: "id", widget: "number" }
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           
@@ -190,13 +197,13 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description 1", name: "description1", widget: "text" }
               - { label: "Description 2", name: "description2", widget: "text" }
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Footer"
             name: "footer"
             widget: "object"
             fields:
-              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Location", name: "location", widget: "string" }
               - label: "Contact"
                 name: "contact"
@@ -216,7 +223,7 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Three Image Section"
             name: "threeImageSection"
@@ -226,7 +233,7 @@ collections:
                 name: "image1"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -235,7 +242,7 @@ collections:
                 name: "image2"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -244,7 +251,7 @@ collections:
                 name: "image3"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -265,13 +272,13 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description 1", name: "description1", widget: "text" }
               - { label: "Description 2", name: "description2", widget: "text" }
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Footer"
             name: "footer"
             widget: "object"
             fields:
-              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Location", name: "location", widget: "string" }
               - label: "Contact"
                 name: "contact"
@@ -291,7 +298,7 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Three Image Section"
             name: "threeImageSection"
@@ -301,7 +308,7 @@ collections:
                 name: "image1"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -310,7 +317,7 @@ collections:
                 name: "image2"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -319,7 +326,7 @@ collections:
                 name: "image3"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
@@ -340,13 +347,13 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description 1", name: "description1", widget: "text" }
               - { label: "Description 2", name: "description2", widget: "text" }
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Footer"
             name: "footer"
             widget: "object"
             fields:
-              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Location", name: "location", widget: "string" }
               - label: "Contact"
                 name: "contact"
@@ -370,7 +377,7 @@ collections:
                 name: "left"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Subtitle", name: "subtitle", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
               
@@ -378,7 +385,7 @@ collections:
                 name: "right"
                 widget: "object"
                 fields:
-                  - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Subtitle", name: "subtitle", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
           
@@ -390,7 +397,7 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description 1", name: "description1", widget: "text" }
               - { label: "Description 2", name: "description2", widget: "text" }
-              - { label: "Image Base", name: "imageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Manifesto Section"
             name: "manifestoSection"
@@ -416,7 +423,7 @@ collections:
             name: "footer"
             widget: "object"
             fields:
-              - { label: "Logo Image Base", name: "logoImageBase", widget: "string", hint: "Image filename without extension" }
+              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Location", name: "location", widget: "string" }
               - label: "Contact"
                 name: "contact"

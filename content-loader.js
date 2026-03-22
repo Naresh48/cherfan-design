@@ -11,13 +11,25 @@
   'use strict';
 
   /**
+   * Check if value is a full URL (Cloudinary, other CDN, or uploads) vs imageBase
+   */
+  function isFullImageUrl(value) {
+    if (!value || typeof value !== 'string') return false;
+    return value.startsWith('http://') || value.startsWith('https://') || value.startsWith('/');
+  }
+
+  /**
    * Helper: Generate optimized image paths from base name
-   * Maintains existing AVIF/WebP structure
+   * - cms/xxx → assets/final-pics/cms/xxx (CMS-uploaded, optimized by build)
+   * - else → assets/optimized/images/xxx (existing structure)
+   * Returns null for full URLs (handled separately)
    */
   function getImagePaths(imageBase) {
-    if (!imageBase) return null;
+    if (!imageBase || isFullImageUrl(imageBase)) return null;
     
-    const basePath = `assets/optimized/images/${imageBase}`;
+    const basePath = imageBase.startsWith('cms/')
+      ? `assets/final-pics/${imageBase}`
+      : `assets/optimized/images/${imageBase}`;
     return {
       avif: {
         1600: `${basePath}-1600.avif`,
@@ -37,11 +49,23 @@
 
   /**
    * Helper: Update picture element with new image paths
-   * Preserves all existing attributes and structure
+   * Handles both imageBase (optimized) and full URLs (Cloudinary, /assets/uploads, etc.)
    */
   function updatePictureElement(pictureEl, imageBase) {
     if (!pictureEl || !imageBase) return;
     
+    // Full URL: use as single image (before build optimization runs)
+    if (isFullImageUrl(imageBase)) {
+      const img = pictureEl.querySelector('img');
+      const avifSource = pictureEl.querySelector('source[type="image/avif"]');
+      const webpSource = pictureEl.querySelector('source[type="image/webp"]');
+      // Use single URL for all - hide sources if present, or set img only
+      if (img) img.src = imageBase;
+      if (avifSource) avifSource.srcset = imageBase;
+      if (webpSource) webpSource.srcset = imageBase;
+      return;
+    }
+
     const paths = getImagePaths(imageBase);
     if (!paths) return;
 

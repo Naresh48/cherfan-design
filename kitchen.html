@@ -72,18 +72,23 @@
         padding: 7rem 0 6rem 0 !important; /* Increased top padding for gap */
       }
     }
-    /* Reduce The Home's Anchor section image size */
+    /* Serge Cherfan section - image reduced by 25%, left text / right image with space */
+    .serge-cherfan-image,
     #homes-anchor-image {
-      max-width: 100% !important;
-      max-height: 70vh !important;
-      width: auto !important;
+      width: 75% !important;
+      max-width: 75% !important;
+      max-height: 52.5vh !important; /* 70vh * 0.75 */
     }
     @media (min-width: 1024px) {
+      .serge-cherfan-image,
       #homes-anchor-image {
-        max-width: 100% !important;
-        max-height: 80vh !important;
-        width: auto !important;
+        width: 75% !important;
+        max-width: 75% !important;
+        max-height: 60vh !important; /* 80vh * 0.75 */
       }
+    }
+    #serge-cherfan-image-wrapper {
+      min-height: 1px;
     }
   </style>
   
@@ -118,8 +123,8 @@
               <li><a href="kids-bedroom.html" class="nav-link" data-target="kids">Kids Bedrooms</a></li>
               <li><a href="master-bedroom.html" class="nav-link" data-target="master">Master Bedrooms</a></li>
               <li><a href="closet.html" class="nav-link" data-target="closet">Closets</a></li>
-              <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
               <li><a href="about-us.html" class="nav-link" data-target="about">About Us</a></li>
+              <li><a href="#contact" class="nav-link" id="contactNavLink" data-target="contact">Contact</a></li>
             </ul>
             <!-- animated sliding underline -->
             <div id="navIndicator" aria-hidden="true">
@@ -356,238 +361,12 @@
     </div>
   </section>
 
-  <!-- Horizontal Scrolling Loop with 8 Images -->
-  <section class="py-12 md:py-16 bg-white overflow-hidden">
-    <div class="horizontal-scroll-container">
-      <div class="horizontal-scroll-track">
-        <!-- First set of 13 RTL images -->
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="0">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-1-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-1-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-1-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-1-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-1-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-1-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-1-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-1-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-1-800.webp" alt="Kitchen RTL 1" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="1">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-2-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-2-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-2-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-2-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-2-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-2-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-2-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-2-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-2-800.webp" alt="Kitchen RTL 2" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="2">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-3-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-3-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-3-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-3-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-3-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-3-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-3-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-3-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-3-800.webp" alt="Kitchen RTL 3" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="3">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-4-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-4-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-4-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-4-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-4-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-4-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-4-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-4-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-4-800.webp" alt="Kitchen RTL 4" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="4">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-5-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-5-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-5-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-5-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-5-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-5-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-5-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-5-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-5-800.webp" alt="Kitchen RTL 5" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="5">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-6-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-6-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-6-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-6-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-6-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-6-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-6-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-6-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-6-800.webp" alt="Kitchen RTL 6" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="6">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-7-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-7-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-7-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-7-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-7-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-7-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-7-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-7-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-7-800.webp" alt="Kitchen RTL 7" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="7">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-8-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-8-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-8-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-8-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-8-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-8-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-8-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-8-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-8-800.webp" alt="Kitchen RTL 8" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="8">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-9-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-9-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-9-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-9-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-9-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-9-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-9-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-9-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-9-800.webp" alt="Kitchen RTL 9" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="9">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-10-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-10-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-10-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-10-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-10-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-10-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-10-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-10-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-10-800.webp" alt="Kitchen RTL 10" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="10">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-11-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-11-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-11-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-11-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-11-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-11-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-11-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-11-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-11-800.webp" alt="Kitchen RTL 11" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="11">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-12-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-12-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-12-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-12-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-12-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-12-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-12-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-12-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-12-800.webp" alt="Kitchen RTL 12" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <!-- Duplicate set for seamless loop -->
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="0">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-1-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-1-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-1-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-1-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-1-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-1-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-1-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-1-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-1-800.webp" alt="Kitchen RTL 1" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="1">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-2-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-2-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-2-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-2-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-2-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-2-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-2-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-2-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-2-800.webp" alt="Kitchen RTL 2" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="2">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-3-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-3-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-3-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-3-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-3-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-3-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-3-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-3-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-3-800.webp" alt="Kitchen RTL 3" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="3">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-4-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-4-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-4-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-4-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-4-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-4-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-4-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-4-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-4-800.webp" alt="Kitchen RTL 4" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="4">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-5-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-5-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-5-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-5-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-5-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-5-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-5-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-5-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-5-800.webp" alt="Kitchen RTL 5" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="5">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-6-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-6-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-6-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-6-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-6-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-6-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-6-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-6-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-6-800.webp" alt="Kitchen RTL 6" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="6">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-7-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-7-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-7-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-7-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-7-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-7-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-7-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-7-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-7-800.webp" alt="Kitchen RTL 7" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="7">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-8-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-8-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-8-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-8-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-8-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-8-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-8-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-8-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-8-800.webp" alt="Kitchen RTL 8" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="8">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-9-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-9-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-9-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-9-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-9-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-9-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-9-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-9-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-9-800.webp" alt="Kitchen RTL 9" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="9">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-10-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-10-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-10-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-10-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-10-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-10-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-10-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-10-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-10-800.webp" alt="Kitchen RTL 10" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="10">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-11-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-11-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-11-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-11-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-11-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-11-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-11-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-11-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-11-800.webp" alt="Kitchen RTL 11" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-        <div class="horizontal-scroll-item group cursor-pointer" data-image-index="11">
-          <div class="aspect-[8/9] overflow-hidden relative">
-            <picture>
-              <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchen-rtl-12-1600.avif 1600w, assets/kitchen-pics-optimised/kitchen-rtl-12-1200.avif 1200w, assets/kitchen-pics-optimised/kitchen-rtl-12-800.avif 800w, assets/kitchen-pics-optimised/kitchen-rtl-12-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchen-rtl-12-1600.webp 1600w, assets/kitchen-pics-optimised/kitchen-rtl-12-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-rtl-12-800.webp 800w, assets/kitchen-pics-optimised/kitchen-rtl-12-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-              <img src="assets/kitchen-pics-optimised/kitchen-rtl-12-800.webp" alt="Kitchen RTL 12" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            </picture>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Image on Right, Text on Left Section -->
+  <!-- Serge Cherfan Section - Image on Right, Text on Left -->
   <section class="bg-white final-text-section" style="padding-top: 5rem !important; padding-bottom: 4rem !important;">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center">
         <!-- Left Side: Text -->
-        <div>
+        <div class="text-left">
           <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4" data-content="finalTextSection.label">THE DRIVE TO FIND</p>
           <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1]" data-content="finalTextSection.title">
             Personal Meaning
@@ -600,13 +379,15 @@
           </p>
         </div>
         
-        <!-- Right Side: Image -->
-        <div class="relative overflow-hidden mx-auto lg:mx-0" style="aspect-ratio: 4/5; max-height: 70vh; max-width: 100%;" id="homes-anchor-image">
-          <picture>
-            <source type="image/avif" srcset="assets/final-pics/kitchen-homeman-1600.avif 1600w, assets/final-pics/kitchen-homeman-1200.avif 1200w, assets/final-pics/kitchen-homeman-800.avif 800w, assets/final-pics/kitchen-homeman-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
-            <source type="image/webp" srcset="assets/final-pics/kitchen-homeman-1600.webp 1600w, assets/final-pics/kitchen-homeman-1200.webp 1200w, assets/final-pics/kitchen-homeman-800.webp 800w, assets/final-pics/kitchen-homeman-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
-            <img src="assets/final-pics/kitchen-homeman-800.webp" alt="Kitchen Design" loading="lazy" decoding="async" class="w-full h-full object-cover">
-          </picture>
+        <!-- Right Side: Image (equal spacing left and right of picture) -->
+        <div class="relative overflow-hidden flex justify-center items-center" id="serge-cherfan-image-wrapper">
+          <div class="relative overflow-hidden serge-cherfan-image" style="aspect-ratio: 4/5;" id="homes-anchor-image">
+            <picture>
+              <source type="image/avif" srcset="assets/final-pics/kitchen-homeman-1600.avif 1600w, assets/final-pics/kitchen-homeman-1200.avif 1200w, assets/final-pics/kitchen-homeman-800.avif 800w, assets/final-pics/kitchen-homeman-400.avif 400w" sizes="(min-width:1024px) 450px, 75vw">
+              <source type="image/webp" srcset="assets/final-pics/kitchen-homeman-1600.webp 1600w, assets/final-pics/kitchen-homeman-1200.webp 1200w, assets/final-pics/kitchen-homeman-800.webp 800w, assets/final-pics/kitchen-homeman-400.webp 400w" sizes="(min-width:1024px) 450px, 75vw">
+              <img src="assets/final-pics/kitchen-homeman-800.webp" alt="Serge Cherfan" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            </picture>
+          </div>
         </div>
       </div>
     </div>
@@ -1204,51 +985,6 @@
         height: 320px !important;
         min-height: 320px !important;
       }
-    }
-    
-    /* Horizontal Scrolling Styles */
-    .horizontal-scroll-container {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .horizontal-scroll-track {
-      display: flex;
-      gap: 1.5rem;
-      animation: scroll-horizontal 32s linear infinite;
-      will-change: transform;
-    }
-
-    @media (max-width: 768px) {
-      .horizontal-scroll-track {
-        animation: scroll-horizontal 16s linear infinite;
-      }
-    }
-
-    .horizontal-scroll-item {
-      flex-shrink: 0;
-      width: 264px;
-      overflow: hidden;
-    }
-
-    @media (min-width: 768px) {
-      .horizontal-scroll-item {
-        width: 308px;
-      }
-    }
-
-    @keyframes scroll-horizontal {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .horizontal-scroll-track:hover {
-      animation-play-state: paused;
     }
 
     /* Image Lightbox Styles */

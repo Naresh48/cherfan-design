@@ -595,56 +595,91 @@ if (window.location.hash === '#top') {
 })();
 
 /* ===========================
-   HEADER SCROLL BEHAVIOR (Arclinea-style)
+   HEADER SCROLL BEHAVIOR (All pages)
+   Hide header after 1.5s for full hero view; show on any movement; hide again after 1.5s
    ===========================*/
 (function headerScrollBehavior() {
-  // Wait for DOM to be ready
   function initHeaderScroll() {
     const header = document.getElementById('siteHeader');
     const heroSection = document.getElementById('heroSection');
     const footer = document.getElementById('contact');
-    
-    if (!header || !heroSection) {
-      return;
-    }
+
+    if (!header || !heroSection) return;
 
     let lastScrollTop = 0;
-    let scrollThreshold = 80; // Hide header after scrolling 80px
+    let scrollThreshold = 80;
     let isHeaderHidden = false;
     let ticking = false;
+    let hideTimeoutId = null;
+
+    function showHeader() {
+      header.classList.remove('header-hidden');
+      isHeaderHidden = false;
+    }
+
+    function hideHeader() {
+      header.classList.add('header-hidden');
+      isHeaderHidden = true;
+    }
+
+    function scheduleHideAfterDelay() {
+      if (hideTimeoutId) clearTimeout(hideTimeoutId);
+      hideTimeoutId = setTimeout(() => {
+        hideTimeoutId = null;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop < 50) hideHeader();
+      }, 1500);
+    }
+
+    scheduleHideAfterDelay();
+
+    function onUserMovement() {
+      showHeader();
+      scheduleHideAfterDelay();
+    }
+
+    function onScrollMovement() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop < 100) {
+        showHeader();
+        scheduleHideAfterDelay();
+      }
+    }
+
+    window.addEventListener('mousemove', onUserMovement, { passive: true });
+    window.addEventListener('touchstart', onUserMovement, { passive: true });
+    window.addEventListener('touchmove', onUserMovement, { passive: true });
+    document.addEventListener('keydown', onUserMovement);
+    window.addEventListener('scroll', onScrollMovement, { passive: true });
 
     function updateHeaderVisibility() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const heroHeight = heroSection.offsetHeight;
 
-      // If at the top, always show header
       if (scrollTop < 50) {
-        header.classList.remove('header-hidden');
-        isHeaderHidden = false;
+        if (scrollTop < lastScrollTop && isHeaderHidden) {
+          showHeader();
+          scheduleHideAfterDelay();
+        }
         lastScrollTop = scrollTop;
         ticking = false;
+        if (footer) {
+          const footerRect = footer.getBoundingClientRect();
+          if (footerRect.top < window.innerHeight * 0.9) footer.classList.add('visible');
+        }
         return;
       }
 
-      // Hide header when scrolling down past threshold
-      // Show header when scrolling up
       if (scrollTop > lastScrollTop && scrollTop > scrollThreshold && !isHeaderHidden) {
-        // Scrolling down - hide header
-        header.classList.add('header-hidden');
-        isHeaderHidden = true;
+        if (hideTimeoutId) { clearTimeout(hideTimeoutId); hideTimeoutId = null; }
+        hideHeader();
       } else if (scrollTop < lastScrollTop && isHeaderHidden) {
-        // Scrolling up - show header
-        header.classList.remove('header-hidden');
-        isHeaderHidden = false;
+        showHeader();
+        scheduleHideAfterDelay();
       }
 
-      // Show footer when scrolled past hero section
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        if (footerRect.top < windowHeight * 0.9) {
-          footer.classList.add('visible');
-        }
+        if (footerRect.top < window.innerHeight * 0.9) footer.classList.add('visible');
       }
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
@@ -658,28 +693,21 @@ if (window.location.hash === '#top') {
       }
     }, { passive: true });
 
-    // Initial check for footer visibility
     if (footer) {
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            footer.classList.add('visible');
-          }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) footer.classList.add('visible');
         });
       }, { threshold: 0.1 });
-      
       observer.observe(footer);
     }
   }
-  
-  // Initialize when DOM is ready
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initHeaderScroll);
   } else {
     initHeaderScroll();
   }
-  
-  // Also try on window load as fallback
   window.addEventListener('load', initHeaderScroll);
 })();
 

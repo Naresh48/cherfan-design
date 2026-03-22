@@ -7,8 +7,35 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
+  <!--
+    Cloudinary integration: Immutable + decap-cms-lib-util must load before the Cloudinary bundle.
+    Using unpkg so admin works when node_modules is not deployed (e.g. .netlifyignore).
+  -->
+  <script src="https://unpkg.com/immutable@3.8.2/dist/immutable.min.js"></script>
+  <script>
+    window.DecapCmsDefaultExports = Object.assign({}, window.DecapCmsDefaultExports || {}, {
+      Immutable: window.Immutable
+    });
+  </script>
+  <script src="https://unpkg.com/decap-cms-lib-util@3.4.0/dist/decap-cms-lib-util.js"></script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms-media-library-cloudinary@3.1.0/dist/decap-cms-media-library-cloudinary.js"></script>
+  <script>
+    (function() {
+      function register() {
+        if (window.CMS && window.DecapCmsMediaLibraryCloudinary) {
+          window.CMS.registerMediaLibrary(window.DecapCmsMediaLibraryCloudinary);
+        } else if (window.CMS) {
+          setTimeout(register, 50);
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', register);
+      } else {
+        register();
+      }
+    })();
+  </script>
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -19,10 +46,8 @@
         }
       });
     } else {
-      // If netlifyIdentity is not available, log an error
       console.error("Netlify Identity widget failed to load. Please check your Netlify Identity settings.");
     }
   </script>
 </body>
 </html>
-
