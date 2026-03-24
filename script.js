@@ -1584,10 +1584,14 @@ if (contactForm) {
       {
         id: 5,
         images: [
-          'assets/optimized/images/dsc09581-1600.webp',
-          'assets/optimized/images/dsc09581-1200.webp',
-          'assets/optimized/images/dsc09581-800.webp',
-          'assets/optimized/images/dsc09581-400.webp'
+          'assets/final-pics/p51-1600.webp',
+          'assets/final-pics/p52-1600.webp',
+          'assets/final-pics/p53-1600.webp',
+          'assets/final-pics/p54-1600.webp',
+          'assets/final-pics/p55-1600.webp',
+          'assets/final-pics/p56-1600.webp',
+          'assets/final-pics/p57-1600.webp',
+          'assets/final-pics/p58-1600.webp'
         ]
       },
       {

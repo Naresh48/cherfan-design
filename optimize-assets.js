@@ -134,7 +134,8 @@ async function optimizeImage(inputBuffer, baseName) {
   const tasks = [];
   for (const w of SIZES) {
     if (w > maxDim && maxDim > 0) continue;
-    const resize = sharp(inputBuffer).resize({ width: w, withoutEnlargement: true });
+    // Auto-apply EXIF orientation before resize/output
+    const resize = sharp(inputBuffer).rotate().resize({ width: w, withoutEnlargement: true });
     tasks.push(
       resize.clone().avif({ quality: 80 }).toFile(path.join(CMS_OUTPUT_DIR, `${baseName}-${w}.avif`)),
       resize.clone().webp({ quality: 85 }).toFile(path.join(CMS_OUTPUT_DIR, `${baseName}-${w}.webp`))
@@ -164,7 +165,8 @@ async function optimizeLocalAssetsNew() {
     const tasks = [];
     for (const w of SIZES) {
       if (w > maxDim && maxDim > 0) continue;
-      const resize = sharp(inputBuffer).resize({ width: w, withoutEnlargement: true });
+      // Auto-apply EXIF orientation before resize/output
+      const resize = sharp(inputBuffer).rotate().resize({ width: w, withoutEnlargement: true });
       tasks.push(
         resize.clone().avif({ quality: 80 }).toFile(path.join(FINAL_PICS_DIR, `${baseName}-${w}.avif`)),
         resize.clone().webp({ quality: 85 }).toFile(path.join(FINAL_PICS_DIR, `${baseName}-${w}.webp`))
