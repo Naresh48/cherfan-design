@@ -12,19 +12,19 @@
     "image1": {
       "imageBase": "0d8a9586-edit",
       "label": "A",
-      "title": "Ceramic Canvas",
-      "description": "Rare slabs of natural art."
+      "title": "Elevated Ceramic",
+      "description": "Built for strength, refined for living."
     },
     "image2": {
       "imageBase": "0d8a9592",
       "label": "B",
-      "title": "Living Grain",
-      "description": "Natural textures you can feel."
+      "title": "Timeless Wood",
+      "description": "Bringing warmth to modern living."
     },
     "image3": {
       "imageBase": "0d8a9589",
       "label": "C",
-      "title": "Atmospheric Light",
+      "title": "Interior Light",
       "description": "Sculpting every evening mood."
     }
   },
@@ -84,8 +84,8 @@
     }
   ],
   "finalTextSection": {
-    "label": "CREATIVE DESIGNER",
-    "title": "Serge Cherfan",
+    "label": "Serge Cherfan",
+    "title": "Creative Designer",
     "description1": "A multidisciplinary creative whose work spans interior architecture, furniture design, and fine art, now driving the vision behind Cherfan Design Kitchens.\n\nApproaching each project with the mindset of an artist, Serge brings a deep appreciation for craftsmanship and detail into every space he creates. His design language is defined by clean lines, a refined palette, and an uncompromising pursuit of perfection.",
     "description2": "By harmonizing modern aesthetics with timeless sensibilities, Serge crafts environments that feel both contemporary and enduring — kitchens designed not only to function beautifully, but to inspire everyday living.",
     "imageBase": "https://res.cloudinary.com/doxvoohbv/image/upload/v1774199022/DSC09350_raoff8.jpg"
