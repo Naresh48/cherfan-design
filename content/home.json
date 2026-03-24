@@ -9,7 +9,7 @@
     "description": "With 40 years of experience, we create living spaces that balance luxury with lasting quality. Our work is built to stand the test of time. This is design that doesn’t just fill a room, but defines it; serving as the quiet foundation for the life you build within. Every line, material, and proportion is considered with intention; crafted not for trends, but for longevity. We believe true luxury reveals itself slowly, through comfort, function, and an enduring sense of belonging."
   },
   "celebrationSection2": {
-    "imageBase": "0d8a9580-edit",
+    "imageBase": "/assets/final-pics/artofliving-400.webp",
     "title": "Art of living",
     "description": "Through our bespoke mastery, every corner becomes a silent chapter of your unique story. Through our bespoke mastery, every corner becomes a silent chapter of your unique story. Shaped by intention, balance, and craft, each space is designed to reflect who you are."
   },
@@ -27,13 +27,13 @@
   "experienceCards": {
     "kitchen": {
       "label": "KITCHEN",
-      "imageBase": "0d8a9586-edit",
+      "imageBase": "/assets/final-pics/kitchenslider-400.webp",
       "title": "Kitchen",
       "description": "Where architectural stone meets refined organic woods to create a timeless culinary masterpiece."
     },
     "masterBedroom": {
       "label": "MASTER BEDROOM",
-      "imageBase": "home-pics-processed/13",
+      "imageBase": "/assets/final-pics/bedroomslider-400.webp",
       "title": "Master Bedroom",
       "description": "An intimate sanctuary where sculptural light and organic textures define a peaceful retreat."
     },

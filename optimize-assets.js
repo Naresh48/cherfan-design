@@ -17,6 +17,8 @@ const sharp = require('sharp');
 
 const SIZES = [400, 800, 1200, 1600];
 const CMS_OUTPUT_DIR = path.join(__dirname, 'assets', 'final-pics', 'cms');
+const FINAL_PICS_DIR = path.join(__dirname, 'assets', 'final-pics');
+const NEW_ASSETS_DIR = path.join(__dirname, 'assets', 'new');
 const UPLOADS_DIR = path.join(__dirname, 'assets', 'uploads');
 const CONTENT_DIR = path.join(__dirname, 'content');
 
@@ -141,6 +143,39 @@ async function optimizeImage(inputBuffer, baseName) {
   await Promise.all(tasks);
 }
 
+async function optimizeLocalAssetsNew() {
+  if (!fs.existsSync(NEW_ASSETS_DIR)) return 0;
+  await fs.promises.mkdir(FINAL_PICS_DIR, { recursive: true });
+
+  const entries = await fs.promises.readdir(NEW_ASSETS_DIR);
+  const files = entries
+    .filter((f) => !f.startsWith('.'))
+    .filter((f) => /\.(png|jpe?g|webp|avif)$/i.test(f));
+
+  let processed = 0;
+  for (const file of files) {
+    const inputPath = path.join(NEW_ASSETS_DIR, file);
+    const baseName = path.basename(file, path.extname(file)).replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 40);
+    const inputBuffer = await fs.promises.readFile(inputPath);
+
+    const meta = await sharp(inputBuffer).metadata();
+    const maxDim = Math.max(meta.width || 0, meta.height || 0);
+
+    const tasks = [];
+    for (const w of SIZES) {
+      if (w > maxDim && maxDim > 0) continue;
+      const resize = sharp(inputBuffer).resize({ width: w, withoutEnlargement: true });
+      tasks.push(
+        resize.clone().avif({ quality: 80 }).toFile(path.join(FINAL_PICS_DIR, `${baseName}-${w}.avif`)),
+        resize.clone().webp({ quality: 85 }).toFile(path.join(FINAL_PICS_DIR, `${baseName}-${w}.webp`))
+      );
+    }
+    await Promise.all(tasks);
+    processed++;
+  }
+  return processed;
+}
+
 async function main() {
   const contentFiles = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'));
 
@@ -204,6 +239,11 @@ async function main() {
 
   if (replacements.size > 0) {
     console.log('[optimize-assets] Processed', replacements.size, 'image(s) → assets/final-pics/cms/');
+  }
+
+  const localProcessed = await optimizeLocalAssetsNew();
+  if (localProcessed > 0) {
+    console.log('[optimize-assets] Processed', localProcessed, 'local image(s) → assets/final-pics/');
   }
 }
 
