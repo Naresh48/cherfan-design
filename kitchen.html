@@ -254,9 +254,9 @@
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="2">
           <div class="aspect-[8/9] overflow-hidden relative">
             <picture>
-              <source type="image/avif" srcset="assets/final-pics/2-800.avif 800w, assets/final-pics/2-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
-              <source type="image/webp" srcset="assets/final-pics/2-800.webp 800w, assets/final-pics/2-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
-              <img src="assets/final-pics/2-800.webp" alt="Project 2" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <source type="image/avif" srcset="assets/final-pics/kitchen-2/2-800.avif 800w, assets/final-pics/kitchen-2/2-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/final-pics/kitchen-2/2-800.webp 800w, assets/final-pics/kitchen-2/2-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/final-pics/kitchen-2/2-800.webp" alt="Project 2" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -269,9 +269,9 @@
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="3">
           <div class="aspect-[8/9] overflow-hidden relative">
             <picture>
-              <source type="image/avif" srcset="assets/final-pics/3-800.avif 800w, assets/final-pics/3-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
-              <source type="image/webp" srcset="assets/final-pics/3-800.webp 800w, assets/final-pics/3-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
-              <img src="assets/final-pics/3-800.webp" alt="Project 3" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <source type="image/avif" srcset="assets/final-pics/kitchen-3/5-800.avif 800w, assets/final-pics/kitchen-3/5-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/final-pics/kitchen-3/5-800.webp 800w, assets/final-pics/kitchen-3/5-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
+              <img src="assets/final-pics/kitchen-3/5-800.webp" alt="Project 3" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -661,7 +661,6 @@
         {
           id: 2,
           images: [
-            'assets/final-pics/2-800.webp',
             'assets/final-pics/kitchen-2/2-1600.webp',
             'assets/final-pics/kitchen-2/3-1600.webp',
             'assets/final-pics/kitchen-2/4-1600.webp',
@@ -674,7 +673,7 @@
         {
           id: 3,
           images: [
-            'assets/final-pics/3-800.webp',
+            'assets/final-pics/kitchen-3/5-1600.webp',
             'assets/final-pics/kitchen-3/1-1600.webp',
             'assets/final-pics/kitchen-3/2-1600.webp',
             'assets/final-pics/kitchen-3/3-1600.webp',
@@ -1338,20 +1337,27 @@
         grid-template-columns: 1fr;
         gap: 2rem;
       }
+      .project-modal-image-container {
+        height: min(56vh, 620px);
+      }
     }
 
     .project-modal-image-container {
       position: relative;
       width: 100%;
-      aspect-ratio: 4/3;
+      height: min(70vh, 760px);
       overflow: hidden;
       border-radius: 8px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .project-modal-main-image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .project-modal-nav {
