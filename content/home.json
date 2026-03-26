@@ -18,7 +18,7 @@
     "description": "Beyond the blueprint lies a home with a soul. Journey through our curated world—from the heart of the kitchen to the finest living details; designed to elevate every moment."
   },
   "kidsBedroomSection": {
-    "label": "KIDS BEDROOM",
+    "label": "KIDS BEDROOMS",
     "imageBase": "home-kids",
     "title": "Design built for discovery",
     "description": "A bedroom is a child's entire universe. We craft furniture that inspires curiosity while maintaining a sense of calm. Our goal is to create a peaceful sanctuary where your little ones have the room they need to play, learn, and rest.",
@@ -26,27 +26,27 @@
   },
   "experienceCards": {
     "kitchen": {
-      "label": "KITCHEN",
+      "label": "KITCHENS",
       "imageBase": "/assets/final-pics/kitchenslider-400.webp",
-      "title": "Kitchen",
+      "title": "Kitchens",
       "description": "Where architectural stone meets refined organic woods to create a timeless culinary masterpiece."
     },
     "masterBedroom": {
-      "label": "MASTER BEDROOM",
+      "label": "MASTER BEDROOMS",
       "imageBase": "/assets/final-pics/bedroomslider-400.webp",
-      "title": "Master Bedroom",
+      "title": "Master Bedrooms",
       "description": "An intimate sanctuary where sculptural light and organic textures define a peaceful retreat."
     },
     "closet": {
-      "label": "CLOSET",
+      "label": "CLOSETS",
       "imageBase": "home-pics-processed/DD123",
-      "title": "Closet",
+      "title": "Closets",
       "description": "A curated gallery where meticulous organization meets the quiet luxury of bespoke design."
     },
     "kidsBedroom": {
-      "label": "KIDS BEDROOM",
+      "label": "KIDS BEDROOMS",
       "imageBase": "zo709223",
-      "title": "Kids Bedroom",
+      "title": "Kids Bedrooms",
       "description": "A sophisticated haven designed for discovery while respecting the home's high-end minimalist aesthetic."
     }
   },
@@ -61,7 +61,7 @@
       {
         "imageBase": "home-pics-processed/DSC08840",
         "label": "The Production",
-        "description": "Our 5,000-square-meter factory bridges technical precision and craft. Advanced machinery scales complex designs while maintaining a precise human touch."
+        "description": "Our 10,000-square-meter factory bridges technical precision and craft. Advanced machinery scales complex designs while maintaining a precise human touch."
       },
       {
         "imageBase": "home-pics-processed/CD123",
