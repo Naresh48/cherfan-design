@@ -83,6 +83,32 @@
       "description": "Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence."
     }
   ],
+  "craftProcessSection": {
+    "title": "The Making Of Excellence",
+    "description": "Defined by precision, refined by craftsmanship, and perfected through advanced technology.",
+    "cards": [
+      {
+        "imageBase": "card1",
+        "label": "Perfect Edges",
+        "description": "Holzer Accura ensures every joint is sealed with precision. Automated edge banding creates waterproof, seamless finishes that enhance both strength and aesthetics."
+      },
+      {
+        "imageBase": "card2",
+        "label": "Smart Cutting",
+        "description": "Holzer CNC technology transforms raw material into precision-crafted components.\nEvery cut, drill, and groove is executed with consistency and technical excellence."
+      },
+      {
+        "imageBase": "card3",
+        "label": "Lasting Finish",
+        "description": "Our waterfall painting system delivers smooth, even coatings. Built for durability, each finish maintains its depth and quality over time."
+      },
+      {
+        "imageBase": "card4",
+        "label": "Skilled Hands",
+        "description": "Craftsmanship defines the final touch. From upholstery to detailing, every element is shaped by experts who bring care, precision, and character into every piece"
+      }
+    ]
+  },
   "finalTextSection": {
     "label": "Serge Cherfan",
     "title": "Creative Designer",

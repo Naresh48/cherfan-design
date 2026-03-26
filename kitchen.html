@@ -138,7 +138,7 @@
 
   <!-- Hero Image Section -->
   <section id="heroSection" class="relative h-screen w-full overflow-hidden">
-    <picture>
+    <picture data-image="hero.imageBase">
       <source type="image/avif" srcset="assets/final-pics/kitchen-hero-1600.avif 1600w, assets/final-pics/kitchen-hero-1200.avif 1200w, assets/final-pics/kitchen-hero-800.avif 800w, assets/final-pics/kitchen-hero-400.avif 400w" sizes="100vw">
       <source type="image/webp" srcset="assets/final-pics/kitchen-hero-1600.webp 1600w, assets/final-pics/kitchen-hero-1200.webp 1200w, assets/final-pics/kitchen-hero-800.webp 800w, assets/final-pics/kitchen-hero-400.webp 400w" sizes="100vw">
       <img src="assets/final-pics/kitchen-hero-800.webp" alt="Kitchen Hero" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover">
@@ -169,7 +169,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <!-- Image 1 (Marble - left) -->
         <div class="relative overflow-hidden aspect-square group w-full">
-          <picture class="block w-full h-full">
+          <picture class="block w-full h-full" data-image="threeImageSection.image1.imageBase">
             <source type="image/avif" srcset="assets/final-pics/ceramic-800.avif 800w, assets/final-pics/ceramic-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/final-pics/ceramic-800.webp 800w, assets/final-pics/ceramic-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/final-pics/ceramic-800.webp" alt="Ceramic Canvas" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -184,7 +184,7 @@
 
         <!-- Image 2 (Grain - middle) -->
         <div class="relative overflow-hidden aspect-square group w-full">
-          <picture class="block w-full h-full">
+          <picture class="block w-full h-full" data-image="threeImageSection.image2.imageBase">
             <source type="image/avif" srcset="assets/final-pics/grain-800.avif 800w, assets/final-pics/grain-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/final-pics/grain-800.webp 800w, assets/final-pics/grain-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/final-pics/grain-800.webp" alt="Living Grain" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -199,7 +199,7 @@
 
         <!-- Image 3 (Light - right) -->
         <div class="relative overflow-hidden aspect-square group w-full">
-          <picture class="block w-full h-full">
+          <picture class="block w-full h-full" data-image="threeImageSection.image3.imageBase">
             <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchens-light-1600.avif 1600w, assets/kitchen-pics-optimised/kitchens-light-1200.avif 1200w, assets/kitchen-pics-optimised/kitchens-light-800.avif 800w, assets/kitchen-pics-optimised/kitchens-light-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchens-light-1600.webp 1600w, assets/kitchen-pics-optimised/kitchens-light-1200.webp 1200w, assets/kitchen-pics-optimised/kitchens-light-800.webp 800w, assets/kitchen-pics-optimised/kitchens-light-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/kitchen-pics-optimised/kitchens-light-800.webp" alt="Kitchen Light" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -365,10 +365,10 @@
   <section class="bg-brand-bg py-14 md:py-16 lg:py-20" style="background-color: var(--brand-bg);">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <div class="max-w-3xl mx-auto text-center mb-10 md:mb-12">
-        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1]">
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1]" data-content="craftProcessSection.title">
           The Making Of Excellence
         </h2>
-        <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal">
+        <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-normal" data-content="craftProcessSection.description">
           Defined by precision, refined by craftsmanship, and perfected through advanced technology.
         </p>
       </div>
@@ -376,28 +376,28 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7">
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[0].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card1-800.avif?v=cardfix1 800w, assets/final-pics/card1-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card1-800.webp?v=cardfix1 800w, assets/final-pics/card1-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card1-800.webp?v=cardfix1" alt="Perfect Edges" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
             </picture>
           </div>
-          <p class="expression-label">Perfect Edges</p>
-          <p class="expression-desc">
+          <p class="expression-label" data-content="craftProcessSection.cards[0].label">Perfect Edges</p>
+          <p class="expression-desc" data-content="craftProcessSection.cards[0].description">
             Holzer Accura ensures every joint is sealed with precision. Automated edge banding creates waterproof, seamless finishes that enhance both strength and aesthetics.
           </p>
         </article>
 
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[1].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card2-800.avif?v=cardfix1 800w, assets/final-pics/card2-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card2-800.webp?v=cardfix1 800w, assets/final-pics/card2-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card2-800.webp?v=cardfix1" alt="Smart Cutting" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
             </picture>
           </div>
-          <p class="expression-label">Smart Cutting</p>
-          <p class="expression-desc">
+          <p class="expression-label" data-content="craftProcessSection.cards[1].label">Smart Cutting</p>
+          <p class="expression-desc" data-content="craftProcessSection.cards[1].description">
             Holzer CNC technology transforms raw material into precision-crafted components.
             Every cut, drill, and groove is executed with consistency and technical excellence.
           </p>
@@ -405,28 +405,28 @@
 
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[2].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card3-800.avif?v=cardfix1 800w, assets/final-pics/card3-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card3-800.webp?v=cardfix1 800w, assets/final-pics/card3-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card3-800.webp?v=cardfix1" alt="Lasting Finish" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
             </picture>
           </div>
-          <p class="expression-label">Lasting Finish</p>
-          <p class="expression-desc">
+          <p class="expression-label" data-content="craftProcessSection.cards[2].label">Lasting Finish</p>
+          <p class="expression-desc" data-content="craftProcessSection.cards[2].description">
             Our waterfall painting system delivers smooth, even coatings. Built for durability, each finish maintains its depth and quality over time.
           </p>
         </article>
 
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[3].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card4-800.avif?v=cardfix1 800w, assets/final-pics/card4-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card4-800.webp?v=cardfix1 800w, assets/final-pics/card4-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card4-800.webp?v=cardfix1" alt="Skilled Hands" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
             </picture>
           </div>
-          <p class="expression-label">Skilled Hands</p>
-          <p class="expression-desc">
+          <p class="expression-label" data-content="craftProcessSection.cards[3].label">Skilled Hands</p>
+          <p class="expression-desc" data-content="craftProcessSection.cards[3].description">
             Craftsmanship defines the final touch. From upholstery to detailing, every element is shaped by experts who bring care, precision, and character into every piece
           </p>
         </article>

@@ -141,6 +141,15 @@ collections:
             fields:
               - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
+          - label: "Hero Text Section"
+            name: "heroTextSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Description 1", name: "description1", widget: "text" }
+          
           - label: "Three Image Section"
             name: "threeImageSection"
             widget: "object"
@@ -188,6 +197,20 @@ collections:
               - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+          
+          - label: "Craft Process Section"
+            name: "craftProcessSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
           
           - label: "Final Text Section"
             name: "finalTextSection"
