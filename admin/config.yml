@@ -457,3 +457,106 @@ collections:
                   - { label: "Email", name: "email", widget: "string" }
               - { label: "Copyright", name: "copyright", widget: "string" }
 
+      # About Us Page
+      - file: "content/about-us.json"
+        label: "About Us Page"
+        name: "about-us"
+        fields:
+          - label: "Hero Section"
+            name: "heroSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+
+          - label: "Story Section"
+            name: "storySection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+              - { label: "Paragraph 3", name: "paragraph3", widget: "text" }
+
+          - label: "Philosophy Section"
+            name: "philosophySection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+
+          - label: "Values Section"
+            name: "valuesSection"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Final Section"
+            name: "finalSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+
+      # Common Text (Shared Across Pages)
+      - file: "content/common.json"
+        label: "Common Text"
+        name: "common"
+        fields:
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Kitchens", name: "kitchen", widget: "string" }
+              - { label: "Kids Bedrooms", name: "kidsBedroom", widget: "string" }
+              - { label: "Master Bedrooms", name: "masterBedroom", widget: "string" }
+              - { label: "Closets", name: "closet", widget: "string" }
+              - { label: "About Us", name: "aboutUs", widget: "string" }
+              - { label: "Contact", name: "contact", widget: "string" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Contact Heading", name: "contactHeading", widget: "string" }
+              - { label: "Contact Block (HTML)", name: "contactHtml", widget: "text", hint: "Use <br> for line breaks." }
+              - { label: "Newsletter Heading", name: "newsletterHeading", widget: "string" }
+              - { label: "Newsletter Placeholder", name: "newsletterPlaceholder", widget: "string" }
+              - { label: "Newsletter Button", name: "newsletterButton", widget: "string" }
+              - { label: "Copyright", name: "copyright", widget: "string" }
+
+          - label: "Contact Modal"
+            name: "contactModal"
+            widget: "object"
+            fields:
+              - { label: "Close Button Aria Label", name: "closeAria", widget: "string" }
+              - { label: "Primary Title", name: "titlePrimary", widget: "string" }
+              - { label: "Secondary Title", name: "titleSecondary", widget: "string" }
+              - { label: "Contact Label", name: "contactLabel", widget: "string" }
+              - { label: "Contact Value", name: "contactValue", widget: "string" }
+              - { label: "Email Label", name: "emailLabel", widget: "string" }
+              - { label: "Email Value", name: "emailValue", widget: "string" }
+              - { label: "Location Label", name: "locationLabel", widget: "string" }
+              - { label: "Location Value", name: "locationValue", widget: "string" }
+              - { label: "First Name Label", name: "firstNameLabel", widget: "string" }
+              - { label: "First Name Error", name: "firstNameError", widget: "string" }
+              - { label: "Last Name Label", name: "lastNameLabel", widget: "string" }
+              - { label: "Last Name Error", name: "lastNameError", widget: "string" }
+              - { label: "Email Field Label", name: "emailFieldLabel", widget: "string" }
+              - { label: "Email Error", name: "emailError", widget: "string" }
+              - { label: "Subject Label", name: "subjectLabel", widget: "string" }
+              - { label: "Subject Error", name: "subjectError", widget: "string" }
+              - { label: "Notes Label", name: "notesLabel", widget: "string" }
+              - { label: "Submit Button", name: "submitButton", widget: "string" }
+

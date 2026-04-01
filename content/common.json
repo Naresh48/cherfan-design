@@ -1,0 +1,39 @@
+{
+  "nav": {
+    "kitchen": "Kitchens",
+    "kidsBedroom": "Kids Bedrooms",
+    "masterBedroom": "Master Bedrooms",
+    "closet": "Closets",
+    "aboutUs": "About Us",
+    "contact": "Contact"
+  },
+  "footer": {
+    "contactHeading": "Contact",
+    "contactHtml": "Zouk Highway - Lebanon<br>+961 9 222 340<br>info.z@cherfandesign.com",
+    "newsletterHeading": "Newsletter",
+    "newsletterPlaceholder": "Email",
+    "newsletterButton": "Subscribe",
+    "copyright": "\u00a9 Cherfan Design \u2014 All rights reserved"
+  },
+  "contactModal": {
+    "closeAria": "Close contact form",
+    "titlePrimary": "Get in Touch",
+    "titleSecondary": "Information Request",
+    "contactLabel": "Contact:",
+    "contactValue": "+961 9 222 340",
+    "emailLabel": "Email:",
+    "emailValue": "info.z@cherfandesign.com",
+    "locationLabel": "Location:",
+    "locationValue": "Zouk Highway",
+    "firstNameLabel": "First Name *",
+    "firstNameError": "First name is required.",
+    "lastNameLabel": "Last Name *",
+    "lastNameError": "Last name is required.",
+    "emailFieldLabel": "Email *",
+    "emailError": "Valid email is required.",
+    "subjectLabel": "Subject *",
+    "subjectError": "Subject is required.",
+    "notesLabel": "Notes *",
+    "submitButton": "Submit"
+  }
+}

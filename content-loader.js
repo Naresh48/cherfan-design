@@ -140,17 +140,132 @@
   }
 
   /**
+   * Helper: Set attribute content safely
+   */
+  function setAttributeContent(element, attribute, value) {
+    if (element && attribute && value !== undefined && value !== null) {
+      const textValue = String(value).trim();
+      if (textValue) {
+        element.setAttribute(attribute, textValue);
+      }
+    }
+  }
+
+  /**
+   * Helper: apply value to selector.
+   * mode "text" updates textContent, otherwise sets attribute with mode name.
+   */
+  function applySelectorValue(root, selector, path, data, mode = 'text') {
+    const element = root.querySelector(selector);
+    if (!element) return;
+    const value = getNestedValue(data, path);
+    if (value === null || value === undefined) return;
+
+    if (mode === 'text') {
+      setTextContent(element, value);
+      return;
+    }
+    if (mode === 'html') {
+      setHTMLContent(element, value);
+      return;
+    }
+    setAttributeContent(element, mode, value);
+  }
+
+  /**
+   * Inject text into static selectors that do not use data-content.
+   */
+  function injectSelectorContent(data, pageName) {
+    const root = document;
+
+    const globalBindings = [
+      ['a[data-target="kitchen"]', 'common.nav.kitchen'],
+      ['a[data-target="kids"]', 'common.nav.kidsBedroom'],
+      ['a[data-target="master"]', 'common.nav.masterBedroom'],
+      ['a[data-target="closet"]', 'common.nav.closet'],
+      ['a[data-target="about"]', 'common.nav.aboutUs'],
+      ['a[data-target="contact"]', 'common.nav.contact'],
+      ['footer .max-w-\\[1200px\\] > div:nth-child(2) h4', 'common.footer.contactHeading'],
+      ['footer .max-w-\\[1200px\\] > div:nth-child(2) p', 'common.footer.contactHtml', 'html'],
+      ['footer .max-w-\\[1200px\\] > div:nth-child(3) h4', 'common.footer.newsletterHeading'],
+      ['#newsletterEmail', 'common.footer.newsletterPlaceholder', 'placeholder'],
+      ['#newsletterForm button[type="submit"]', 'common.footer.newsletterButton'],
+      ['footer .text-center.text-xs.text-gray-600.pb-6', 'common.footer.copyright'],
+      ['.contact-modal-close', 'common.contactModal.closeAria', 'aria-label'],
+      ['.contact-modal-title:nth-of-type(1)', 'common.contactModal.titlePrimary'],
+      ['.contact-modal-title:nth-of-type(2)', 'common.contactModal.titleSecondary'],
+      ['#contactModal .mb-4 p:nth-child(1)', 'common.contactModal.contactLabel'],
+      ['#contactModal .mb-4 p:nth-child(2)', 'common.contactModal.emailLabel'],
+      ['#contactModal .mb-4 p:nth-child(3)', 'common.contactModal.locationLabel'],
+      ['#contactForm > div:nth-of-type(1) > label', 'common.contactModal.firstNameLabel'],
+      ['#errFirst', 'common.contactModal.firstNameError'],
+      ['#contactForm > div:nth-of-type(2) > label', 'common.contactModal.lastNameLabel'],
+      ['#errLast', 'common.contactModal.lastNameError'],
+      ['#contactForm > div:nth-of-type(3) > label', 'common.contactModal.emailFieldLabel'],
+      ['#errEmail', 'common.contactModal.emailError'],
+      ['#contactForm > div:nth-of-type(4) > label', 'common.contactModal.subjectLabel'],
+      ['#errSubject', 'common.contactModal.subjectError'],
+      ['#contactForm > div:nth-of-type(5) > label', 'common.contactModal.notesLabel'],
+      ['#contactForm button[type="submit"]', 'common.contactModal.submitButton']
+    ];
+
+    globalBindings.forEach(([selector, path, mode]) => {
+      applySelectorValue(root, selector, path, data, mode || 'text');
+    });
+
+    const contactValueLines = [
+      ['#contactModal .mb-4 p:nth-child(1)', 'common.contactModal.contactLabel', 'common.contactModal.contactValue'],
+      ['#contactModal .mb-4 p:nth-child(2)', 'common.contactModal.emailLabel', 'common.contactModal.emailValue'],
+      ['#contactModal .mb-4 p:nth-child(3)', 'common.contactModal.locationLabel', 'common.contactModal.locationValue']
+    ];
+    contactValueLines.forEach(([selector, labelPath, valuePath]) => {
+      const element = root.querySelector(selector);
+      const label = getNestedValue(data, labelPath);
+      const value = getNestedValue(data, valuePath);
+      if (element && label && value) {
+        setHTMLContent(element, `<span class="font-medium">${label}</span> ${value}`);
+      }
+    });
+
+    if (pageName === 'about-us') {
+      const aboutBindings = [
+        ['#heroSection h1', 'heroSection.title'],
+        ['#heroSection p', 'heroSection.subtitle'],
+        ['section:nth-of-type(2) .max-w-4xl > p', 'storySection.label'],
+        ['section:nth-of-type(2) .max-w-4xl > h2', 'storySection.title'],
+        ['section:nth-of-type(2) .max-w-4xl .space-y-6 p:nth-child(1)', 'storySection.paragraph1'],
+        ['section:nth-of-type(2) .max-w-4xl .space-y-6 p:nth-child(2)', 'storySection.paragraph2'],
+        ['section:nth-of-type(2) .max-w-4xl .space-y-6 p:nth-child(3)', 'storySection.paragraph3'],
+        ['section:nth-of-type(3) .grid > div:nth-child(2) > p', 'philosophySection.label'],
+        ['section:nth-of-type(3) .grid > div:nth-child(2) > h2', 'philosophySection.title'],
+        ['section:nth-of-type(3) .grid > div:nth-child(2) > p:nth-of-type(2)', 'philosophySection.paragraph1'],
+        ['section:nth-of-type(3) .grid > div:nth-child(2) > p:nth-of-type(3)', 'philosophySection.paragraph2'],
+        ['section:nth-of-type(4) .text-center > p', 'valuesSection.label'],
+        ['section:nth-of-type(4) .text-center > h2', 'valuesSection.title'],
+        ['section:nth-of-type(4) .grid > div:nth-child(1) h3', 'valuesSection.cards[0].title'],
+        ['section:nth-of-type(4) .grid > div:nth-child(1) p', 'valuesSection.cards[0].description'],
+        ['section:nth-of-type(4) .grid > div:nth-child(2) h3', 'valuesSection.cards[1].title'],
+        ['section:nth-of-type(4) .grid > div:nth-child(2) p', 'valuesSection.cards[1].description'],
+        ['section:nth-of-type(4) .grid > div:nth-child(3) h3', 'valuesSection.cards[2].title'],
+        ['section:nth-of-type(4) .grid > div:nth-child(3) p', 'valuesSection.cards[2].description'],
+        ['section:nth-of-type(5) .max-w-3xl h2', 'finalSection.title'],
+        ['section:nth-of-type(5) .max-w-3xl p:nth-of-type(1)', 'finalSection.paragraph1'],
+        ['section:nth-of-type(5) .max-w-3xl p:nth-of-type(2)', 'finalSection.paragraph2']
+      ];
+
+      aboutBindings.forEach(([selector, path]) => {
+        applySelectorValue(root, selector, path, data, 'text');
+      });
+    }
+  }
+
+  /**
    * Load and inject content for a specific page
    */
-  function loadPageContent(pageName) {
-    // Use relative path to work in all environments
-    const jsonPath = `content/${pageName}.json`;
-    
-    // Add cache-busting timestamp to ensure fresh content
+  function fetchJSON(jsonPath) {
     const timestamp = new Date().getTime();
     const url = `${jsonPath}?t=${timestamp}`;
-    
-    fetch(url, {
+    return fetch(url, {
       cache: 'no-cache',
       headers: {
         'Cache-Control': 'no-cache'
@@ -161,14 +276,40 @@
           throw new Error(`Failed to load ${jsonPath}`);
         }
         return response.json();
-      })
-      .then(data => {
-        console.log(`Content loader: Successfully loaded ${jsonPath}`, data);
-        injectContent(data);
+      });
+  }
+
+  function loadPageContent(pageName) {
+    const pageJsonPath = `content/${pageName}.json`;
+    const commonJsonPath = 'content/common.json';
+
+    Promise.allSettled([fetchJSON(pageJsonPath), fetchJSON(commonJsonPath)])
+      .then(([pageResult, commonResult]) => {
+        const pageData = pageResult.status === 'fulfilled' ? pageResult.value : null;
+        const commonData = commonResult.status === 'fulfilled' ? commonResult.value : null;
+
+        if (!pageData) {
+          console.error(`Content loader: Could not load ${pageJsonPath}`, pageResult.reason);
+        } else {
+          console.log(`Content loader: Successfully loaded ${pageJsonPath}`, pageData);
+        }
+
+        if (!commonData) {
+          console.error(`Content loader: Could not load ${commonJsonPath}`, commonResult.reason);
+        }
+
+        if (!pageData && !commonData) return;
+
+        const mergedData = pageData || {};
+        if (commonData) {
+          mergedData.common = commonData;
+        }
+
+        injectContent(mergedData);
+        injectSelectorContent(mergedData, pageName);
       })
       .catch(error => {
-        // Log error for debugging
-        console.error(`Content loader: Could not load ${jsonPath}`, error);
+        console.error('Content loader: Unexpected loading error', error);
       });
   }
 
@@ -274,6 +415,8 @@
         pageName = 'closet';
       } else if (currentPage === 'kids-bedroom.html' || currentPage.includes('kids-bedroom')) {
         pageName = 'kids';
+      } else if (currentPage === 'about-us.html' || currentPage.includes('about-us')) {
+        pageName = 'about-us';
       }
     }
     

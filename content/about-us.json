@@ -1,0 +1,42 @@
+{
+  "heroSection": {
+    "title": "About Cherfan",
+    "subtitle": "Crafting Timeless Interiors Since Our Inception"
+  },
+  "storySection": {
+    "label": "OUR STORY",
+    "title": "A Legacy of Excellence",
+    "paragraph1": "At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends, embodying a timeless elegance that speaks to the soul.",
+    "paragraph2": "With a passion for exceptional craftsmanship, sustainable materials, and timeless design, we bring you thoughtfully curated collections that blend beauty with functionality. Our team of skilled artisans and designers work in harmony to transform your vision into reality.",
+    "paragraph3": "Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves."
+  },
+  "philosophySection": {
+    "label": "OUR PHILOSOPHY",
+    "title": "The Art of Living",
+    "paragraph1": "Every corner of your home tells a story. Through our bespoke design approach, we create spaces that reflect your unique personality while maintaining the highest standards of quality and sophistication.",
+    "paragraph2": "We understand that true luxury lies in the details-the perfect balance of form and function, the harmony of colors and textures, and the seamless integration of design elements that create an atmosphere of refined elegance."
+  },
+  "valuesSection": {
+    "label": "WHAT DRIVES US",
+    "title": "Our Core Values",
+    "cards": [
+      {
+        "title": "Craftsmanship",
+        "description": "We honor traditional techniques while embracing innovation, ensuring every piece meets our exacting standards of excellence."
+      },
+      {
+        "title": "Authenticity",
+        "description": "We believe in creating spaces that are genuine reflections of your lifestyle, avoiding trends in favor of timeless elegance."
+      },
+      {
+        "title": "Excellence",
+        "description": "From concept to completion, we maintain unwavering attention to detail and commitment to surpassing expectations."
+      }
+    ]
+  },
+  "finalSection": {
+    "title": "Creating Spaces That Inspire",
+    "paragraph1": "At Cherfan Design, we don't just design interiors-we craft experiences. Each project is an opportunity to create something extraordinary, something that will be cherished for generations to come.",
+    "paragraph2": "We invite you to discover the difference that passion, expertise, and unwavering dedication can make in transforming your living spaces into sanctuaries of beauty and comfort."
+  }
+}
