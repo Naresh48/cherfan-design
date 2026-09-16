@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
+
 <body>
   <!--
     Cloudinary integration: Immutable + decap-cms-lib-util must load before the Cloudinary bundle.
@@ -19,9 +20,10 @@
   </script>
   <script src="https://unpkg.com/decap-cms-lib-util@3.4.0/dist/decap-cms-lib-util.js"></script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script src="https://unpkg.com/decap-cms-media-library-cloudinary@3.1.0/dist/decap-cms-media-library-cloudinary.js"></script>
+  <script
+    src="https://unpkg.com/decap-cms-media-library-cloudinary@3.1.0/dist/decap-cms-media-library-cloudinary.js"></script>
   <script>
-    (function() {
+    (function () {
       function register() {
         if (window.CMS && window.DecapCmsMediaLibraryCloudinary) {
           window.CMS.registerMediaLibrary(window.DecapCmsMediaLibraryCloudinary);
@@ -36,18 +38,6 @@
       }
     })();
   </script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    } else {
-      console.error("Netlify Identity widget failed to load. Please check your Netlify Identity settings.");
-    }
-  </script>
 </body>
+
 </html>
