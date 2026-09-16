@@ -1,6 +1,6 @@
 {
   "hero": {
-    "imageBase": "0d8a9591"
+    "imageBase": "/assets/final-pics/kitchen-hero-800.webp"
   },
   "heroTextSection": {
     "label": "CULINARY EXCELLENCE",
@@ -10,19 +10,19 @@
   },
   "threeImageSection": {
     "image1": {
-      "imageBase": "0d8a9586-edit",
+      "imageBase": "/assets/final-pics/ceramic-800.webp",
       "label": "A",
       "title": "Elevated Ceramic",
       "description": "Built for strength, refined for living."
     },
     "image2": {
-      "imageBase": "0d8a9592",
+      "imageBase": "/assets/final-pics/grain-800.webp",
       "label": "B",
       "title": "Timeless Wood",
       "description": "Bringing warmth to modern living."
     },
     "image3": {
-      "imageBase": "0d8a9589",
+      "imageBase": "/assets/kitchen-pics-optimised/kitchens-light-800.webp",
       "label": "C",
       "title": "Interior Light",
       "description": "Sculpting every evening mood."
@@ -36,51 +36,120 @@
   "projects": [
     {
       "id": 1,
-      "imageBase": "0d8a9586-edit",
+      "imageBase": "/assets/final-pics/1-800.webp",
       "title": "Marai A12",
-      "description": "A kitchen island where rich walnut wood wrap around sculpted black onyx ceramic, creating a dialogue between warmth and depth."
+      "description": "A kitchen island where rich walnut wood wrap around sculpted black onyx ceramic, creating a dialogue between warmth and depth.",
+      "images": [
+        { "image": "assets/final-pics/1-800.webp" },
+        { "image": "assets/final-pics/kitchen1/0d8a0043-1600.webp" },
+        { "image": "assets/final-pics/kitchen1/0d8a0050-1600.webp" },
+        { "image": "assets/final-pics/kitchen1/zo709957-1600.webp" },
+        { "image": "assets/final-pics/kitchen1/zo709958-1600.webp" },
+        { "image": "assets/final-pics/kitchen1/zo709960-1600.webp" },
+        { "image": "assets/final-pics/kitchen1/zo709961-1600.webp" },
+        { "image": "assets/final-pics/kitchen1/zo709962-1600.webp" }
+      ]
     },
     {
       "id": 2,
-      "imageBase": "0d8a9592",
+      "imageBase": "/assets/final-pics/kitchen-2/2-800.webp",
       "title": "Ligno Z23",
-      "description": "A kitchen where warm minimalism meets refined living.\nSoft ceramic surfaces and muted tones create a calm, timeless space designed for effortless elegance."
+      "description": "A kitchen where warm minimalism meets refined living.\nSoft ceramic surfaces and muted tones create a calm, timeless space designed for effortless elegance.",
+      "images": [
+        { "image": "assets/final-pics/kitchen-2/2-1600.webp" },
+        { "image": "assets/final-pics/kitchen-2/3-1600.webp" },
+        { "image": "assets/final-pics/kitchen-2/4-1600.webp" },
+        { "image": "assets/final-pics/kitchen-2/5-1600.webp" },
+        { "image": "assets/final-pics/kitchen-2/6-1600.webp" }
+      ]
     },
     {
       "id": 3,
-      "imageBase": "0d8a9589",
+      "imageBase": "/assets/final-pics/kitchen-3/5-800.webp",
       "title": "Layera AM1",
-      "description": "Glossy cabinets combined with walnut wood tones create a modern, clean kitchen, while adding warmth and contrast to the space."
+      "description": "Glossy cabinets combined with walnut wood tones create a modern, clean kitchen, while adding warmth and contrast to the space.",
+      "images": [
+        { "image": "assets/final-pics/kitchen-3/5-1600.webp" },
+        { "image": "assets/final-pics/kitchen-3/1-1600.webp" },
+        { "image": "assets/final-pics/kitchen-3/2-1600.webp" },
+        { "image": "assets/final-pics/kitchen-3/3-1600.webp" },
+        { "image": "assets/final-pics/kitchen-3/4-1600.webp" }
+      ]
     },
     {
       "id": 4,
-      "imageBase": "0d8a9509-edit",
+      "imageBase": "/assets/final-pics/4-800.webp",
       "title": "Mirai C2",
-      "description": "Wrapped in the soft stillness of Moon Grey ceramic, this kitchen evokes the quiet beauty of twilight. Subtle, grounded, and endlessly refined."
+      "description": "Wrapped in the soft stillness of Moon Grey ceramic, this kitchen evokes the quiet beauty of twilight. Subtle, grounded, and endlessly refined.",
+      "images": [
+        { "image": "assets/final-pics/4-800.webp" },
+        { "image": "assets/final-pics/kitchen4/0d8a9589-1600.webp" },
+        { "image": "assets/final-pics/kitchen4/0d8a9591-1600.webp" },
+        { "image": "assets/final-pics/kitchen4/0d8a9592-1600.webp" },
+        { "image": "assets/final-pics/kitchen4/0d8a9620-1600.webp" },
+        { "image": "assets/final-pics/kitchen4/0d8a9674-1600.webp" },
+        { "image": "assets/final-pics/kitchen4/zo709964-1600.webp" },
+        { "image": "assets/final-pics/kitchen4/zo709967-1600.webp" },
+        { "image": "assets/final-pics/kitchen4/zo709968-1600.webp" }
+      ]
     },
     {
       "id": 5,
-      "imageBase": "0d8a9659",
+      "imageBase": "/assets/final-pics/5-800.webp",
       "title": "Troy B4",
-      "description": "A kitchen defined by the beauty of onyx-inspired ceramic.\nTranslucent tones and organic veining flow across the island and backsplash, transforming ceramic into a statement of natural depth and modern luxury."
+      "description": "A kitchen defined by the beauty of onyx-inspired ceramic.\nTranslucent tones and organic veining flow across the island and backsplash, transforming ceramic into a statement of natural depth and modern luxury.",
+      "images": [
+        { "image": "assets/final-pics/5-800.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0111-1600.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0116-1600.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0118-1600.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0122-1600.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0149-1600.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0167-1600.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0168-1600.webp" },
+        { "image": "assets/final-pics/kitchen5/img-0169-1600.webp" }
+      ]
     },
     {
       "id": 6,
-      "imageBase": "0d8a9601",
+      "imageBase": "/assets/final-pics/6-800.webp",
       "title": "Cimi 01",
-      "description": "Soft grey tones meet clever design — crafted for both experience and practicality.\nCeramic surfaces bring durability and quiet elegance, while warm lighting and layered storage create a kitchen that feels as functional as it is refined."
+      "description": "Soft grey tones meet clever design — crafted for both experience and practicality.\nCeramic surfaces bring durability and quiet elegance, while warm lighting and layered storage create a kitchen that feels as functional as it is refined.",
+      "images": [
+        { "image": "assets/final-pics/6-800.webp" },
+        { "image": "assets/final-pics/kitchen-6/2-1600.webp" },
+        { "image": "assets/final-pics/kitchen-6/3-1600.webp" },
+        { "image": "assets/final-pics/kitchen-6/4-1600.webp" },
+        { "image": "assets/final-pics/kitchen-6/5-1600.webp" },
+        { "image": "assets/final-pics/kitchen-6/6-1600.webp" },
+        { "image": "assets/final-pics/kitchen-6/7-1600.webp" },
+        { "image": "assets/final-pics/kitchen-6/8-1600.webp" }
+      ]
     },
     {
       "id": 7,
-      "imageBase": "0d8a9620",
+      "imageBase": "/assets/final-pics/7-800.webp",
       "title": "Taloy D5",
-      "description": "Where warmth meets modern edge — walnut textures, glossy whites, and sleek greys in perfect harmony. A refined ceramic countertop anchors the space, bringing durability, elegance, and a calm architectural presence to everyday living."
+      "description": "Where warmth meets modern edge — walnut textures, glossy whites, and sleek greys in perfect harmony. A refined ceramic countertop anchors the space, bringing durability, elegance, and a calm architectural presence to everyday living.",
+      "images": [
+        { "image": "assets/final-pics/7-800.webp" },
+        { "image": "assets/final-pics/kitchen-7/2-1600.webp" },
+        { "image": "assets/final-pics/kitchen-7/3-1600.webp" },
+        { "image": "assets/final-pics/kitchen-7/4-1600.webp" }
+      ]
     },
     {
       "id": 8,
-      "imageBase": "0d8a9625",
+      "imageBase": "/assets/final-pics/8-800.webp",
       "title": "Glory C6",
-      "description": "Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence."
+      "description": "Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence.",
+      "images": [
+        { "image": "assets/final-pics/8-800.webp" },
+        { "image": "assets/final-pics/kitchen-8/2-1600.webp" },
+        { "image": "assets/final-pics/kitchen-8/3-1600.webp" },
+        { "image": "assets/final-pics/kitchen-8/4-1600.webp" },
+        { "image": "assets/final-pics/kitchen-8/5-1600.webp" }
+      ]
     }
   ],
   "craftProcessSection": {
@@ -88,42 +157,25 @@
     "description": "Defined by precision, refined by craftsmanship, and perfected through advanced technology.",
     "cards": [
       {
-        "imageBase": "card1",
+        "imageBase": "/assets/final-pics/card1-800.webp",
         "label": "Perfect Edges",
         "description": "Holzer CNC technology transforms raw material into precision-crafted components.\nEvery cut, drill, and groove is executed with consistency and technical excellence."
       },
       {
-        "imageBase": "card2",
+        "imageBase": "/assets/final-pics/card2-800.webp",
         "label": "Smart Cutting",
         "description": "Holzer Accura ensures every joint is sealed with precision. Automated edge banding creates waterproof, seamless finishes that enhance both strength and aesthetics."
       },
       {
-        "imageBase": "card3",
+        "imageBase": "/assets/final-pics/card3-800.webp",
         "label": "Lasting Finish",
         "description": "Our waterfall painting system delivers smooth, even coatings. Built for durability, each finish maintains its depth and quality over time."
       },
       {
-        "imageBase": "card4",
+        "imageBase": "/assets/final-pics/card4-800.webp",
         "label": "Skilled Hands",
         "description": "Craftsmanship defines the final touch. From upholstery to detailing, every element is shaped by experts who bring care, precision, and character into every piece"
       }
     ]
-  },
-  "finalTextSection": {
-    "label": "Serge Cherfan",
-    "title": "Creative Designer",
-    "description1": "A multidisciplinary creative whose work spans interior architecture, furniture design, and fine art, now driving the vision behind Cherfan Design Kitchens.\n\nApproaching each project with the mindset of an artist, Serge brings a deep appreciation for craftsmanship and detail into every space he creates. His design language is defined by clean lines, a refined palette, and an uncompromising pursuit of perfection.",
-    "description2": "By harmonizing modern aesthetics with timeless sensibilities, Serge crafts environments that feel both contemporary and enduring — kitchens designed not only to function beautifully, but to inspire everyday living.",
-    "imageBase": "https://res.cloudinary.com/doxvoohbv/image/upload/v1774199022/DSC09350_raoff8.jpg"
-  },
-  "footer": {
-    "logoImageBase": "whatsapp-image-2025-12-04-at-4.11.49-pm",
-    "location": "Cherfan Design — Lebanon",
-    "contact": {
-      "address": "Zouk Highway",
-      "phone": "+961 9 222 340",
-      "email": "info.z@cherfandesign.com"
-    },
-    "copyright": "© Cherfan Design — All rights reserved"
   }
 }

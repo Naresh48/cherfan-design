@@ -1,7 +1,8 @@
 {
   "heroSection": {
     "title": "About Cherfan Design",
-    "subtitle": "Crafting Timeless Interiors Since Our Inception"
+    "subtitle": "Crafting Timeless Interiors Since Our Inception",
+    "imageBase": "0d8a9586-edit"
   },
   "storySection": {
     "label": "OUR STORY",
@@ -13,6 +14,7 @@
   "philosophySection": {
     "label": "OUR PHILOSOPHY",
     "title": "The Art of Living",
+    "imageBase": "0d8a9509-edit",
     "paragraph1": "Every corner of your home tells a story. Through our bespoke design approach, we create spaces that reflect your unique personality while maintaining the highest standards of quality and sophistication.",
     "paragraph2": "We understand that true luxury lies in the details-the perfect balance of form and function, the harmony of colors and textures, and the seamless integration of design elements that create an atmosphere of refined elegance."
   },

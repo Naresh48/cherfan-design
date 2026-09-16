@@ -102,7 +102,7 @@
     <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col items-center gap-2">
       <!-- Logo centered -->
       <a href="index.html" class="inline-flex justify-center py-2">
-        <picture>
+        <picture data-image="common.header.logoImageBase">
           <img id="siteTitleImg" src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="eager" decoding="async" class="h-6 md:h-10 object-contain">
         </picture>
       </a>
@@ -138,7 +138,7 @@
 
   <!-- Hero Image Section -->
   <section id="heroSection" class="relative h-screen w-full overflow-hidden">
-    <picture>
+    <picture data-image="hero.imageBase">
       <source type="image/avif" srcset="assets/final-pics/kitchen-hero-1600.avif 1600w, assets/final-pics/kitchen-hero-1200.avif 1200w, assets/final-pics/kitchen-hero-800.avif 800w, assets/final-pics/kitchen-hero-400.avif 400w" sizes="100vw">
       <source type="image/webp" srcset="assets/final-pics/kitchen-hero-1600.webp 1600w, assets/final-pics/kitchen-hero-1200.webp 1200w, assets/final-pics/kitchen-hero-800.webp 800w, assets/final-pics/kitchen-hero-400.webp 400w" sizes="100vw">
       <img src="assets/final-pics/kitchen-hero-800.webp" alt="Kitchen Hero" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover">
@@ -169,7 +169,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <!-- Image 1 (Marble - left) -->
         <div class="relative overflow-hidden aspect-square group w-full">
-          <picture class="block w-full h-full">
+          <picture class="block w-full h-full" data-image="threeImageSection.image1.imageBase">
             <source type="image/avif" srcset="assets/final-pics/ceramic-800.avif 800w, assets/final-pics/ceramic-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/final-pics/ceramic-800.webp 800w, assets/final-pics/ceramic-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/final-pics/ceramic-800.webp" alt="Ceramic Canvas" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -184,7 +184,7 @@
 
         <!-- Image 2 (Grain - middle) -->
         <div class="relative overflow-hidden aspect-square group w-full">
-          <picture class="block w-full h-full">
+          <picture class="block w-full h-full" data-image="threeImageSection.image2.imageBase">
             <source type="image/avif" srcset="assets/final-pics/grain-800.avif 800w, assets/final-pics/grain-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/final-pics/grain-800.webp 800w, assets/final-pics/grain-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/final-pics/grain-800.webp" alt="Living Grain" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -199,7 +199,7 @@
 
         <!-- Image 3 (Light - right) -->
         <div class="relative overflow-hidden aspect-square group w-full">
-          <picture class="block w-full h-full">
+          <picture class="block w-full h-full" data-image="threeImageSection.image3.imageBase">
             <source type="image/avif" srcset="assets/kitchen-pics-optimised/kitchens-light-1600.avif 1600w, assets/kitchen-pics-optimised/kitchens-light-1200.avif 1200w, assets/kitchen-pics-optimised/kitchens-light-800.avif 800w, assets/kitchen-pics-optimised/kitchens-light-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/kitchen-pics-optimised/kitchens-light-1600.webp 1600w, assets/kitchen-pics-optimised/kitchens-light-1200.webp 1200w, assets/kitchen-pics-optimised/kitchens-light-800.webp 800w, assets/kitchen-pics-optimised/kitchens-light-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/kitchen-pics-optimised/kitchens-light-800.webp" alt="Kitchen Light" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -238,7 +238,7 @@
         <!-- Project 1 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="1">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[0].imageBase">
               <source type="image/avif" srcset="assets/final-pics/1-800.avif 800w, assets/final-pics/1-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/1-800.webp 800w, assets/final-pics/1-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/1-800.webp" alt="Project 1" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -253,7 +253,7 @@
         <!-- Project 2 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="2">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[1].imageBase">
               <source type="image/avif" srcset="assets/final-pics/kitchen-2/2-800.avif 800w, assets/final-pics/kitchen-2/2-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/kitchen-2/2-800.webp 800w, assets/final-pics/kitchen-2/2-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/kitchen-2/2-800.webp" alt="Project 2" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -268,7 +268,7 @@
         <!-- Project 3 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="3">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[2].imageBase">
               <source type="image/avif" srcset="assets/final-pics/kitchen-3/5-800.avif 800w, assets/final-pics/kitchen-3/5-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/kitchen-3/5-800.webp 800w, assets/final-pics/kitchen-3/5-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/kitchen-3/5-800.webp" alt="Project 3" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -283,7 +283,7 @@
         <!-- Project 4 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="4">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[3].imageBase">
               <source type="image/avif" srcset="assets/final-pics/4-800.avif 800w, assets/final-pics/4-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/4-800.webp 800w, assets/final-pics/4-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/4-800.webp" alt="Project 4" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -301,7 +301,7 @@
         <!-- Project 5 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="5">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[4].imageBase">
               <source type="image/avif" srcset="assets/final-pics/5-800.avif 800w, assets/final-pics/5-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/5-800.webp 800w, assets/final-pics/5-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/5-800.webp" alt="Project 5" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -316,7 +316,7 @@
         <!-- Project 6 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="6">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[5].imageBase">
               <source type="image/avif" srcset="assets/final-pics/6-800.avif 800w, assets/final-pics/6-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/6-800.webp 800w, assets/final-pics/6-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/6-800.webp" alt="Project 6" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -331,7 +331,7 @@
         <!-- Project 7 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="7">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[6].imageBase">
               <source type="image/avif" srcset="assets/final-pics/7-800.avif 800w, assets/final-pics/7-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/7-800.webp 800w, assets/final-pics/7-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/7-800.webp" alt="Project 7" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -346,7 +346,7 @@
         <!-- Project 8 -->
         <div class="relative overflow-hidden group cursor-pointer project-item" data-project="8">
           <div class="aspect-[8/9] overflow-hidden relative bg-brand-bg" style="background-color: var(--brand-bg);">
-            <picture>
+            <picture data-image="projects[7].imageBase">
               <source type="image/avif" srcset="assets/final-pics/8-800.avif 800w, assets/final-pics/8-400.avif 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/8-800.webp 800w, assets/final-pics/8-400.webp 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/8-800.webp" alt="Project 8" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -376,7 +376,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7">
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[0].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card1-800.avif?v=cardfix1 800w, assets/final-pics/card1-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card1-800.webp?v=cardfix1 800w, assets/final-pics/card1-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card1-800.webp?v=cardfix1" alt="Perfect Edges" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
@@ -390,7 +390,7 @@
 
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[1].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card2-800.avif?v=cardfix1 800w, assets/final-pics/card2-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card2-800.webp?v=cardfix1 800w, assets/final-pics/card2-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card2-800.webp?v=cardfix1" alt="Smart Cutting" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
@@ -405,7 +405,7 @@
 
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[2].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card3-800.avif?v=cardfix1 800w, assets/final-pics/card3-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card3-800.webp?v=cardfix1 800w, assets/final-pics/card3-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card3-800.webp?v=cardfix1" alt="Lasting Finish" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
@@ -419,7 +419,7 @@
 
         <article>
           <div class="aspect-[4/5] overflow-hidden mb-4 bg-gray-300">
-            <picture>
+            <picture data-image="craftProcessSection.cards[3].imageBase">
               <source type="image/avif" srcset="assets/final-pics/card4-800.avif?v=cardfix1 800w, assets/final-pics/card4-400.avif?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <source type="image/webp" srcset="assets/final-pics/card4-800.webp?v=cardfix1 800w, assets/final-pics/card4-400.webp?v=cardfix1 400w" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw">
               <img src="assets/final-pics/card4-800.webp?v=cardfix1" alt="Skilled Hands" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale">
@@ -438,7 +438,7 @@
   <footer id="contact" class="border-t border-white/40 mt-12" style="background-color: #E8D9C8;">
     <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
-        <picture>
+        <picture data-image="common.footer.logoImageBase">
           <img src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="lazy" decoding="async" class="h-6 md:h-10 object-contain" />
         </picture>
       </div>
@@ -462,7 +462,7 @@
       </div>
     </div>
 
-    <div class="text-center text-xs text-gray-600 pb-6" data-content="footer.copyright">
+    <div class="text-center text-xs text-gray-600 pb-6" data-content="common.footer.copyright">
       © Cherfan Design — All rights reserved
     </div>
   </footer>
@@ -764,6 +764,32 @@
           description: 'Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence.'
         }
       ];
+
+      // Resolve one gallery entry to a display URL.
+      // Accepts a string path or {image}/{imageBase} objects from the CMS.
+      function resolveGallerySrc(value) {
+        var v = value;
+        if (v && typeof v === 'object') v = v.image || v.imageBase || v.src;
+        if (!v || typeof v !== 'string') return null;
+        if (/^https?:\/\//i.test(v) || v.charAt(0) === '/') return v;
+        if (/^cms\//.test(v)) return 'assets/final-pics/' + v + '-1600.webp';
+        return v;
+      }
+
+      // Override viewer galleries from content/kitchen.json (Projects > Viewer Gallery).
+      // Hardcoded arrays above stay as fallback.
+      fetch('content/kitchen.json', { cache: 'no-cache' })
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (data) {
+          if (!data || !Array.isArray(data.projects)) return;
+          data.projects.forEach(function (jp, i) {
+            var list = jp && jp.images;
+            if (!projects[i] || !Array.isArray(list) || !list.length) return;
+            var resolved = list.map(resolveGallerySrc).filter(Boolean);
+            if (resolved.length) projects[i].images = resolved;
+          });
+        })
+        .catch(function () { /* keep hardcoded fallback galleries */ });
 
       let currentProjectId = null;
       let currentImageIndex = 0;

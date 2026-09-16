@@ -52,6 +52,40 @@
       object-fit: cover !important;
       object-position: center !important;
     }
+    /* Hero photo slider - 2 photos visible, auto-scrolls one photo every 2s */
+    .hero-slider-viewport {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .hero-slider-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.8s ease;
+      will-change: transform;
+    }
+    .hero-slider-track.no-transition {
+      transition: none !important;
+    }
+    .hero-slide {
+      flex: 0 0 50%;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .hero-slide {
+        flex: 0 0 100%;
+        width: 100%;
+      }
+    }
   </style>
 
 </head>
@@ -64,7 +98,7 @@
     <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col items-center gap-2">
       <!-- Logo centered -->
       <a href="index.html" class="inline-flex justify-center py-2">
-        <picture>
+        <picture data-image="common.header.logoImageBase">
           <img id="siteTitleImg" src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="eager" decoding="async" class="h-6 md:h-10 object-contain">
         </picture>
       </a>
@@ -98,27 +132,158 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="heroSection" class="relative h-screen w-full overflow-hidden" style="display: block !important; visibility: visible !important;">
-    <video 
-      id="heroVideo" 
-      class="absolute inset-0 w-full h-full object-cover" 
-      muted 
-      loop 
-      playsinline 
-      webkit-playsinline
-      autoplay
-      preload="metadata"
-      style="display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important;">
-      <!-- Optimized MP4 sources for mobile/tablet/desktop -->
-      <source src="assets/videos/homepage-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
-      <source src="assets/videos/homepage-desktop.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/25" style="pointer-events: none; z-index: 1;"></div>
-
+  <!-- Hero photo slider (2 photos visible, advances one photo every 2s) -->
+  <section id="heroSection" class="relative h-screen w-full overflow-hidden" style="padding: 0 !important;">
+    <div class="hero-slider-viewport">
+      <div class="hero-slider-track" id="heroSliderTrack">
+        <div class="hero-slide">
+          <img src="assets/optimized/images/0d8a9509-edit-800.webp" srcset="assets/optimized/images/0d8a9509-edit-400.webp 400w, assets/optimized/images/0d8a9509-edit-800.webp 800w, assets/optimized/images/0d8a9509-edit-1200.webp 1200w, assets/optimized/images/0d8a9509-edit-1600.webp 1600w" sizes="50vw" alt="Luxury interior 1" loading="eager" decoding="async">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/optimized/images/home-pics-processed/DD123-800.webp" srcset="assets/optimized/images/home-pics-processed/DD123-400.webp 400w, assets/optimized/images/home-pics-processed/DD123-800.webp 800w, assets/optimized/images/home-pics-processed/DD123-1200.webp 1200w, assets/optimized/images/home-pics-processed/DD123-1600.webp 1600w" sizes="50vw" alt="Luxury interior 2" loading="eager" decoding="async">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/final-pics/kitchen-hero-800.webp" srcset="assets/final-pics/kitchen-hero-400.webp 400w, assets/final-pics/kitchen-hero-800.webp 800w, assets/final-pics/kitchen-hero-1200.webp 1200w, assets/final-pics/kitchen-hero-1600.webp 1600w" sizes="50vw" alt="Luxury interior 3" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/optimized/images/home-pics-processed/13-800.webp" srcset="assets/optimized/images/home-pics-processed/13-400.webp 400w, assets/optimized/images/home-pics-processed/13-800.webp 800w, assets/optimized/images/home-pics-processed/13-1200.webp 1200w, assets/optimized/images/home-pics-processed/13-1600.webp 1600w" sizes="50vw" alt="Luxury interior 4" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/kitchen-pics-optimised/kitchen-collage-1-800.webp" srcset="assets/kitchen-pics-optimised/kitchen-collage-1-400.webp 400w, assets/kitchen-pics-optimised/kitchen-collage-1-800.webp 800w, assets/kitchen-pics-optimised/kitchen-collage-1-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-collage-1-1600.webp 1600w" sizes="50vw" alt="Luxury interior 5" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/kitchen-pics-optimised/kitchen-collage-2-800.webp" srcset="assets/kitchen-pics-optimised/kitchen-collage-2-400.webp 400w, assets/kitchen-pics-optimised/kitchen-collage-2-800.webp 800w, assets/kitchen-pics-optimised/kitchen-collage-2-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-collage-2-1600.webp 1600w" sizes="50vw" alt="Luxury interior 6" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/optimized/images/0d8a9397-edit-copy-800.webp" srcset="assets/optimized/images/0d8a9397-edit-copy-400.webp 400w, assets/optimized/images/0d8a9397-edit-copy-800.webp 800w, assets/optimized/images/0d8a9397-edit-copy-1200.webp 1200w, assets/optimized/images/0d8a9397-edit-copy-1600.webp 1600w" sizes="50vw" alt="Luxury interior 7" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/kitchen-pics-optimised/kitchen-collage-3-800.webp" srcset="assets/kitchen-pics-optimised/kitchen-collage-3-400.webp 400w, assets/kitchen-pics-optimised/kitchen-collage-3-800.webp 800w, assets/kitchen-pics-optimised/kitchen-collage-3-1200.webp 1200w, assets/kitchen-pics-optimised/kitchen-collage-3-1600.webp 1600w" sizes="50vw" alt="Luxury interior 8" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
   </section>
+  <script>
+    // Hero photo slider: slides come from content/home.json (heroSlider.images).
+    // The static markup above stays as instant fallback. Shows 2 photos, shifts one every 2s.
+    (function heroPhotoSlider() {
+      var track = document.getElementById('heroSliderTrack');
+      if (!track) return;
+
+      // Resolve a slider imageBase to {src, srcset}.
+      // - "http(s)://..." or "/..." or a file with an extension -> single file
+      // - "cms/<base>" -> assets/final-pics/cms/<base>-{400,800,1200,1600}.webp
+      // - otherwise a path relative to assets/ without size suffix,
+      //   e.g. "optimized/images/0d8a9509-edit"
+      function resolveSlide(base) {
+        if (!base || typeof base !== 'string') return null;
+        if (/^https?:\/\//i.test(base)) return { src: base, srcset: null };
+        if (/^cms\//.test(base)) {
+          var p = 'assets/final-pics/' + base;
+          return { src: p + '-800.webp', srcset: p + '-400.webp 400w, ' + p + '-800.webp 800w, ' + p + '-1200.webp 1200w, ' + p + '-1600.webp 1600w' };
+        }
+        if (base.charAt(0) === '/' || /\.(jpe?g|png|webp|avif|gif)(\?.*)?$/i.test(base)) {
+          return { src: base, srcset: null };
+        }
+        var full = 'assets/' + base.replace(/^\/+/, '');
+        return { src: full + '-800.webp', srcset: full + '-400.webp 400w, ' + full + '-800.webp 800w, ' + full + '-1200.webp 1200w, ' + full + '-1600.webp 1600w' };
+      }
+
+      function buildSlides(images) {
+        track.innerHTML = '';
+        images.forEach(function (item, i) {
+          var r = resolveSlide(item && item.imageBase);
+          if (!r) return;
+          var div = document.createElement('div');
+          div.className = 'hero-slide';
+          var img = document.createElement('img');
+          img.src = r.src;
+          if (r.srcset) { img.setAttribute('srcset', r.srcset); img.setAttribute('sizes', '50vw'); }
+          img.alt = (item && item.alt) || ('Luxury interior ' + (i + 1));
+          img.decoding = 'async';
+          img.loading = i < 2 ? 'eager' : 'lazy';
+          div.appendChild(img);
+          track.appendChild(div);
+        });
+      }
+
+      function initSlider() {
+        var originalCount = track.children.length;
+        if (!originalCount) return;
+
+        // Duplicate slides for a seamless loop
+        var clones = [];
+        for (var i = 0; i < originalCount; i++) {
+          var clone = track.children[i].cloneNode(true);
+          clone.querySelectorAll('img').forEach(function (img) {
+            img.setAttribute('loading', 'lazy');
+          });
+          clones.push(clone);
+        }
+        clones.forEach(function (clone) { track.appendChild(clone); });
+
+        var index = 0;
+        var timer = null;
+
+        function slideWidth() {
+          var slide = track.children[0];
+          return slide ? slide.getBoundingClientRect().width : 0;
+        }
+
+        function goTo(i, animate) {
+          if (animate === false) track.classList.add('no-transition');
+          else track.classList.remove('no-transition');
+          track.style.transform = 'translateX(' + (-(i * slideWidth())) + 'px)';
+          // Force reflow when jumping without animation so the next slide animates
+          if (animate === false) void track.offsetWidth;
+        }
+
+        function step() {
+          index += 1;
+          goTo(index, true);
+          // After reaching the cloned set, jump back to the equivalent original position
+          if (index >= originalCount) {
+            setTimeout(function () {
+              index = 0;
+              goTo(index, false);
+            }, 850);
+          }
+        }
+
+        function start() {
+          stop();
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          timer = setInterval(step, 2000);
+        }
+
+        function stop() {
+          if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        window.addEventListener('resize', function () { goTo(index, false); });
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) stop();
+          else start();
+        });
+        var hero = document.getElementById('heroSection');
+        if (hero) {
+          hero.addEventListener('mouseenter', stop);
+          hero.addEventListener('mouseleave', start);
+        }
+
+        start();
+      }
+
+      fetch('content/home.json', { cache: 'no-cache' })
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (data) {
+          var imgs = data && data.heroSlider && data.heroSlider.images;
+          if (imgs && imgs.length) buildSlides(imgs);
+        })
+        .catch(function () { /* keep static fallback slides */ })
+        .then(initSlider);
+    })();
+  </script>
 
   <!-- A Global Celebration Section (Aman Style) -->
   <section class="global-celebration-section py-8 md:py-10 lg:py-12 bg-white">
@@ -192,7 +357,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center">
         <!-- Left Side: Square Image -->
         <div class="relative overflow-hidden mx-auto lg:mx-0" style="width: 100%; max-width: 600px; aspect-ratio: 1 / 1; background: transparent !important; background-color: transparent !important;">
-          <picture style="display: block; width: 100%; height: 100%; background: transparent !important; background-color: transparent !important;">
+          <picture data-image="kidsBedroomSection.imageBase" style="display: block; width: 100%; height: 100%; background: transparent !important; background-color: transparent !important;">
             <source type="image/avif" srcset="assets/kitchen-pics-optimised/kids-imagee-home-page-1600.avif 1600w, assets/kitchen-pics-optimised/kids-imagee-home-page-1200.avif 1200w, assets/kitchen-pics-optimised/kids-imagee-home-page-800.avif 800w, assets/kitchen-pics-optimised/kids-imagee-home-page-400.avif 400w" sizes="(min-width:1024px) 600px, 100vw">
             <source type="image/webp" srcset="assets/kitchen-pics-optimised/kids-imagee-home-page-1600.webp 1600w, assets/kitchen-pics-optimised/kids-imagee-home-page-1200.webp 1200w, assets/kitchen-pics-optimised/kids-imagee-home-page-800.webp 800w, assets/kitchen-pics-optimised/kids-imagee-home-page-400.webp 400w" sizes="(min-width:1024px) 600px, 100vw">
             <img src="assets/kitchen-pics-optimised/kids-imagee-home-page-800.webp" alt="Kids Bedroom" loading="lazy" decoding="async" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; background: transparent !important; background-color: transparent !important;">
@@ -387,7 +552,7 @@
   <footer id="contact" class="border-t border-white/40 mt-12" style="background-color: #E8D9C8;">
     <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
-        <picture>
+        <picture data-image="common.footer.logoImageBase">
           <img src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="lazy" decoding="async" class="h-6 md:h-10 object-contain" />
         </picture>
       </div>
@@ -411,7 +576,7 @@
       </div>
     </div>
 
-    <div class="text-center text-xs text-gray-600 pb-6" data-content="footer.copyright">
+    <div class="text-center text-xs text-gray-600 pb-6" data-content="common.footer.copyright">
       © Cherfan Design — All rights reserved
     </div>
   </footer>

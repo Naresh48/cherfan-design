@@ -226,37 +226,6 @@
         setHTMLContent(element, `<span class="font-medium">${label}</span> ${value}`);
       }
     });
-
-    if (pageName === 'about-us') {
-      const aboutBindings = [
-        ['#heroSection h1', 'heroSection.title'],
-        ['#heroSection p', 'heroSection.subtitle'],
-        ['section:nth-of-type(2) .max-w-4xl > p', 'storySection.label'],
-        ['section:nth-of-type(2) .max-w-4xl > h2', 'storySection.title'],
-        ['section:nth-of-type(2) .max-w-4xl .space-y-6 p:nth-child(1)', 'storySection.paragraph1'],
-        ['section:nth-of-type(2) .max-w-4xl .space-y-6 p:nth-child(2)', 'storySection.paragraph2'],
-        ['section:nth-of-type(2) .max-w-4xl .space-y-6 p:nth-child(3)', 'storySection.paragraph3'],
-        ['section:nth-of-type(3) .grid > div:nth-child(2) > p', 'philosophySection.label'],
-        ['section:nth-of-type(3) .grid > div:nth-child(2) > h2', 'philosophySection.title'],
-        ['section:nth-of-type(3) .grid > div:nth-child(2) > p:nth-of-type(2)', 'philosophySection.paragraph1'],
-        ['section:nth-of-type(3) .grid > div:nth-child(2) > p:nth-of-type(3)', 'philosophySection.paragraph2'],
-        ['section:nth-of-type(4) .text-center > p', 'valuesSection.label'],
-        ['section:nth-of-type(4) .text-center > h2', 'valuesSection.title'],
-        ['section:nth-of-type(4) .grid > div:nth-child(1) h3', 'valuesSection.cards[0].title'],
-        ['section:nth-of-type(4) .grid > div:nth-child(1) p', 'valuesSection.cards[0].description'],
-        ['section:nth-of-type(4) .grid > div:nth-child(2) h3', 'valuesSection.cards[1].title'],
-        ['section:nth-of-type(4) .grid > div:nth-child(2) p', 'valuesSection.cards[1].description'],
-        ['section:nth-of-type(4) .grid > div:nth-child(3) h3', 'valuesSection.cards[2].title'],
-        ['section:nth-of-type(4) .grid > div:nth-child(3) p', 'valuesSection.cards[2].description'],
-        ['section:nth-of-type(5) .max-w-3xl h2', 'finalSection.title'],
-        ['section:nth-of-type(5) .max-w-3xl p:nth-of-type(1)', 'finalSection.paragraph1'],
-        ['section:nth-of-type(5) .max-w-3xl p:nth-of-type(2)', 'finalSection.paragraph2']
-      ];
-
-      aboutBindings.forEach(([selector, path]) => {
-        applySelectorValue(root, selector, path, data, 'text');
-      });
-    }
   }
 
   /**

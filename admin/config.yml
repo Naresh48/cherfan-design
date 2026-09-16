@@ -23,6 +23,18 @@ collections:
         label: "Home Page"
         name: "home"
         fields:
+          - label: "Hero Slider"
+            name: "heroSlider"
+            widget: "object"
+            fields:
+              - label: "Slides"
+                name: "images"
+                widget: "list"
+                hint: "Photos shown 2 at a time in the top slider. Reorder or replace freely."
+                fields:
+                  - { label: "Photo", name: "imageBase", widget: "image", hint: "Pick from Photos/computer, then crop. Or type a path relative to assets/, without size suffix — e.g. 'optimized/images/0d8a9509-edit'." }
+                  - { label: "Alt Text", name: "alt", widget: "string" }
+          
           - label: "Global Celebration"
             name: "globalCelebration"
             widget: "object"
@@ -114,21 +126,6 @@ collections:
                   - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
-          
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
-              - { label: "Location", name: "location", widget: "string" }
-              - label: "Contact"
-                name: "contact"
-                widget: "object"
-                fields:
-                  - { label: "Address", name: "address", widget: "string" }
-                  - { label: "Phone", name: "phone", widget: "string" }
-                  - { label: "Email", name: "email", widget: "string" }
-              - { label: "Copyright", name: "copyright", widget: "string" }
       
       # Kitchen Page
       - file: "content/kitchen.json"
@@ -194,9 +191,15 @@ collections:
             widget: "list"
             fields:
               - { label: "ID", name: "id", widget: "number" }
-              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
+              - { label: "Cover Image", name: "imageBase", widget: "image", hint: "Grid cover. Click Choose to pick from Photos/computer, then crop." }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+              - label: "Viewer Gallery"
+                name: "images"
+                widget: "list"
+                hint: "Photos shown in the fullscreen viewer when this project is clicked."
+                fields:
+                  - { label: "Photo", name: "image", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Craft Process Section"
             name: "craftProcessSection"
@@ -211,31 +214,6 @@ collections:
                   - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
-          
-          - label: "Final Text Section"
-            name: "finalTextSection"
-            widget: "object"
-            fields:
-              - { label: "Label", name: "label", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description 1", name: "description1", widget: "text" }
-              - { label: "Description 2", name: "description2", widget: "text" }
-              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
-          
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
-              - { label: "Location", name: "location", widget: "string" }
-              - label: "Contact"
-                name: "contact"
-                widget: "object"
-                fields:
-                  - { label: "Address", name: "address", widget: "string" }
-                  - { label: "Phone", name: "phone", widget: "string" }
-                  - { label: "Email", name: "email", widget: "string" }
-              - { label: "Copyright", name: "copyright", widget: "string" }
       
       # Master Bedroom Page
       - file: "content/master-bedroom.json"
@@ -287,6 +265,17 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           
+          - label: "Scroll Gallery"
+            name: "scrollGallery"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                hint: "Photos in the horizontal scrolling strip (shown twice for the seamless loop). The same photos open in the fullscreen viewer."
+                fields:
+                  - { label: "Photo", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop. Or use an existing base like '0d8a9661'." }
+          
           - label: "Final Text Section"
             name: "finalTextSection"
             widget: "object"
@@ -297,20 +286,6 @@ collections:
               - { label: "Description 2", name: "description2", widget: "text" }
               - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
-              - { label: "Location", name: "location", widget: "string" }
-              - label: "Contact"
-                name: "contact"
-                widget: "object"
-                fields:
-                  - { label: "Address", name: "address", widget: "string" }
-                  - { label: "Phone", name: "phone", widget: "string" }
-                  - { label: "Email", name: "email", widget: "string" }
-              - { label: "Copyright", name: "copyright", widget: "string" }
       
       # Closet Page
       - file: "content/closet.json"
@@ -362,6 +337,17 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           
+          - label: "Scroll Gallery"
+            name: "scrollGallery"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                hint: "Photos in the horizontal scrolling strip (shown twice for the seamless loop). The same photos open in the fullscreen viewer."
+                fields:
+                  - { label: "Photo", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop. Or use an existing base like '0d8a9661'." }
+          
           - label: "Final Text Section"
             name: "finalTextSection"
             widget: "object"
@@ -372,20 +358,6 @@ collections:
               - { label: "Description 2", name: "description2", widget: "text" }
               - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
-              - { label: "Location", name: "location", widget: "string" }
-              - label: "Contact"
-                name: "contact"
-                widget: "object"
-                fields:
-                  - { label: "Address", name: "address", widget: "string" }
-                  - { label: "Phone", name: "phone", widget: "string" }
-                  - { label: "Email", name: "email", widget: "string" }
-              - { label: "Copyright", name: "copyright", widget: "string" }
       
       # Kids Bedroom Page
       - file: "content/kids.json"
@@ -420,7 +392,6 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description 1", name: "description1", widget: "text" }
               - { label: "Description 2", name: "description2", widget: "text" }
-              - { label: "Image", name: "imageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Manifesto Section"
             name: "manifestoSection"
@@ -432,8 +403,15 @@ collections:
                 widget: "list"
                 fields:
                   - { label: "ID", name: "id", widget: "number" }
+                  - { label: "Cover Photo", name: "imageBase", widget: "image", hint: "Card cover. Click Choose to pick from Photos/computer, then crop." }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Text", name: "text", widget: "text" }
+                  - label: "Viewer Gallery"
+                    name: "images"
+                    widget: "list"
+                    hint: "Photos shown in the fullscreen viewer when this product is clicked."
+                    fields:
+                      - { label: "Photo", name: "image", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
           
           - label: "Study Section"
             name: "studySection"
@@ -441,21 +419,8 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Body", name: "body", widget: "text" }
+              - { label: "Image", name: "imageBase", widget: "image", hint: "Study-space photo. Click Choose to pick from Photos/computer, then crop." }
           
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Click Choose to pick from Photos/computer, then crop." }
-              - { label: "Location", name: "location", widget: "string" }
-              - label: "Contact"
-                name: "contact"
-                widget: "object"
-                fields:
-                  - { label: "Address", name: "address", widget: "string" }
-                  - { label: "Phone", name: "phone", widget: "string" }
-                  - { label: "Email", name: "email", widget: "string" }
-              - { label: "Copyright", name: "copyright", widget: "string" }
 
       # About Us Page
       - file: "content/about-us.json"
@@ -466,6 +431,7 @@ collections:
             name: "heroSection"
             widget: "object"
             fields:
+              - { label: "Background Photo", name: "imageBase", widget: "image", hint: "Fullscreen hero photo. Click Choose to pick from Photos/computer, then crop." }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle", name: "subtitle", widget: "string" }
 
@@ -483,6 +449,7 @@ collections:
             name: "philosophySection"
             widget: "object"
             fields:
+              - { label: "Photo", name: "imageBase", widget: "image", hint: "Side photo next to the philosophy text. Click Choose to pick from Photos/computer, then crop." }
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
@@ -514,6 +481,12 @@ collections:
         label: "Common Text"
         name: "common"
         fields:
+          - label: "Header"
+            name: "header"
+            widget: "object"
+            fields:
+              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Site logo shown on every page. Use a PNG with transparent background." }
+
           - label: "Navigation"
             name: "nav"
             widget: "object"
@@ -529,6 +502,7 @@ collections:
             name: "footer"
             widget: "object"
             fields:
+              - { label: "Logo Image", name: "logoImageBase", widget: "image", hint: "Footer logo. Use a PNG with transparent background." }
               - { label: "Contact Heading", name: "contactHeading", widget: "string" }
               - { label: "Contact Block (HTML)", name: "contactHtml", widget: "text", hint: "Use <br> for line breaks." }
               - { label: "Newsletter Heading", name: "newsletterHeading", widget: "string" }

@@ -26,7 +26,7 @@
     <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col items-center gap-2">
       <!-- Logo centered -->
       <a href="index.html" class="inline-flex justify-center py-2">
-        <picture>
+        <picture data-image="common.header.logoImageBase">
           <img id="siteTitleImg" src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="eager" decoding="async" class="h-6 md:h-10 object-contain">
         </picture>
       </a>
@@ -325,7 +325,7 @@
   <footer id="contact" class="border-t border-white/40 mt-12" style="background-color: #E8D9C8;">
     <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
-        <picture>
+        <picture data-image="common.footer.logoImageBase">
           <img src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="lazy" decoding="async" class="h-6 md:h-10 object-contain" />
         </picture>
       </div>
@@ -349,7 +349,7 @@
       </div>
     </div>
 
-    <div class="text-center text-xs text-gray-600 pb-6" data-content="footer.copyright">
+    <div class="text-center text-xs text-gray-600 pb-6" data-content="common.footer.copyright">
       © Cherfan Design — All rights reserved
     </div>
   </footer>
@@ -439,8 +439,8 @@
       const nextBtn = document.querySelector('.lightbox-next');
       const backdrop = document.querySelector('.lightbox-backdrop');
 
-      // Array of unique images (8 images)
-      const images = [
+      // Array of unique images (8 images) — fallback, overridden from JSON below
+      let images = [
         'assets/optimized/images/0d8a9661-1600.webp',
         'assets/optimized/images/0d8a9665-1600.webp',
         'assets/optimized/images/0d8a9674-1600.webp',
@@ -452,6 +452,55 @@
       ];
 
       let currentIndex = 0;
+
+      // Resolve one scroll-gallery entry (string or {imageBase}/{image}) to display URLs.
+      function resolveScrollEntry(value) {
+        var v = value;
+        if (v && typeof v === 'object') v = v.imageBase || v.image || v.src;
+        if (!v || typeof v !== 'string') return null;
+        if (/^https?:\/\//i.test(v) || v.charAt(0) === '/') return { single: v };
+        var full = /^cms\//.test(v) ? 'assets/final-pics/' + v : 'assets/optimized/images/' + v;
+        return {
+          avif: full + '-400.avif 400w, ' + full + '-800.avif 800w, ' + full + '-1200.avif 1200w, ' + full + '-1600.avif 1600w',
+          webp: full + '-400.webp 400w, ' + full + '-800.webp 800w, ' + full + '-1200.webp 1200w, ' + full + '-1600.webp 1600w',
+          img: full + '-800.webp',
+          lightbox: full + '-1600.webp'
+        };
+      }
+
+      // Override scroll covers + lightbox from content/closet.json (Scroll Gallery).
+      // Hardcoded arrays stay as fallback.
+      fetch('content/closet.json', { cache: 'no-cache' })
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (data) {
+          var list = data && data.scrollGallery && data.scrollGallery.images;
+          if (!list || !list.length) return;
+          document.querySelectorAll('.horizontal-scroll-item').forEach(function (item) {
+            var idx = parseInt(item.getAttribute('data-image-index'), 10) || 0;
+            var r = resolveScrollEntry(list[idx % list.length]);
+            if (!r) return;
+            var pic = item.querySelector('picture');
+            if (!pic) return;
+            var avif = pic.querySelector('source[type="image/avif"]');
+            var webp = pic.querySelector('source[type="image/webp"]');
+            var img = pic.querySelector('img');
+            if (r.single) {
+              if (img) img.src = r.single;
+              if (avif) avif.srcset = r.single;
+              if (webp) webp.srcset = r.single;
+            } else {
+              if (avif) avif.srcset = r.avif;
+              if (webp) webp.srcset = r.webp;
+              if (img) img.src = r.img;
+            }
+          });
+          var lb = list.map(function (entry) {
+            var r = resolveScrollEntry(entry);
+            return r ? (r.single || r.lightbox) : null;
+          }).filter(Boolean);
+          if (lb.length) images = lb;
+        })
+        .catch(function () { /* keep hardcoded fallback gallery */ });
 
       function openLightbox(index) {
         currentIndex = index;

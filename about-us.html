@@ -152,7 +152,7 @@
     <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col items-center gap-2">
       <!-- Logo centered -->
       <a href="index.html" class="inline-flex justify-center py-2">
-        <picture>
+        <picture data-image="common.header.logoImageBase">
           <img id="siteTitleImg" src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="eager" decoding="async" class="h-6 md:h-10 object-contain">
         </picture>
       </a>
@@ -188,7 +188,7 @@
 
   <!-- Hero Image Section -->
   <section id="heroSection" class="relative h-screen w-full overflow-hidden">
-    <picture>
+    <picture data-image="heroSection.imageBase">
       <source type="image/avif" srcset="assets/optimized/images/0d8a9586-edit-1600.avif 1600w, assets/optimized/images/0d8a9586-edit-1200.avif 1200w, assets/optimized/images/0d8a9586-edit-800.avif 800w, assets/optimized/images/0d8a9586-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
       <source type="image/webp" srcset="assets/optimized/images/0d8a9586-edit-1600.webp 1600w, assets/optimized/images/0d8a9586-edit-1200.webp 1200w, assets/optimized/images/0d8a9586-edit-800.webp 800w, assets/optimized/images/0d8a9586-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
       <img src="assets/optimized/images/0d8a9586-edit-800.webp" alt="About Us Hero" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover">
@@ -196,10 +196,10 @@
     <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40"></div>
     <div class="absolute inset-0 flex items-center justify-center">
       <div class="text-center text-white px-6">
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-light tracking-[-0.02em] mb-4 scroll-reveal-text" style="font-family: 'Playfair Display', serif;">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-light tracking-[-0.02em] mb-4 scroll-reveal-text" style="font-family: 'Playfair Display', serif;" data-content="heroSection.title">
           About Cherfan
         </h1>
-        <p class="text-lg md:text-xl font-light tracking-wide opacity-90 scroll-reveal-text" style="font-family: 'Inter', sans-serif;">
+        <p class="text-lg md:text-xl font-light tracking-wide opacity-90 scroll-reveal-text" style="font-family: 'Inter', sans-serif;" data-content="heroSection.subtitle">
           Crafting Timeless Interiors Since Our Inception
         </p>
       </div>
@@ -210,18 +210,18 @@
   <section class="py-16 md:py-20 lg:py-24 bg-white">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <div class="max-w-4xl mx-auto">
-        <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 scroll-reveal-text">OUR STORY</p>
-        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-8 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;">
+        <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 scroll-reveal-text" data-content="storySection.label">OUR STORY</p>
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-8 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;" data-content="storySection.title">
           A Legacy of Excellence
         </h2>
         <div class="space-y-6">
-          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text">
+          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text" data-content="storySection.paragraph1">
             At Cherfan Design, we believe that exceptional interiors are born from the seamless fusion of artistry and functionality. Each project is a testament to our commitment to creating spaces that transcend trends, embodying a timeless elegance that speaks to the soul.
           </p>
-          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text">
+          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text" data-content="storySection.paragraph2">
             With a passion for exceptional craftsmanship, sustainable materials, and timeless design, we bring you thoughtfully curated collections that blend beauty with functionality. Our team of skilled artisans and designers work in harmony to transform your vision into reality.
           </p>
-          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text">
+          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text" data-content="storySection.paragraph3">
             Luxury is not about flamboyance anymore. Real connoisseurs aim not to show off but to show their true colors. Stylish, quality furniture makes people feel good about their environment, and even more importantly, about themselves.
           </p>
         </div>
@@ -235,7 +235,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center">
         <!-- Left Side: Image -->
         <div class="relative overflow-hidden aspect-[4/5] scroll-reveal-image">
-          <picture>
+          <picture data-image="philosophySection.imageBase">
             <source type="image/avif" srcset="assets/optimized/images/0d8a9509-edit-1600.avif 1600w, assets/optimized/images/0d8a9509-edit-1200.avif 1200w, assets/optimized/images/0d8a9509-edit-800.avif 800w, assets/optimized/images/0d8a9509-edit-400.avif 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <source type="image/webp" srcset="assets/optimized/images/0d8a9509-edit-1600.webp 1600w, assets/optimized/images/0d8a9509-edit-1200.webp 1200w, assets/optimized/images/0d8a9509-edit-800.webp 800w, assets/optimized/images/0d8a9509-edit-400.webp 400w" sizes="(min-width:1024px) 1200px, 100vw">
             <img src="assets/optimized/images/0d8a9509-edit-800.webp" alt="Cherfan Design" loading="lazy" decoding="async" class="w-full h-full object-cover">
@@ -244,14 +244,14 @@
         
         <!-- Right Side: Text -->
         <div>
-          <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 scroll-reveal-text">OUR PHILOSOPHY</p>
-          <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;">
+          <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 scroll-reveal-text" data-content="philosophySection.label">OUR PHILOSOPHY</p>
+          <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;" data-content="philosophySection.title">
             The Art of Living
           </h2>
-          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light mb-4 scroll-reveal-text">
+          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light mb-4 scroll-reveal-text" data-content="philosophySection.paragraph1">
             Every corner of your home tells a story. Through our bespoke design approach, we create spaces that reflect your unique personality while maintaining the highest standards of quality and sophistication.
           </p>
-          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text">
+          <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text" data-content="philosophySection.paragraph2">
             We understand that true luxury lies in the details—the perfect balance of form and function, the harmony of colors and textures, and the seamless integration of design elements that create an atmosphere of refined elegance.
           </p>
         </div>
@@ -263,8 +263,8 @@
   <section class="py-16 md:py-20 lg:py-24 bg-white">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <div class="text-center mb-16">
-        <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 scroll-reveal-text">WHAT DRIVES US</p>
-        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;">
+        <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 scroll-reveal-text" data-content="valuesSection.label">WHAT DRIVES US</p>
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-6 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;" data-content="valuesSection.title">
           Our Core Values
         </h2>
       </div>
@@ -272,30 +272,30 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
         <!-- Value 1 -->
         <div class="text-center scroll-reveal-text">
-          <h3 class="text-[24px] md:text-[28px] font-normal tracking-[-0.01em] text-brand-accent mb-4 leading-[1.2]" style="font-family: 'Playfair Display', serif;">
+          <h3 class="text-[24px] md:text-[28px] font-normal tracking-[-0.01em] text-brand-accent mb-4 leading-[1.2]" style="font-family: 'Playfair Display', serif;" data-content="valuesSection.cards[0].title">
             Craftsmanship
           </h3>
-          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-light">
+          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-light" data-content="valuesSection.cards[0].description">
             We honor traditional techniques while embracing innovation, ensuring every piece meets our exacting standards of excellence.
           </p>
         </div>
         
         <!-- Value 2 -->
         <div class="text-center scroll-reveal-text">
-          <h3 class="text-[24px] md:text-[28px] font-normal tracking-[-0.01em] text-brand-accent mb-4 leading-[1.2]" style="font-family: 'Playfair Display', serif;">
+          <h3 class="text-[24px] md:text-[28px] font-normal tracking-[-0.01em] text-brand-accent mb-4 leading-[1.2]" style="font-family: 'Playfair Display', serif;" data-content="valuesSection.cards[1].title">
             Authenticity
           </h3>
-          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-light">
+          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-light" data-content="valuesSection.cards[1].description">
             We believe in creating spaces that are genuine reflections of your lifestyle, avoiding trends in favor of timeless elegance.
           </p>
         </div>
         
         <!-- Value 3 -->
         <div class="text-center scroll-reveal-text">
-          <h3 class="text-[24px] md:text-[28px] font-normal tracking-[-0.01em] text-brand-accent mb-4 leading-[1.2]" style="font-family: 'Playfair Display', serif;">
+          <h3 class="text-[24px] md:text-[28px] font-normal tracking-[-0.01em] text-brand-accent mb-4 leading-[1.2]" style="font-family: 'Playfair Display', serif;" data-content="valuesSection.cards[2].title">
             Excellence
           </h3>
-          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-light">
+          <p class="text-[14px] md:text-[15px] leading-[1.6] text-gray-700 font-light" data-content="valuesSection.cards[2].description">
             From concept to completion, we maintain unwavering attention to detail and commitment to surpassing expectations.
           </p>
         </div>
@@ -307,13 +307,15 @@
   <section class="py-16 md:py-20 lg:py-24 bg-white">
     <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-14">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-8 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;">
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-normal tracking-[-0.02em] text-brand-accent mb-8 leading-[1.1] scroll-reveal-text" style="font-family: 'Playfair Display', serif;" data-content="finalSection.title">
           Creating Spaces That Inspire
         </h2>
-        <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text">
+        <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light scroll-reveal-text" data-content="finalSection.paragraph1">
           At Cherfan Design, we don't just design interiors—we craft experiences. Each project is an opportunity to create something extraordinary, something that will be cherished for generations to come.
         </p>
-        <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light mt-6 scroll-reveal-text">
+        <p class="text-[14px] md:text-[15px] leading-[1.7] text-gray-700 font-light mt-6 scroll-reveal-text" data-content="finalSection.paragraph2">
+          We invite you to discover the difference that passion, expertise, and unwavering dedication can make in transforming your living spaces into sanctuaries of beauty and comfort.
+        </p>
           We invite you to discover the difference that passion, expertise, and unwavering dedication can make in transforming your living spaces into sanctuaries of beauty and comfort.
         </p>
       </div>
@@ -324,7 +326,7 @@
   <footer id="contact" class="border-t border-white/40 mt-12" style="background-color: #E8D9C8;">
     <div class="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div>
-        <picture data-image="footer.logoImageBase">
+        <picture data-image="common.footer.logoImageBase">
           <img src="assets/optimized/images/main-logo.png" alt="Cherfan Design" loading="lazy" decoding="async" class="h-6 md:h-10 object-contain" />
         </picture>
       </div>

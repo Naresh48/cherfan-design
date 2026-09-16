@@ -761,207 +761,6 @@ if (window.location.hash === '#top') {
   });
 })();
 
-/* Hero video handler - FINAL SIMPLE MOBILE-FIRST SOLUTION */
-(function heroVideoHandler() {
-  const video = document.getElementById("heroVideo");
-  if (!video) return;
-
-  const heroSection = video.parentElement;
-  if (!heroSection) return;
-
-  // Detect mobile
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
-                   (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
-
-  // FORCE video visibility - use !important
-  function forceVisible() {
-    video.style.setProperty('display', 'block', 'important');
-    video.style.setProperty('visibility', 'visible', 'important');
-    video.style.setProperty('opacity', '1', 'important');
-    heroSection.style.setProperty('display', 'block', 'important');
-    heroSection.style.setProperty('visibility', 'visible', 'important');
-  }
-  forceVisible();
-
-  // Configure video
-  video.muted = true;
-  video.playsInline = true;
-  video.setAttribute('playsinline', '');
-  video.setAttribute('muted', '');
-  video.style.pointerEvents = 'auto';
-
-  // Make gradient non-interactive
-  const gradient = heroSection.querySelector('.bg-gradient-to-b');
-  if (gradient) {
-    gradient.style.pointerEvents = 'none';
-    gradient.style.zIndex = '1';
-  }
-
-  // Create play button
-  let playBtn = document.getElementById('heroPlayOverlay');
-  if (!playBtn) {
-    playBtn = document.createElement('button');
-    playBtn.id = 'heroPlayOverlay';
-    playBtn.type = 'button';
-    playBtn.innerHTML = '▶';
-    playBtn.setAttribute('aria-label', 'Play video');
-    
-    Object.assign(playBtn.style, {
-      position: 'absolute',
-      left: '50%',
-      top: '50%',
-      transform: 'translate(-50%, -50%)',
-      zIndex: '10000',
-      width: '80px',
-      height: '80px',
-      borderRadius: '50%',
-      border: 'none',
-      background: 'rgba(255, 255, 255, 0.95)',
-      color: '#1f1b18',
-      fontSize: '36px',
-      display: isMobile ? 'block' : 'none',
-      cursor: 'pointer',
-      pointerEvents: 'auto',
-      touchAction: 'manipulation',
-      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
-      lineHeight: '80px',
-      textAlign: 'center',
-      padding: '0',
-      margin: '0'
-    });
-    
-    heroSection.appendChild(playBtn);
-  }
-
-  // Simple play function
-  function playVideo() {
-    forceVisible();
-    video.muted = true;
-    video.playsInline = true;
-    const p = video.play();
-    if (p) {
-      p.then(() => {
-        playBtn.style.display = 'none';
-        forceVisible();
-      }).catch(() => {
-        playBtn.style.display = 'block';
-        forceVisible();
-      });
-    }
-  }
-
-  // Play button handlers - ULTRA SIMPLE
-  playBtn.onclick = playVideo;
-  playBtn.ontouchend = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    playVideo();
-  };
-
-  // Video element handlers - PRIMARY for mobile
-  video.onclick = function(e) {
-    if (video.paused) {
-      e.preventDefault();
-      e.stopPropagation();
-      playVideo();
-    }
-  };
-  
-  video.ontouchend = function(e) {
-    if (video.paused) {
-      e.preventDefault();
-      e.stopPropagation();
-      playVideo();
-    }
-  };
-
-  // Hero section handlers
-  heroSection.onclick = function(e) {
-    if (video.paused && !e.target.closest('#heroPlayOverlay')) {
-      e.preventDefault();
-      e.stopPropagation();
-      playVideo();
-    }
-  };
-  
-  heroSection.ontouchend = function(e) {
-    if (video.paused && !e.target.closest('#heroPlayOverlay')) {
-      e.preventDefault();
-      e.stopPropagation();
-      playVideo();
-    }
-  };
-
-  // Try autoplay
-  function tryAutoplay() {
-    forceVisible();
-    video.muted = true;
-    video.playsInline = true;
-    const p = video.play();
-    if (p) {
-      p.then(() => {
-        playBtn.style.display = 'none';
-        forceVisible();
-      }).catch(() => {
-        if (isMobile) {
-          playBtn.style.display = 'block';
-        }
-        forceVisible();
-      });
-    } else if (isMobile) {
-      playBtn.style.display = 'block';
-    }
-  }
-
-  // AGGRESSIVE visibility protection
-  setInterval(forceVisible, 100);
-  
-  const obs = new MutationObserver(forceVisible);
-  obs.observe(video, { attributes: true, attributeFilter: ['style', 'class'] });
-  obs.observe(heroSection, { attributes: true, attributeFilter: ['style', 'class'] });
-
-  // Prevent hiding on any interaction
-  ['click', 'touchstart', 'touchend', 'mousedown'].forEach(evt => {
-    document.addEventListener(evt, function(e) {
-      if (!e.target.closest('#heroPlayOverlay')) {
-        forceVisible();
-      }
-    }, true);
-  });
-
-  // Initialize
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', tryAutoplay);
-  } else {
-    tryAutoplay();
-  }
-  
-  window.addEventListener('load', tryAutoplay);
-  
-  // Show button on mobile if paused
-  if (isMobile) {
-    setTimeout(() => {
-      if (video.paused) {
-        playBtn.style.display = 'block';
-      }
-    }, 300);
-  }
-  
-  // Watch play state
-  video.addEventListener('play', () => {
-    playBtn.style.display = 'none';
-    forceVisible();
-  });
-  
-  video.addEventListener('pause', () => {
-    if (isMobile && !video.ended) {
-      playBtn.style.display = 'block';
-    }
-    forceVisible();
-  });
-})();
-
-
 /* ===========================
    STAGGERED REVEAL (Arclinea-like)
    ===========================*/
@@ -1523,8 +1322,8 @@ if (contactForm) {
     const nextImgBtn = modal ? modal.querySelector('.kids-project-modal-next') : null;
     const thumbsContainer = modal ? document.getElementById('kidsProjectThumbnails') : null;
 
-    // Per-product galleries (4 kids-bedroom-like photos each)
-    const kidsProjects = [
+    // Per-product galleries (fallback — overridden from content/kids.json when available)
+    let kidsProjects = [
       {
         id: 1,
         images: [
@@ -1603,6 +1402,30 @@ if (contactForm) {
         ]
       }
     ];
+
+    // Resolve one gallery entry to a display URL (string or {image}/{imageBase}).
+    function resolveKidsSrc(value) {
+      let v = value;
+      if (v && typeof v === 'object') v = v.image || v.imageBase || v.src;
+      if (!v || typeof v !== 'string') return null;
+      if (/^https?:\/\//i.test(v) || v.charAt(0) === '/') return v;
+      if (/^cms\//.test(v)) return 'assets/final-pics/' + v + '-1600.webp';
+      return v;
+    }
+
+    // Override viewer galleries from content/kids.json (Manifesto > Products > Viewer Gallery).
+    fetch('content/kids.json', { cache: 'no-cache' })
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        const list = data && data.manifestoSection && data.manifestoSection.products;
+        if (!Array.isArray(list) || !list.length) return;
+        const fromJson = list.map((p, i) => {
+          const imgs = p && Array.isArray(p.images) ? p.images.map(resolveKidsSrc).filter(Boolean) : [];
+          return { id: (p && p.id) || (i + 1), images: imgs.length ? imgs : null };
+        }).filter(p => p.images);
+        if (fromJson.length) kidsProjects = fromJson;
+      })
+      .catch(() => { /* keep hardcoded fallback galleries */ });
 
     let currentProject = null;
     let currentImageIndex = 0;

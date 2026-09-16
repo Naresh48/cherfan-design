@@ -1,4 +1,7 @@
 {
+  "header": {
+    "logoImageBase": "/assets/optimized/images/main-logo.png"
+  },
   "nav": {
     "kitchen": "Kitchens",
     "kidsBedroom": "Kids Bedrooms",
@@ -8,6 +11,7 @@
     "contact": "Contact"
   },
   "footer": {
+    "logoImageBase": "/assets/optimized/images/main-logo.png",
     "contactHeading": "Contact",
     "contactHtml": "Zouk Highway - Lebanon<br>+961 9 222 340<br>info.z@cherfandesign.com",
     "newsletterHeading": "Newsletter",
