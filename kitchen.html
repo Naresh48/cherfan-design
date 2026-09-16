@@ -467,41 +467,14 @@
     </div>
   </footer>
 
-  <!-- Project Modal -->
-  <div id="projectModal" class="project-modal hidden">
+  <!-- Project Viewer (fullscreen, like sergecherfan.com) -->
+  <div id="projectModal" class="project-modal hidden" role="dialog" aria-modal="true" aria-label="Project image viewer">
     <div class="project-modal-backdrop"></div>
-    <div class="project-modal-content">
-      <button class="project-modal-close" aria-label="Close project modal">×</button>
-      
-      <div class="project-modal-grid">
-        <!-- Left Side: Main Image -->
-        <div class="project-modal-image-container">
-          <img id="projectModalImage" src="" alt="Project Image" class="project-modal-main-image" loading="lazy" decoding="async">
-          <!-- Navigation Arrows -->
-          <button class="project-modal-nav project-modal-prev" aria-label="Previous project">‹</button>
-          <button class="project-modal-nav project-modal-next" aria-label="Next project">›</button>
-        </div>
-        
-        <!-- Right Side: Description and Thumbnails -->
-        <div class="project-modal-info">
-          <div class="project-modal-header">
-            <h2 id="projectModalTitle" class="project-modal-title">Project 1</h2>
-          </div>
-          
-          <div class="project-modal-description">
-            <p id="projectModalDescription" class="project-description-text">
-              <!-- Description will be populated by JavaScript -->
-            </p>
-          </div>
-          
-          <!-- Thumbnail Gallery -->
-          <div class="project-modal-thumbnails">
-            <div class="project-thumbnails-grid" id="projectThumbnails">
-              <!-- Thumbnails will be populated by JavaScript -->
-            </div>
-          </div>
-        </div>
-      </div>
+    <button class="project-modal-close" aria-label="Close viewer">×</button>
+    <button class="project-modal-nav project-modal-prev" aria-label="Previous image">‹</button>
+    <button class="project-modal-nav project-modal-next" aria-label="Next image">›</button>
+    <div class="project-modal-stage">
+      <img id="projectModalImage" src="" alt="Project Image" class="project-modal-main-image" decoding="async">
     </div>
   </div>
 
@@ -668,21 +641,17 @@
       });
     })();
 
-    // Project Modal with Gallery and Description
+    // Project Viewer — fullscreen image only (no title / text / thumbnails)
     (function projectModal() {
       const modal = document.getElementById('projectModal');
       const modalImage = document.getElementById('projectModalImage');
-      const modalTitle = document.getElementById('projectModalTitle');
-      const modalDescription = document.getElementById('projectModalDescription');
       const modalClose = document.querySelector('.project-modal-close');
       const modalBackdrop = document.querySelector('.project-modal-backdrop');
       const prevBtn = document.querySelector('.project-modal-prev');
       const nextBtn = document.querySelector('.project-modal-next');
-      const thumbnailsContainer = document.getElementById('projectThumbnails');
 
-      // Project data with multiple images per project
-      // Images arrays are kept as they represent gallery images for each project
-      // Title and description will be loaded from JSON
+      // Project data — image galleries only (viewer shows image fullscreen)
+      // Titles/descriptions from content/kitchen.json are intentionally not shown
       let projects = [
         {
           id: 1,
@@ -796,103 +765,24 @@
         }
       ];
 
-      // Load project titles and descriptions from JSON
-      function loadProjectDataFromJSON() {
-        fetch('/content/kitchen.json')
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Failed to load kitchen.json');
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (data.projects && Array.isArray(data.projects)) {
-              // Update project titles and descriptions from JSON
-              data.projects.forEach((jsonProject, index) => {
-                if (projects[index]) {
-                  projects[index].title = jsonProject.title || projects[index].title;
-                  projects[index].description = jsonProject.description || projects[index].description;
-                }
-              });
-              // If modal is already open, update it with new data
-              if (currentProjectId && !modal.classList.contains('hidden')) {
-                updateModal();
-              }
-            }
-          })
-          .catch(error => {
-            console.warn('Could not load project data from JSON:', error);
-          });
-      }
-
-      // Load JSON data when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadProjectDataFromJSON);
-      } else {
-        loadProjectDataFromJSON();
-      }
-
       let currentProjectId = null;
       let currentImageIndex = 0;
 
-      // Create thumbnails for current project
-      function createThumbnails() {
-        thumbnailsContainer.innerHTML = '';
-        if (!currentProjectId) return;
-        
-        const project = projects.find(p => p.id === currentProjectId);
-        if (!project) return;
-
-        project.images.forEach((image, index) => {
-          const thumbnail = document.createElement('div');
-          thumbnail.className = 'project-thumbnail';
-          if (index === currentImageIndex) {
-            thumbnail.classList.add('active');
-          }
-          thumbnail.dataset.index = index;
-          
-          const img = document.createElement('img');
-          img.src = image;
-          img.alt = `${project.title} - Image ${index + 1}`;
-          img.loading = 'lazy';
-          
-          thumbnail.appendChild(img);
-          thumbnail.addEventListener('click', () => {
-            currentImageIndex = index;
-            updateModal();
-          });
-          
-          thumbnailsContainer.appendChild(thumbnail);
-        });
-      }
-
-      // Update modal content
+      // Update viewer image only
       function updateModal() {
         if (!currentProjectId) return;
-        
+
         const project = projects.find(p => p.id === currentProjectId);
         if (!project) return;
 
         modalImage.src = project.images[currentImageIndex];
-        modalTitle.textContent = project.title;
-        modalDescription.textContent = project.description;
-        
-        // Update active thumbnail
-        const thumbnails = thumbnailsContainer.querySelectorAll('.project-thumbnail');
-        thumbnails.forEach((thumb, index) => {
-          if (index === currentImageIndex) {
-            thumb.classList.add('active');
-          } else {
-            thumb.classList.remove('active');
-          }
-        });
+        modalImage.alt = 'Project ' + project.id + ' — image ' + (currentImageIndex + 1);
       }
 
       // Open modal
       function openModal(projectId) {
         currentProjectId = projectId;
         currentImageIndex = 0; // Always start with first image of the project
-        createThumbnails();
         updateModal();
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
@@ -959,6 +849,20 @@
           showNext();
         });
       }
+
+      // Touch swipe (mobile, like sergecherfan.com)
+      let touchStartX = 0;
+      modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+      }, { passive: true });
+      modal.addEventListener('touchend', (e) => {
+        if (modal.classList.contains('hidden')) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) {
+          if (dx < 0) showNext();
+          else showPrev();
+        }
+      }, { passive: true });
 
       // Keyboard navigation
       document.addEventListener('keydown', (e) => {
@@ -1305,7 +1209,7 @@
       cursor: not-allowed;
     }
 
-    /* Project Modal Styles */
+    /* Project Viewer — fullscreen, black transparent, like sergecherfan.com */
     .project-modal {
       position: fixed;
       inset: 0;
@@ -1313,7 +1217,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
     }
 
     .project-modal.hidden {
@@ -1323,81 +1226,55 @@
     .project-modal-backdrop {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.92);
     }
 
-    .project-modal-content {
+    .project-modal-stage {
       position: relative;
       z-index: 1;
-      background: var(--brand-bg) !important;
-      border-radius: 12px;
-      max-width: 1400px;
       width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-      padding: 2rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 84px;
+    }
+
+    .project-modal-main-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     .project-modal-close {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 12px;
+      right: 20px;
+      z-index: 2;
       background: transparent;
       border: none;
-      font-size: 32px;
+      color: #fff;
+      font-size: 44px;
+      font-weight: 300;
       line-height: 1;
-      color: #666;
-      cursor: pointer;
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      z-index: 10;
+      cursor: pointer;
+      opacity: 0.9;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .project-modal-close:hover {
-      background: #f5f5f5;
-      color: #000;
-    }
-
-    .project-modal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    @media (max-width: 1024px) {
-      .project-modal-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .project-modal-image-container {
-        height: min(56vh, 620px);
-      }
-    }
-
-    .project-modal-image-container {
-      position: relative;
-      width: 100%;
-      height: min(70vh, 760px);
-      overflow: hidden;
-      border-radius: 8px;
-      background: var(--brand-bg);
-      display: block;
-    }
-
-    .project-modal-main-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
+      opacity: 1;
+      transform: scale(1.08);
     }
 
     .project-modal-nav {
@@ -1405,111 +1282,54 @@
       top: 50%;
       transform: translateY(-50%);
       z-index: 2;
-      background: rgba(255, 255, 255, 0.9);
+      background: transparent;
       border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 32px;
+      color: #fff;
+      font-size: 56px;
+      font-weight: 300;
       line-height: 1;
-      color: #000;
-      cursor: pointer;
+      width: 64px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
+      cursor: pointer;
+      opacity: 0.85;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .project-modal-nav:hover {
-      background: white;
+      opacity: 1;
       transform: translateY(-50%) scale(1.1);
     }
 
     .project-modal-prev {
-      left: 1rem;
+      left: 12px;
     }
 
     .project-modal-next {
-      right: 1rem;
-    }
-
-    .project-modal-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .project-modal-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 400;
-      color: var(--brand-accent);
-      margin: 0;
-      line-height: 1.2;
-    }
-
-    .project-modal-description {
-      flex: 1;
-    }
-
-    .project-description-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #666;
-      margin: 0;
-    }
-
-    .project-modal-thumbnails {
-      margin-top: auto;
-    }
-
-    .project-thumbnails-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.5rem;
+      right: 12px;
     }
 
     @media (max-width: 768px) {
-      .project-thumbnails-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.5rem;
+      .project-modal-stage {
+        padding: 56px 52px;
       }
-    }
-
-    .project-thumbnail {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 6px;
-      cursor: pointer;
-      opacity: 0.6;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      padding: 0;
-      background: var(--brand-bg);
-    }
-
-    .project-thumbnail:hover {
-      opacity: 1;
-      transform: scale(1.02);
-    }
-
-    .project-thumbnail.active {
-      opacity: 1;
-      border-color: var(--brand-accent);
-    }
-
-    .project-thumbnail img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 4px;
-      display: block;
+      .project-modal-nav {
+        font-size: 44px;
+        width: 48px;
+      }
+      .project-modal-prev {
+        left: 4px;
+      }
+      .project-modal-next {
+        right: 4px;
+      }
+      .project-modal-close {
+        top: 8px;
+        right: 12px;
+        font-size: 38px;
+      }
     }
   </style>
 
