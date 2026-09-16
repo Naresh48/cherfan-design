@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: https://github.com/Naresh48/cherfan-design
+  repo: Naresh48/cherfan-design
   branch: main
 
 media_folder: "assets/uploads"
