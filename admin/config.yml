@@ -31,7 +31,7 @@ collections:
               - label: "Slides"
                 name: "images"
                 widget: "list"
-                hint: "Photos shown 2 at a time in the top slider. Reorder or replace freely."
+                hint: "Photos shown 1 at a time in the top slider. Reorder or replace freely."
                 fields:
                   - { label: "Photo", name: "imageBase", widget: "image", hint: "Pick from Photos/computer, then crop. Or type a path relative to assets/, without size suffix — e.g. 'optimized/images/0d8a9509-edit'." }
                   - { label: "Alt Text", name: "alt", widget: "string" }
