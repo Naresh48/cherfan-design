@@ -160,9 +160,16 @@
   <script>
     // Hero photo slider: slides come from content/home.json (heroSlider.images).
     // The static markup above stays as instant fallback. Shows 1 photo, shifts every 3s.
+    // Starts immediately on the static markup so cold first loads slide right away;
+    // when the CMS fetch resolves, slides are rebuilt and the loop restarts.
     (function heroPhotoSlider() {
       var track = document.getElementById('heroSliderTrack');
       if (!track) return;
+
+      var timer = null;
+      var index = 0;
+      var originalCount = 0;
+      var listenersAttached = false;
 
       // Resolve a slider imageBase to {src, srcset}.
       // - "http(s)://..." or "/..." or a file with an extension -> single file
@@ -184,7 +191,12 @@
       }
 
       function buildSlides(images) {
+        stop();
         track.innerHTML = '';
+        track.removeAttribute('data-original-count');
+        track.style.transform = '';
+        track.classList.remove('no-transition');
+        index = 0;
         images.forEach(function (item, i) {
           var r = resolveSlide(item && item.imageBase);
           if (!r) return;
@@ -201,9 +213,60 @@
         });
       }
 
-      function initSlider() {
-        var originalCount = track.children.length;
+      function slideWidth() {
+        var slide = track.children[0];
+        var w = slide ? slide.getBoundingClientRect().width : 0;
+        // Fallback when layout isn't ready yet (cold first load)
+        if (!w) w = track.parentElement ? track.parentElement.clientWidth : window.innerWidth;
+        return w;
+      }
+
+      function goTo(i, animate) {
+        if (animate === false) track.classList.add('no-transition');
+        else track.classList.remove('no-transition');
+        track.style.transform = 'translateX(' + (-(i * slideWidth())) + 'px)';
+        // Force reflow when jumping without animation so the next slide animates
+        if (animate === false) void track.offsetWidth;
+      }
+
+      function step() {
         if (!originalCount) return;
+        index += 1;
+        goTo(index, true);
+        // After reaching the cloned set, jump back to the equivalent original position
+        if (index >= originalCount) {
+          setTimeout(function () {
+            index = 0;
+            goTo(index, false);
+          }, 850);
+        }
+      }
+
+      function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+      }
+
+      function start() {
+        stop();
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!originalCount) return;
+        timer = setInterval(step, 3000);
+      }
+
+      function initSlider() {
+        // Tear down previous run (timer + old clones) so re-init is safe
+        stop();
+        var prev = parseInt(track.getAttribute('data-original-count') || '0', 10);
+        if (prev > 0 && track.children.length > prev) {
+          while (track.children.length > prev) track.removeChild(track.lastChild);
+        }
+        track.style.transform = '';
+        track.classList.remove('no-transition');
+        index = 0;
+
+        originalCount = track.children.length;
+        if (!originalCount) return;
+        track.setAttribute('data-original-count', String(originalCount));
 
         // Duplicate slides for a seamless loop
         var clones = [];
@@ -216,66 +279,37 @@
         }
         clones.forEach(function (clone) { track.appendChild(clone); });
 
-        var index = 0;
-        var timer = null;
-
-        function slideWidth() {
-          var slide = track.children[0];
-          return slide ? slide.getBoundingClientRect().width : 0;
-        }
-
-        function goTo(i, animate) {
-          if (animate === false) track.classList.add('no-transition');
-          else track.classList.remove('no-transition');
-          track.style.transform = 'translateX(' + (-(i * slideWidth())) + 'px)';
-          // Force reflow when jumping without animation so the next slide animates
-          if (animate === false) void track.offsetWidth;
-        }
-
-        function step() {
-          index += 1;
-          goTo(index, true);
-          // After reaching the cloned set, jump back to the equivalent original position
-          if (index >= originalCount) {
-            setTimeout(function () {
-              index = 0;
-              goTo(index, false);
-            }, 850);
+        if (!listenersAttached) {
+          listenersAttached = true;
+          window.addEventListener('resize', function () { goTo(index, false); });
+          document.addEventListener('visibilitychange', function () {
+            if (document.hidden) stop();
+            else start();
+          });
+          var hero = document.getElementById('heroSection');
+          if (hero) {
+            hero.addEventListener('mouseenter', stop);
+            hero.addEventListener('mouseleave', start);
           }
-        }
-
-        function start() {
-          stop();
-          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-          timer = setInterval(step, 3000);
-        }
-
-        function stop() {
-          if (timer) { clearInterval(timer); timer = null; }
-        }
-
-        window.addEventListener('resize', function () { goTo(index, false); });
-        document.addEventListener('visibilitychange', function () {
-          if (document.hidden) stop();
-          else start();
-        });
-        var hero = document.getElementById('heroSection');
-        if (hero) {
-          hero.addEventListener('mouseenter', stop);
-          hero.addEventListener('mouseleave', start);
         }
 
         start();
       }
 
+      // Start immediately on the static fallback so the first paint already slides.
+      initSlider();
+
+      // Then upgrade to CMS photos when ready and restart the loop.
       fetch('content/home.json', { cache: 'no-cache' })
         .then(function (res) { return res.ok ? res.json() : null; })
         .then(function (data) {
           var imgs = data && data.heroSlider && data.heroSlider.images;
-          if (imgs && imgs.length) buildSlides(imgs);
+          if (imgs && imgs.length) {
+            buildSlides(imgs);
+            initSlider();
+          }
         })
-        .catch(function () { /* keep static fallback slides */ })
-        .then(initSlider);
+        .catch(function () { /* keep running on static fallback slides */ });
     })();
   </script>
 
