@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && npm run build-css && npm run optimize-assets"
+  command = "npm install && npm run build-css && npm run optimize-assets && npm run bake-content"
   publish = "."
 
 # Headers for better caching and security

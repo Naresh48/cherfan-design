@@ -5,9 +5,11 @@
   "scripts": {
     "build-css": "tailwindcss -i ./src/input.css -o ./tailwind.css --minify",
     "watch-css": "tailwindcss -i ./src/input.css -o ./tailwind.css --watch",
-    "optimize-assets": "node optimize-assets.js"
+    "optimize-assets": "node optimize-assets.js",
+    "bake-content": "node bake-content.js"
   },
   "devDependencies": {
+    "cheerio": "^1.2.0",
     "glob": "^13.0.0",
     "sharp": "^0.33.5",
     "tailwindcss": "^3.4.1"
