@@ -48,6 +48,75 @@
   }
 
   /**
+   * Helper: keep the <link rel="preload" as="image"> in sync with the CMS hero.
+   * Hardcoded preloads in HTML go stale after an Admin image swap and cause
+   * "preloaded but not used" warnings, so update it to the live hero URL.
+   */
+  function updateHeroPreload(imageBase) {
+    if (!imageBase || typeof imageBase !== 'string') return;
+    const href = isFullImageUrl(imageBase)
+      ? imageBase
+      : (function () {
+          const paths = getImagePaths(imageBase);
+          return paths ? paths.avif[800] : null;
+        })();
+    if (!href) return;
+    let link = document.querySelector('link[data-cms-hero-preload]');
+    if (!link) {
+      // Adopt an existing hero preload if present, else create one.
+      link = document.querySelector('link[rel="preload"][as="image"]');
+      if (link) {
+        link.setAttribute('data-cms-hero-preload', 'true');
+      } else {
+        link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.setAttribute('data-cms-hero-preload', 'true');
+        document.head.appendChild(link);
+      }
+    }
+    if (link.getAttribute('href') !== href) link.setAttribute('href', href);
+  }
+
+  /**
+   * Self-healing for variants missing on the CDN (e.g. pages published
+   * before the build generated all widths): if the chosen srcset file
+   * 404s, strip the -1600 entries once and retry with -1200 and below.
+   */
+  function downgradePictureOnError(pictureEl) {
+    if (!pictureEl || pictureEl.__cmsDowngraded) return;
+    pictureEl.__cmsDowngraded = true;
+    pictureEl.querySelectorAll('source[srcset]').forEach((source) => {
+      const srcset = source.getAttribute('srcset');
+      if (srcset && srcset.includes('-1600.')) {
+        const parts = srcset.split(',').filter((p) => !p.includes('-1600.'));
+        if (parts.length) source.setAttribute('srcset', parts.join(','));
+      }
+    });
+    const img = pictureEl.querySelector('img');
+    if (img) {
+      const src = img.getAttribute('src') || img.src;
+      if (src && src.includes('-1600.')) {
+        img.src = src.replace('-1600.', '-1200.');
+      } else {
+        // Force reload with downgraded sources.
+        const fallback = img.getAttribute('src');
+        if (fallback) img.src = fallback;
+      }
+    }
+  }
+
+  document.addEventListener('error', function (event) {
+    const target = event.target;
+    if (target && target.tagName === 'IMG') {
+      const pictureEl = target.closest ? target.closest('picture[data-image]') : null;
+      if (pictureEl && !pictureEl.__cmsDowngraded) {
+        downgradePictureOnError(pictureEl);
+      }
+    }
+  }, true);
+
+  /**
    * Helper: Update picture element with new image paths
    * Handles both imageBase (optimized) and full URLs (Cloudinary, /assets/uploads, etc.)
    */
@@ -329,6 +398,9 @@
       const imageBase = getNestedValue(data, path);
       if (imageBase) {
         updatePictureElement(pictureEl, imageBase);
+        if (path === 'hero.imageBase' || path === 'heroSection.imageBase') {
+          updateHeroPreload(imageBase);
+        }
       }
     });
 

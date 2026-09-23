@@ -128,14 +128,15 @@ async function getImageBuffer(src) {
 async function optimizeImage(inputBuffer, baseName) {
   await fs.promises.mkdir(CMS_OUTPUT_DIR, { recursive: true });
 
-  const meta = await sharp(inputBuffer).metadata();
-  const maxDim = Math.max(meta.width || 0, meta.height || 0);
-
+  // NOTE: always generate ALL sizes (400/800/1200/1600) even when the
+  // source is smaller. Previously sizes larger than the source were
+  // skipped, but content-loader.js always requests all 4 widths, so
+  // browsers picked the missing -1600 file and the hero broke site-wide.
+  // Upscaling here guarantees the file exists with correct dimensions.
   const tasks = [];
   for (const w of SIZES) {
-    if (w > maxDim && maxDim > 0) continue;
     // Auto-apply EXIF orientation before resize/output
-    const resize = sharp(inputBuffer).rotate().resize({ width: w, withoutEnlargement: true });
+    const resize = sharp(inputBuffer).rotate().resize({ width: w });
     tasks.push(
       resize.clone().avif({ quality: 80 }).toFile(path.join(CMS_OUTPUT_DIR, `${baseName}-${w}.avif`)),
       resize.clone().webp({ quality: 85 }).toFile(path.join(CMS_OUTPUT_DIR, `${baseName}-${w}.webp`))
@@ -159,14 +160,11 @@ async function optimizeLocalAssetsNew() {
     const baseName = path.basename(file, path.extname(file)).replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 40);
     const inputBuffer = await fs.promises.readFile(inputPath);
 
-    const meta = await sharp(inputBuffer).metadata();
-    const maxDim = Math.max(meta.width || 0, meta.height || 0);
-
+    // Always generate all sizes (see optimizeImage note) so no srcset entry 404s.
     const tasks = [];
     for (const w of SIZES) {
-      if (w > maxDim && maxDim > 0) continue;
       // Auto-apply EXIF orientation before resize/output
-      const resize = sharp(inputBuffer).rotate().resize({ width: w, withoutEnlargement: true });
+      const resize = sharp(inputBuffer).rotate().resize({ width: w });
       tasks.push(
         resize.clone().avif({ quality: 80 }).toFile(path.join(FINAL_PICS_DIR, `${baseName}-${w}.avif`)),
         resize.clone().webp({ quality: 85 }).toFile(path.join(FINAL_PICS_DIR, `${baseName}-${w}.webp`))
@@ -176,6 +174,77 @@ async function optimizeLocalAssetsNew() {
     processed++;
   }
   return processed;
+}
+
+/**
+ * Collect already-rewritten "cms/<base>" values from content files.
+ * These occur when a previous deploy rewrote an https URL but the
+ * generated files were incomplete (e.g. missing -1600) or were lost.
+ */
+function collectCmsBases(obj, out = new Set()) {
+  if (!obj) return out;
+  if (typeof obj === 'string') {
+    const m = obj.match(/^cms\/([A-Za-z0-9_-]{3,45})$/);
+    if (m) out.add(m[1]);
+    return out;
+  }
+  if (Array.isArray(obj)) {
+    obj.forEach((v) => collectCmsBases(v, out));
+    return out;
+  }
+  if (typeof obj === 'object') {
+    Object.values(obj).forEach((v) => collectCmsBases(v, out));
+  }
+  return out;
+}
+
+/**
+ * Backfill any missing width variants for an existing cms base.
+ * Uses the largest available local variant as source (upscales if needed)
+ * so already-published pages self-heal even though the original
+ * Cloudinary URL is no longer in the JSON.
+ */
+async function ensureCmsVariants(baseName) {
+  await fs.promises.mkdir(CMS_OUTPUT_DIR, { recursive: true });
+  const missing = [];
+  for (const w of SIZES) {
+    for (const ext of ['avif', 'webp']) {
+      const p = path.join(CMS_OUTPUT_DIR, `${baseName}-${w}.${ext}`);
+      if (!fs.existsSync(p)) missing.push({ w, ext, path: p });
+    }
+  }
+  if (missing.length === 0) return 0;
+  // Find largest existing variant to upscale from (prefer webp, then avif).
+  let donor = null;
+  for (const w of [...SIZES].sort((a, b) => b - a)) {
+    for (const ext of ['webp', 'avif']) {
+      const p = path.join(CMS_OUTPUT_DIR, `${baseName}-${w}.${ext}`);
+      if (fs.existsSync(p)) {
+        donor = p;
+        break;
+      }
+    }
+    if (donor) break;
+  }
+  if (!donor) return 0; // nothing to rebuild from; fresh URL pass will handle it
+  const donorBuffer = await fs.promises.readFile(donor);
+  const byWidth = new Map();
+  for (const m of missing) {
+    if (!byWidth.has(m.w)) byWidth.set(m.w, []);
+    byWidth.get(m.w).push(m);
+  }
+  for (const [w, items] of byWidth) {
+    const resize = sharp(donorBuffer).rotate().resize({ width: w });
+    await Promise.all(
+      items.map((item) =>
+        item.ext === 'avif'
+          ? resize.clone().avif({ quality: 80 }).toFile(item.path)
+          : resize.clone().webp({ quality: 85 }).toFile(item.path)
+      )
+    );
+  }
+  console.log(`[optimize-assets] Backfilled ${missing.length} file(s) for cms/${baseName} from ${path.basename(donor)}`);
+  return missing.length;
 }
 
 async function main() {
@@ -241,6 +310,30 @@ async function main() {
 
   if (replacements.size > 0) {
     console.log('[optimize-assets] Processed', replacements.size, 'image(s) → assets/final-pics/cms/');
+  }
+
+  // 3b. Self-heal: ensure every cms/<base> referenced in content has all
+  // width variants on disk (fixes pages published before the fix above).
+  let backfilled = 0;
+  for (const file of contentFiles) {
+    const filePath = path.join(CONTENT_DIR, file);
+    let data;
+    try {
+      data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    } catch {
+      continue;
+    }
+    const bases = collectCmsBases(data);
+    for (const base of bases) {
+      try {
+        backfilled += await ensureCmsVariants(base);
+      } catch (err) {
+        console.warn(`[optimize-assets] Backfill failed for cms/${base}:`, err.message);
+      }
+    }
+  }
+  if (backfilled > 0) {
+    console.log('[optimize-assets] Backfilled', backfilled, 'missing variant file(s)');
   }
 
   const localProcessed = await optimizeLocalAssetsNew();
