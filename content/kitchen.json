@@ -1,6 +1,6 @@
 {
   "hero": {
-    "imageBase": "/assets/final-pics/kitchen-hero-800.webp"
+    "imageBase": "https://res.cloudinary.com/doxvoohbv/image/upload/v1790189652/wall-mac-intersteller_keqcrw.jpg"
   },
   "heroTextSection": {
     "label": "CULINARY EXCELLENCE",
@@ -40,14 +40,30 @@
       "title": "Marai A12",
       "description": "A kitchen island where rich walnut wood wrap around sculpted black onyx ceramic, creating a dialogue between warmth and depth.",
       "images": [
-        { "image": "assets/final-pics/1-800.webp" },
-        { "image": "assets/final-pics/kitchen1/0d8a0043-1600.webp" },
-        { "image": "assets/final-pics/kitchen1/0d8a0050-1600.webp" },
-        { "image": "assets/final-pics/kitchen1/zo709957-1600.webp" },
-        { "image": "assets/final-pics/kitchen1/zo709958-1600.webp" },
-        { "image": "assets/final-pics/kitchen1/zo709960-1600.webp" },
-        { "image": "assets/final-pics/kitchen1/zo709961-1600.webp" },
-        { "image": "assets/final-pics/kitchen1/zo709962-1600.webp" }
+        {
+          "image": "assets/final-pics/1-800.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen1/0d8a0043-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen1/0d8a0050-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen1/zo709957-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen1/zo709958-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen1/zo709960-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen1/zo709961-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen1/zo709962-1600.webp"
+        }
       ]
     },
     {
@@ -56,11 +72,21 @@
       "title": "Ligno Z23",
       "description": "A kitchen where warm minimalism meets refined living.\nSoft ceramic surfaces and muted tones create a calm, timeless space designed for effortless elegance.",
       "images": [
-        { "image": "assets/final-pics/kitchen-2/2-1600.webp" },
-        { "image": "assets/final-pics/kitchen-2/3-1600.webp" },
-        { "image": "assets/final-pics/kitchen-2/4-1600.webp" },
-        { "image": "assets/final-pics/kitchen-2/5-1600.webp" },
-        { "image": "assets/final-pics/kitchen-2/6-1600.webp" }
+        {
+          "image": "assets/final-pics/kitchen-2/2-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-2/3-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-2/4-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-2/5-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-2/6-1600.webp"
+        }
       ]
     },
     {
@@ -69,11 +95,21 @@
       "title": "Layera AM1",
       "description": "Glossy cabinets combined with walnut wood tones create a modern, clean kitchen, while adding warmth and contrast to the space.",
       "images": [
-        { "image": "assets/final-pics/kitchen-3/5-1600.webp" },
-        { "image": "assets/final-pics/kitchen-3/1-1600.webp" },
-        { "image": "assets/final-pics/kitchen-3/2-1600.webp" },
-        { "image": "assets/final-pics/kitchen-3/3-1600.webp" },
-        { "image": "assets/final-pics/kitchen-3/4-1600.webp" }
+        {
+          "image": "assets/final-pics/kitchen-3/5-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-3/1-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-3/2-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-3/3-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-3/4-1600.webp"
+        }
       ]
     },
     {
@@ -82,15 +118,33 @@
       "title": "Mirai C2",
       "description": "Wrapped in the soft stillness of Moon Grey ceramic, this kitchen evokes the quiet beauty of twilight. Subtle, grounded, and endlessly refined.",
       "images": [
-        { "image": "assets/final-pics/4-800.webp" },
-        { "image": "assets/final-pics/kitchen4/0d8a9589-1600.webp" },
-        { "image": "assets/final-pics/kitchen4/0d8a9591-1600.webp" },
-        { "image": "assets/final-pics/kitchen4/0d8a9592-1600.webp" },
-        { "image": "assets/final-pics/kitchen4/0d8a9620-1600.webp" },
-        { "image": "assets/final-pics/kitchen4/0d8a9674-1600.webp" },
-        { "image": "assets/final-pics/kitchen4/zo709964-1600.webp" },
-        { "image": "assets/final-pics/kitchen4/zo709967-1600.webp" },
-        { "image": "assets/final-pics/kitchen4/zo709968-1600.webp" }
+        {
+          "image": "assets/final-pics/4-800.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/0d8a9589-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/0d8a9591-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/0d8a9592-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/0d8a9620-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/0d8a9674-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/zo709964-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/zo709967-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen4/zo709968-1600.webp"
+        }
       ]
     },
     {
@@ -99,15 +153,33 @@
       "title": "Troy B4",
       "description": "A kitchen defined by the beauty of onyx-inspired ceramic.\nTranslucent tones and organic veining flow across the island and backsplash, transforming ceramic into a statement of natural depth and modern luxury.",
       "images": [
-        { "image": "assets/final-pics/5-800.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0111-1600.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0116-1600.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0118-1600.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0122-1600.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0149-1600.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0167-1600.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0168-1600.webp" },
-        { "image": "assets/final-pics/kitchen5/img-0169-1600.webp" }
+        {
+          "image": "assets/final-pics/5-800.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0111-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0116-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0118-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0122-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0149-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0167-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0168-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen5/img-0169-1600.webp"
+        }
       ]
     },
     {
@@ -116,14 +188,30 @@
       "title": "Cimi 01",
       "description": "Soft grey tones meet clever design — crafted for both experience and practicality.\nCeramic surfaces bring durability and quiet elegance, while warm lighting and layered storage create a kitchen that feels as functional as it is refined.",
       "images": [
-        { "image": "assets/final-pics/6-800.webp" },
-        { "image": "assets/final-pics/kitchen-6/2-1600.webp" },
-        { "image": "assets/final-pics/kitchen-6/3-1600.webp" },
-        { "image": "assets/final-pics/kitchen-6/4-1600.webp" },
-        { "image": "assets/final-pics/kitchen-6/5-1600.webp" },
-        { "image": "assets/final-pics/kitchen-6/6-1600.webp" },
-        { "image": "assets/final-pics/kitchen-6/7-1600.webp" },
-        { "image": "assets/final-pics/kitchen-6/8-1600.webp" }
+        {
+          "image": "assets/final-pics/6-800.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-6/2-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-6/3-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-6/4-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-6/5-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-6/6-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-6/7-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-6/8-1600.webp"
+        }
       ]
     },
     {
@@ -132,10 +220,18 @@
       "title": "Taloy D5",
       "description": "Where warmth meets modern edge — walnut textures, glossy whites, and sleek greys in perfect harmony. A refined ceramic countertop anchors the space, bringing durability, elegance, and a calm architectural presence to everyday living.",
       "images": [
-        { "image": "assets/final-pics/7-800.webp" },
-        { "image": "assets/final-pics/kitchen-7/2-1600.webp" },
-        { "image": "assets/final-pics/kitchen-7/3-1600.webp" },
-        { "image": "assets/final-pics/kitchen-7/4-1600.webp" }
+        {
+          "image": "assets/final-pics/7-800.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-7/2-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-7/3-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-7/4-1600.webp"
+        }
       ]
     },
     {
@@ -144,11 +240,21 @@
       "title": "Glory C6",
       "description": "Bespoke kitchen featuring custom details and premium materials. This carefully crafted space reflects your unique personality while maintaining the highest standards of excellence.",
       "images": [
-        { "image": "assets/final-pics/8-800.webp" },
-        { "image": "assets/final-pics/kitchen-8/2-1600.webp" },
-        { "image": "assets/final-pics/kitchen-8/3-1600.webp" },
-        { "image": "assets/final-pics/kitchen-8/4-1600.webp" },
-        { "image": "assets/final-pics/kitchen-8/5-1600.webp" }
+        {
+          "image": "assets/final-pics/8-800.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-8/2-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-8/3-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-8/4-1600.webp"
+        },
+        {
+          "image": "assets/final-pics/kitchen-8/5-1600.webp"
+        }
       ]
     }
   ],
