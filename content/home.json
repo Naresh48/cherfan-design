@@ -2,11 +2,11 @@
   "heroSlider": {
     "images": [
       {
-        "imageBase": "optimized/images/0d8a9509-edit",
+        "imageBase": "https://res.cloudinary.com/mr99iw6t/image/upload/letssee2.png",
         "alt": "Luxury interior 1"
       },
       {
-        "imageBase": "optimized/images/home-pics-processed/DD123",
+        "imageBase": "https://res.cloudinary.com/mr99iw6t/image/upload/letssee1.png",
         "alt": "Luxury interior 2"
       },
       {
@@ -40,7 +40,7 @@
     "title": "A history built on trust"
   },
   "celebrationSection1": {
-    "imageBase": "https://res.cloudinary.com/mr99iw6t/image/upload/letssee2.png",
+    "imageBase": "0d8a9509-edit",
     "title": "Four Decades of Design",
     "description": "With 41 years of experience, we create living spaces that balance luxury with lasting quality. Our work is built to stand the test of time. This is design that doesn’t just fill a room, but defines it; serving as the quiet foundation for the life you build within. Every line, material, and proportion is considered with intention; crafted not for trends, but for longevity. We believe true luxury reveals itself slowly, through comfort, function, and an enduring sense of belonging."
   },
